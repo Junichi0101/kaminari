@@ -1,0 +1,53 @@
+HTTrack3.49-2+htsswf+htsjava launched on Sun, 26 Jan 2025 19:51:24 at http://www.kaminarizushi.jp/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qYC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "ja, en, *" -Y http://www.kaminarizushi.jp/ -O1 "C:\Users\reasa\OneDrive\デスクトップ\kaminari" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+19:51:24	Warning: 	HTML file (0 bytes) retransferred due to lack of cache: www.kaminarizushi.jp/
+19:51:25	Warning: 	Note: due to www.kaminarizushi.jp remote robots.txt rules, links beginning with these path will be forbidden: /wp/wp-admin/ (see in the options to disable this)
+19:51:33	Error: 	Unable to save file C:/Users/reasa/OneDrive/デスクトップ/kaminari/s.yimg.jp/images/reservation/rm/assets/pc/0-0-2/js/tag-min.js: No such file or directory
+19:51:33	Warning: 	file not stored in cache due to bogus state (broken size, expected 692 got 0): https://s.yimg.jp/images/reservation/rm/assets/pc/0-0-2/js/tag-min.js
+19:52:33	Error: 	"Error when decompressing" (-1) at link maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css (from www.kaminarizushi.jp/)
+19:52:33	Error: 	"Error when decompressing" (-1) at link netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css (from www.kaminarizushi.jp/)
+19:52:34	Warning: 	Moved Permanently for s.w.org/robots.txt
+19:52:34	Warning: 	File has moved from s.w.org/robots.txt to https://wordpress.org/
+19:52:34	Warning: 	Moved Permanently for s.w.org/
+19:52:34	Warning: 	File has moved from s.w.org/ to https://wordpress.org/
+19:52:59	Error: 	"Error when decompressing" (-1) at link https://connect.facebook.net/ja_JP/sdk.js (from www.kaminarizushi.jp/)
+19:52:59	Warning: 	Retry after error -4 (Incorrect length (0 Bytes, 692 expected)) at link https://s.yimg.jp/images/reservation/rm/assets/pc/0-0-2/js/tag-min.js (from www.kaminarizushi.jp/)
+19:54:24	Error: 	"Error when decompressing" (-1) at link www.kaminarizushi.jp/category/cat_blog (from www.kaminarizushi.jp/)
+19:54:32	Error: 	"Error when decompressing" (-1) at link https://www.facebook.com/kaminarizushi/ (from www.kaminarizushi.jp/)
+19:54:32	Error: 	"Error when decompressing" (-1) at link https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3894.6305673951974!2d134.68683568080965!3d34.831573174291144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3554e013eeacdc17%3A0xc8f5d80866aae8!2z6Zu35a-_5Y-4!5e0!3m2!1sja!2sjp!4v1490059664703 (from www.kaminarizushi.jp/)
+19:54:32	Warning: 	File not parsed, looks like binary: www.kaminarizushi.jp/wp/wp-content/themes/wp_kaminari/fonts/bootstrap/glyphicons-halflings-regular.eot
+19:54:32	Warning: 	File not parsed, looks like binary: www.kaminarizushi.jp/wp/wp-content/themes/wp_kaminari/fonts/bootstrap/glyphicons-halflings-regular.eot?
+19:54:32	Warning: 	File not parsed, looks like binary: www.kaminarizushi.jp/wp/wp-content/themes/wp_kaminari/fonts/bootstrap/glyphicons-halflings-regular.woff2
+19:54:32	Warning: 	File not parsed, looks like binary: www.kaminarizushi.jp/wp/wp-content/themes/wp_kaminari/fonts/bootstrap/glyphicons-halflings-regular.woff
+19:54:32	Error: 	"Not Found" (404) at link www.kaminarizushi.jp/Popover requires tooltip.js (from www.kaminarizushi.jp/wp/wp-content/themes/wp_kaminari/js/bootstrap.min.js?ver=4.7.29)
+19:54:32	Warning: 	Moved Permanently for www.kaminarizushi.jp/?p=6
+19:54:32	Warning: 	File has moved from www.kaminarizushi.jp/?p=6 to http://www.kaminarizushi.jp/beginners
+19:54:32	Warning: 	Moved Permanently for www.kaminarizushi.jp/?p=8
+19:54:32	Warning: 	File has moved from www.kaminarizushi.jp/?p=8 to http://www.kaminarizushi.jp/menu
+19:54:32	Warning: 	Moved Permanently for www.kaminarizushi.jp/?p=10
+19:54:32	Warning: 	File has moved from www.kaminarizushi.jp/?p=10 to http://www.kaminarizushi.jp/guide
+19:54:32	Warning: 	Moved Permanently for www.kaminarizushi.jp/?p=12
+19:54:32	Warning: 	File has moved from www.kaminarizushi.jp/?p=12 to http://www.kaminarizushi.jp/about
+19:54:32	Warning: 	Moved Permanently for www.kaminarizushi.jp/newslist/feed/
+19:54:32	Warning: 	File has moved from www.kaminarizushi.jp/newslist/feed/ to http://www.kaminarizushi.jp/newslist/feed
+19:54:33	Error: 	Unable to save file C:/Users/reasa/OneDrive/デスクトップ/kaminari/www.kaminarizushi.jp/newslist/feed: Permission denied
+19:54:33	Warning: 	file not stored in cache due to bogus state (broken size, expected 3291 got 0): www.kaminarizushi.jp/newslist/feed
+19:54:33	Warning: 	Moved Permanently for www.kaminarizushi.jp/?p=18
+19:54:33	Warning: 	File has moved from www.kaminarizushi.jp/?p=18 to http://www.kaminarizushi.jp/contact
+19:54:34	Warning: 	Retry after error -4 (Incorrect length (0 Bytes, 3291 expected)) at link www.kaminarizushi.jp/newslist/feed (from www.kaminarizushi.jp/newslist/feed/)
+19:54:34	Error: 	Unable to save file C:/Users/reasa/OneDrive/デスクトップ/kaminari/www.kaminarizushi.jp/newslist/feed: Permission denied
+19:54:34	Warning: 	file not stored in cache due to bogus state (broken size, expected 3291 got 0): www.kaminarizushi.jp/newslist/feed
+19:54:34	Warning: 	Retry after error -4 (Incorrect length (0 Bytes, 3291 expected)) at link www.kaminarizushi.jp/newslist/feed (from www.kaminarizushi.jp/newslist/feed/)
+19:54:35	Error: 	Unable to save file C:/Users/reasa/OneDrive/デスクトップ/kaminari/www.kaminarizushi.jp/newslist/feed: Permission denied
+19:54:35	Warning: 	file not stored in cache due to bogus state (broken size, expected 3291 got 0): www.kaminarizushi.jp/newslist/feed
+19:54:35	Error: 	"Incorrect length (0 Bytes, 3291 expected)" (-4) after 2 retries at link www.kaminarizushi.jp/newslist/feed (from www.kaminarizushi.jp/newslist/feed/)
+19:54:35	Error: 	Unable to save file C:/Users/reasa/OneDrive/デスクトップ/kaminari/www.kaminarizushi.jp/newslist/feed: Permission denied
+
+HTTrack Website Copier/3.49-2 mirror complete in 3 minutes 11 seconds : 173 links scanned, 151 files written (4911756 bytes overall), 153 files updated [4958844 bytes received at 25962 bytes/sec], 197259 bytes transferred using HTTP compression in 15 files, ratio 51%, 2.0 requests per connection
+(13 errors, 29 warnings, 0 messages)
