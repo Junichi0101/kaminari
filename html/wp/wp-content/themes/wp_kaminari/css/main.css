@@ -1437,6 +1437,12 @@ img {
   height: auto;
 }
 
+.img-logo {
+  display: block;
+  max-width: 40%;
+  height: auto;
+}
+
 .img-rounded {
   border-radius: 6px;
 }
