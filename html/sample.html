@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>和福路 総本店</title>
+    <link rel="stylesheet" href="sample.css" />
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log('Document loaded successfully')
+      })
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img
+            src="logo.png"
+            alt="和福路 総本店"
+            onload="console.log('Logo image loaded')"
+          />
+        </div>
+        <div class="contact-info">
+          <p>
+            <strong>ご予約・お問い合わせ：</strong>
+            <a
+              href="tel:0792236812"
+              onclick="console.log('Phone number clicked')"
+              >079-223-6812</a
+            >
+          </p>
+          <p>営業時間：18:00～24:00 定休日：月曜日</p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#home" onclick="console.log('Navigation: ホーム clicked')"
+              >ホーム</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              onclick="console.log('Navigation: 初めての方へ clicked')"
+              >初めての方へ</a
+            >
+          </li>
+          <li>
+            <a
+              href="#menu"
+              onclick="console.log('Navigation: お品書き clicked')"
+              >お品書き</a
+            >
+          </li>
+          <li>
+            <a
+              href="#access"
+              onclick="console.log('Navigation: 店舗案内 clicked')"
+              >店舗案内</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              onclick="console.log('Navigation: お問い合わせ clicked')"
+              >お問い合わせ</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="slider">
+      <div class="slider-item">
+        <img
+          src="sushi1.jpg"
+          alt="握り寿司"
+          onload="console.log('Slider image loaded')"
+        />
+        <div class="slider-caption">
+          <h2>旬の食材を心ゆくまでご堪能ください</h2>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>初めての方へ</h2>
+      <p>和福路は地元の新鮮な魚を使用したお寿司を提供するお店です。</p>
+      <ul>
+        <li>毎朝市場で仕入れた新鮮な魚介を使用しています。</li>
+        <li>寿司の基本であるシャリは特別な製法で炊き上げています。</li>
+        <li>お客様に心地よいひとときを提供します。</li>
+      </ul>
+      <script>
+        console.log('About section loaded')
+      </script>
+    </section>
+
+    <section id="menu">
+      <h2>お品書き</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <img
+            src="sushi-menu.jpg"
+            alt="寿司"
+            onload="console.log('寿司 menu item loaded')"
+          />
+          <p>寿司</p>
+        </div>
+        <div class="menu-item">
+          <img
+            src="sashimi-menu.jpg"
+            alt="刺身"
+            onload="console.log('刺身 menu item loaded')"
+          />
+          <p>刺身</p>
+        </div>
+        <div class="menu-item">
+          <img
+            src="dish-menu.jpg"
+            alt="一品料理"
+            onload="console.log('一品料理 menu item loaded')"
+          />
+          <p>一品料理</p>
+        </div>
+        <div class="menu-item">
+          <img
+            src="drink-menu.jpg"
+            alt="お飲み物"
+            onload="console.log('お飲み物 menu item loaded')"
+          />
+          <p>お飲み物</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="access">
+      <h2>店舗へのご案内</h2>
+      <p>和福路総本店へのアクセスは以下の地図をご覧ください。</p>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?..."
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          onload="console.log('Map loaded')"
+        ></iframe>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 和福路 総本店. All rights reserved.</p>
+      <script>
+        console.log('Footer loaded')
+      </script>
+    </footer>
+  </body>
+</html>

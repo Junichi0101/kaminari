@@ -1,0 +1,7 @@
+div.back-ground {
+  background-color: beige !important;
+}
+div.col-md-6.center {
+  display: grid;
+  place-items: center; /* 水平・垂直ともに中央配置 */
+}
