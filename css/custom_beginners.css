@@ -43,3 +43,9 @@ h2 {
 .underline_r {
   border-bottom: 2px solid red !important;
 }
+
+.title h2 {
+  text-align: center !important;
+  border-bottom: none !important;
+  font-size: 36px !important;
+}

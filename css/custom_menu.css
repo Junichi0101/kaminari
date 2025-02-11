@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Tegaki'; /* 任意のフォント名（後で使用する名前） */
+  src: url('../font/tegaki.ttf') format('truetype'); /* ファイルのパスとフォーマット指定 */
+  font-weight: normal; /* 必要に応じて指定 */
+  font-style: normal; /* 必要に応じて指定 */
+}
+.osinagaki {
+  text-align: left;
+  font-size: 20px;
+  padding: 3%;
+}
+
+h2 {
+  font-family: 'Tegaki', sans-serif !important; /* 任意のフォント名を指定 */
+  text-align: center;
+  font-size: 36px !important;
+}
+
+.font-left h2 {
+  text-align: left !important;
+}
+
+.kaisen img {
+  /* 画像をブロック要素にすることで margin: auto が有効になります */
+  display: block;
+
+  /* 左右のマージンを自動設定して中央配置に */
+  margin: 0 auto;
+
+  /* 画像が親要素の幅を超えないようにし、レスポンシブに対応 */
+  max-width: 100%;
+
+  /* アスペクト比を維持して高さを自動調整 */
+  height: auto;
+
+  /* 画像に柔らかい印象と立体感を与える影を追加 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* 角を丸めて上品な印象に */
+  border-radius: 8px;
+
+  /* ホバー時の変化にスムーズなアニメーションを追加 */
+  transition: transform 0.3s ease;
+}
+
+/* マウスホバー時に画像を少し拡大して強調する効果 */
+.kaisen img:hover {
+  transform: scale(1.05);
+}
