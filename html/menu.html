@@ -100,9 +100,13 @@ img.emoji {
 
 
   <div class="row">
-  <div class="head__logo col-md-4 col-md-offset-4">
-    <h2><a href="index.html"><img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/logo.png" alt="和招縁" /></a></h2>
-  </div>
+    <div class="head__logo col-md-4 col-md-offset-4">
+      <h2>
+        <a href="index.html">
+          <img class="img-logo" src="../image/logo.png" alt="和招縁" />
+        </a>
+      </h2>
+    </div>
   <div class="col-md-4 head__tel">
   <img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/head_tel.png" alt="和招縁 ご予約・お問い合わせ 電話番号079-223-6812 営業時間 17:00～24:00 定休日 日曜日・祝日" />
   <div class="head__img">
@@ -141,12 +145,17 @@ img.emoji {
 <div class="container">
 <div class="row">
 <div id="nav-menu-1" class="collapse navbar-collapse"><ul id="header-gloval" class="nav navbar-nav"><li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-20"><a title="ホーム"  title="menu_home.png" href="index.html""><img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/menu_home.png" alt="*" /></a></li>
-<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a title="始めての方へ"  title="menu_beginners.png" href="beginners.html""><img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/menu_beginners.png" alt="*" /></a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a title="始めての方へ"  title="menu_beginners.png" href="beginners.html"><img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/menu_beginners.png" alt="*" /></a></li>
 <li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-8 current_page_item menu-item-21 active"><a title="お品書き"  title="menu_menu.png" href="menu.html""><img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/menu_menu.png" alt="*" /></a></li>
-<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a title="当店への道案内"  title="menu_guide.png" href="guide.html""><img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/menu_guide.png" alt="*" /></a></li>
-<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a title="店舗概要"  title="menu_about.png" href="about.html""><img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/menu_about.png" alt="*" /></a></li>
-<li id="menu-item-39" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39"><a title="ブログ"  title="menu_blog.png" href="category/cat_blog.html""><img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/menu_blog.png" alt="*" /></a></li>
-<li id="menu-item-40" class="menu-item menu-item-type-post_type_archive menu-item-object-news menu-item-40"><a title="お知らせ"  title="menu_news.png" href="newslist.html""><img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/menu_news.png" alt="*" /></a></li>
+<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-10 current_page_item menu-item-27 active dropdown">
+  <a href="guide.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+    <img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/menu_guide.png" alt="*" />
+  </a>
+  <ul class="dropdown-menu">
+    <li><a href="guide_fukunaka.html">福中店</a></li>
+    <li><a href="guide_shiomachi.html">塩町店</a></li>
+  </ul>
+</li><li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a title="店舗概要"  title="menu_about.png" href="about.html""><img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/menu_about.png" alt="*" /></a></li>
 <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a title="お問合せ"  title="menu_contact.png" href="contact.html""><img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/menu_contact.png" alt="*" /></a></li>
 <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a title="facebook"  title="menu_fb.png" target="_blank" href="../www.facebook.com/kaminarizushi/index.html""><img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/menu_fb.png" alt="*" /></a></li>
 </ul></div></div>
@@ -333,8 +342,6 @@ img.emoji {
 <li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-8 current_page_item menu-item-48"><a href="menu.html">お品書き</a></li>
 <li id="menu-item-54" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="guide.html">当店への道案内</a></li>
 <li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="about.html">店舗概要</a></li>
-<li id="menu-item-55" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-55"><a href="category/cat_blog.html">ブログ</a></li>
-<li id="menu-item-56" class="menu-item menu-item-type-post_type_archive menu-item-object-news menu-item-56"><a href="newslist.html">お知らせ</a></li>
 <li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="contact.html">お問合せ</a></li>
 </ul></div>  <!-- //フッターメニュー-->
   </div>
