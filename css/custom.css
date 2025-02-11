@@ -5,3 +5,11 @@ div.col-md-6.center {
   display: grid;
   place-items: center; /* 水平・垂直ともに中央配置 */
 }
+.carousel__out_frame {
+  background: url(../image/haikei_v2.png) !important;
+}
+video {
+  width: 100%;
+  height: auto;
+  display: block; /* 親要素内で余白ができないように */
+}

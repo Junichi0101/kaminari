@@ -1,0 +1,45 @@
+h2 {
+  /* エレガントな印象を与えるフォントを指定（Google Fontsなどで読み込み可能） */
+  font-family: 'Playfair Display', serif;
+
+  /* 大きめのフォントサイズで存在感を */
+  font-size: 36px;
+
+  /* 落ち着いたダークトーンの文字色 */
+  color: #333;
+
+  /* 中央揃えでバランスの良い配置 */
+  text-align: center;
+
+  /* 少し広めの文字間隔で洗練された印象に */
+  letter-spacing: 1.5px;
+
+  /* ゴールドのボーダーで高級感をプラス */
+  border-bottom: 2px solid #d4af37;
+
+  /* 下部に余白をとり、ボーダーとの一体感を調整 */
+  padding-bottom: 10px;
+
+  /* 上下に適度な余白を確保 */
+  margin: 30px 0;
+
+  /* 軽いテキストシャドウで立体感を演出 */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+@font-face {
+  font-family: 'Tegaki'; /* 任意のフォント名（後で使用する名前） */
+  src: url('../font/tegaki.ttf') format('truetype'); /* ファイルのパスとフォーマット指定 */
+  font-weight: normal; /* 必要に応じて指定 */
+  font-style: normal; /* 必要に応じて指定 */
+}
+
+h2 {
+  font-family: 'Tegaki', sans-serif !important; /* 任意のフォント名を指定 */
+  text-align: left;
+  font-size: x-large !important;
+}
+
+.underline_r {
+  border-bottom: 2px solid red !important;
+}
