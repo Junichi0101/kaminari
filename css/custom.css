@@ -89,3 +89,124 @@ h2 {
   width: 100%;
   height: 300px !important;
 }
+
+.sushi-menu {
+  background-color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+  font-family: 'Georgia', serif;
+}
+.sushi-menu h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 40px;
+}
+/* 商品リストのレイアウト */
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+/* 各商品のスタイル */
+.menu-item {
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  background-color: #fff;
+}
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+.menu-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+.menu-item h3 {
+  font-size: 24px;
+  color: #555;
+  margin: 15px 0 10px;
+}
+.menu-item p {
+  font-size: 16px;
+  color: #777;
+  margin: 5px 0;
+}
+.menu-item .price {
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+/**** ヘッダー ***/
+/* ヘッダー全体のスタイル */
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* 画面いっぱいの高さ */
+  overflow: hidden;
+}
+
+/* 動画背景のスタイル */
+header video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* ナビゲーションのスタイル */
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  padding: 20px 0;
+  /* 半透明の背景で文字を見やすく */
+  background: rgba(0, 0, 0, 0.4);
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+nav ul li {
+  font-family: 'Tegaki', serif;
+  font-size: 18px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: #ccc;
+}
+
+/* レスポンシブ対応：画面幅が狭い場合 */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+  nav {
+    padding: 15px 0;
+  }
+  nav ul li {
+    font-size: 16px;
+  }
+  nav ul li a {
+    font-family: 'Tamanegi', serif !important;
+  }
+}
+/**** ヘッダーここまで ***/
