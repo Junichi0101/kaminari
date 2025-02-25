@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<!--[if IE 7]>
-<html class="ie ie7" lang="ja">
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8" lang="ja">
-<![endif]-->
-<!--[if !(IE 7) & !(IE 8)]><!-->
 <html lang="ja">
 <![endif]-->
 <head>
@@ -390,28 +383,7 @@ img.emoji {
 
 
 </footer>
-    <script>
-    /*TOPへ戻る*/
-    $(function() {
-    var topBtn = $('#page-top');
-    topBtn.hide();
-    //スクロールが100に達したらボタン表示
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            topBtn.fadeIn().css('display','inline-block');
-        } else {
-            topBtn.fadeOut();
-        }
-    });
-    //スクロールしてトップ
-    topBtn.click(function () {
-        $('body,html').animate({
-            scrollTop: 0
-        }, 1000);
-        return false;
-    });
-    });
-    </script>
+
 
 <script type='text/javascript' src='wp/wp-includes/js/wp-embed.min0155.js?ver=4.7.29'></script>
   </body>
