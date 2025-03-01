@@ -147,12 +147,9 @@ img.emoji {
     <div class="row">
       <div class="pagetitle__block">
         <div class="header_beginners__title">
-          <h2 class="container">
-            <img src="wp/wp-content/themes/wp_kaminari/images/header_beginners_title.png" alt="初めての方へ" class="img-responsive">
-          </h2>
+          <h2 class="container title_main">初めての方へ</h2>
         </div>
       </div>
-
       <div id="post-6" class="p-6 beginnersPage">
         <div class="main-content">
           <main>
@@ -347,32 +344,21 @@ img.emoji {
 </div>
 </div>
 </aside>
-
-<div class="container">
-<div class="goto__block"><a id="page-top" href="#wrap"><img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/go_to_top.png" alt="和招縁 ページの先頭へ" /></a></div>
-</div>
-
-
 <footer>
   <div class="container">
   <!-- フッターメニュー-->
   <div id="footernav" class="list-group"><ul id="footerlist" class="footermenu footernavbar"><li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-47"><a href="index.html">ホーム</a></li>
-<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item menu-item-52"><a href="beginners.html">初めての方へ</a></li>
-<li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="menu.html">お品書き</a></li>
+<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="beginners.html">初めての方へ</a></li>
+<li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-8 current_page_item menu-item-48"><a href="menu.html">お品書き</a></li>
 <li id="menu-item-54" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="guide.html">当店への道案内</a></li>
 <li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="about.html">店舗概要</a></li>
-
+<li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="contact.html">お問合せ</a></li>
 </ul></div>  <!-- //フッターメニュー-->
-</div>
+  </div>
 
 <div class="footer__logoblock">
 <div class="line__pt"></div>
 
-<!--
-<div class="footer__logo">
-<img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/footer_logo.png" alt="和招縁" />
-</div>
--->
 </div>
 
 
@@ -380,18 +366,18 @@ img.emoji {
 
 <div class="container">
 
-<div class="footer__info">
+  <div class="footer__info">
 
-    <div class="footer__title">
-      <h2>和招縁</h2>
-    </div>
+      <div class="footer__title">
+        <h2>和招縁</h2>
+      </div>
 
-    <div class="footer__address">
-    〒670-0904　兵庫県姫路市塩町177　アールビル1F
-    </div>
+      <div class="footer__address">
+      〒670-0904　兵庫県姫路市塩町177　アールビル1F
+      </div>
 
 
-</div>
+  </div>
 
 </div>
 
@@ -403,32 +389,5 @@ img.emoji {
 </div>
 </div>
 
-
 </footer>
-  <script>
-  /*TOPへ戻る*/
-  $(function() {
-  var topBtn = $('#page-top');
-  topBtn.hide();
-  //スクロールが100に達したらボタン表示
-  $(window).scroll(function () {
-      if ($(this).scrollTop() > 100) {
-          topBtn.fadeIn().css('display','inline-block');
-      } else {
-          topBtn.fadeOut();
-      }
-  });
-  //スクロールしてトップ
-  topBtn.click(function () {
-      $('body,html').animate({
-          scrollTop: 0
-      }, 1000);
-      return false;
-  });
-  });
-  </script>
-
-<script type='text/javascript' src='wp/wp-includes/js/wp-embed.min0155.js?ver=4.7.29'></script>
-</body>
-
 </html>
