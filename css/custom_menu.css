@@ -47,3 +47,29 @@ h2 {
 .kaisen img:hover {
   transform: scale(1.05);
 }
+
+/* header */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 30px;
+
+  /* Flexboxを有効化 */
+  display: flex;
+
+  /* 子要素（li）を左右中央に配置 */
+  justify-content: center;
+
+  /* 上下方向の中央寄せ（高さを指定するか、行揃えを調整したい場合） 
+     align-items: center;
+  */
+}
+
+.main-nav li {
+  margin: 0 1rem; /* 項目同士の隙間を調整 */
+}
+
+.transfont {
+  font-family: 'Tegaki', sans-serif !important;
+  font-size: large;
+}
