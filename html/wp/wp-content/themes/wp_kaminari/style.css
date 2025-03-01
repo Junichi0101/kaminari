@@ -211,30 +211,6 @@ header {
   background-image: url(images/header_menu.png);
 }
 
-.header_beginners__title h2 {
-  background-image: url(images/header_beginners.png);
-}
-
-.header_guide__title h2 {
-  background-image: url(images/header_guide.png);
-}
-
-.header_about__title h2 {
-  background-image: url(images/header_about.png);
-}
-
-.header_cat_blog__title h2 {
-  background-image: url(images/header_cat_blog.png);
-}
-
-.header_newslist__title h2 {
-  background-image: url(images/header_newslist.png);
-}
-
-.header_contact__title h2 {
-  background-image: url(images/header_contact.png);
-}
-
 .carousel-indicators {
   position: static;
   width: 60%;
@@ -387,7 +363,7 @@ header {
 }
 
 .button__block--inner {
-  background: url(images/button_gray.png);
+  background: url(/image/transfar_buttom.png);
   padding: 2px;
   margin: 25px auto;
   text-align: center;
@@ -395,7 +371,7 @@ header {
 }
 
 .button__black .button__block--inner {
-  background: url(images/button_black.png);
+  background: url(/image/transfar_buttom.png);
 }
 
 .button__block--inner a {

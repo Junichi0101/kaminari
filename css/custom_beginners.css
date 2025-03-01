@@ -6,9 +6,6 @@
 }
 
 h2 {
-  /* エレガントな印象を与えるフォントを指定（Google Fontsなどで読み込み可能） */
-  font-family: 'Playfair Display', serif;
-
   /* 大きめのフォントサイズで存在感を */
   font-size: 36px;
 
