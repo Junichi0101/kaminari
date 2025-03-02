@@ -66,7 +66,24 @@
       <li ><a href="index.html">ホーム</a></li>
       <li><a href="beginners.html">初めての方へ</a></li>
       <li><a href="menu.html">お品書き</a></li>
-      <li><a href="guide_fukunaka.html">当店への道案内</a></li>
+      <!-- <li><a href="guide_fukunaka.html">当店への道案内</a></li> -->
+        <!-- ▼ ドロップダウン部分 ▼ -->
+        <li class="dropdown">
+          <a href="guide.html"
+             class="dropdown-toggle"
+             data-toggle="dropdown"
+             role="button"
+             aria-haspopup="true"
+             aria-expanded="false">
+            当店への道案内
+            <span class="caret"></span> <!-- 下向き矢印を表示 -->
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="guide_fukunaka.html">福中店</a></li>
+            <li><a href="guide_shiomachi.html">塩町店</a></li>
+          </ul>
+        </li>
+        <!-- ▲ ドロップダウン部分 ▲ -->
       <li><a href="about.html">店舗概要</a></li>
       <li><a href="contact.html">お問合せ</a></li>
     </ul>
@@ -200,7 +217,12 @@
                   </div>
                   <div class="button__block--wrap button__black">
                     <div class="button__block--inner">
-                      <a href="guide_shiomachi.html">店舗へのご案内</a>
+                      <a href="guide_shiomachi.html">店舗への道案内（塩町店）</a>
+                    </div>
+                  </div>
+                  <div class="button__block--wrap button__black">
+                    <div class="button__block--inner">
+                      <a href="guide_fukunaka.html">店舗への道案内（福中店）</a>
                     </div>
                   </div>
                 </div>
