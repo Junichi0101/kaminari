@@ -1,7 +1,5 @@
 <!doctype html>
 <html lang="ja">
-  <![endif]-->
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -425,18 +423,6 @@
       </div>
     </aside>
 
-    <div class="container">
-      <div class="goto__block">
-        <a id="page-top" href="#wrap">
-          <img
-            class="img-responsive"
-            src="wp/wp-content/themes/wp_kaminari/images/go_to_top.png"
-            alt="和招縁 ページの先頭へ"
-          />
-        </a>
-      </div>
-    </div>
-
     <footer>
       <div class="container">
         <!-- フッターメニュー-->
@@ -514,32 +500,6 @@
         </div>
       </div>
     </footer>
-    <script>
-      /*TOPへ戻る*/
-      $(function () {
-        var topBtn = $('#page-top')
-        topBtn.hide()
-        //スクロールが100に達したらボタン表示
-        $(window).scroll(function () {
-          if ($(this).scrollTop() > 100) {
-            topBtn.fadeIn().css('display', 'inline-block')
-          } else {
-            topBtn.fadeOut()
-          }
-        })
-        //スクロールしてトップ
-        topBtn.click(function () {
-          $('body,html').animate(
-            {
-              scrollTop: 0,
-            },
-            1000,
-          )
-          return false
-        })
-      })
-    </script>
-
     <script type="text/javascript" src="wp/wp-includes/js/wp-embed.min0155.js?ver=4.7.29"></script>
   </body>
 </html>

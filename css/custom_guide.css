@@ -38,3 +38,7 @@ h2 {
   font-family: 'Tegaki', sans-serif !important;
   font-size: large;
 }
+
+.footer__title h2 {
+  text-align: center !important;
+}
