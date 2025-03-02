@@ -30,6 +30,62 @@ h2 {
   */
 }
 
+/* clearfix クラスのスタイル */
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* directions クラスのスタイル */
+/* clearfix クラスのスタイル */
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+h3 {
+  font-size: 1rem; /* 読みやすいサイズに調整 */
+  color: #444;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+/* directions クラスのスタイル */
+.directions {
+  font-size: 1rem;
+  padding: 20px;
+  background: #e3e2d3;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.directions h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.directions ul {
+  list-style-type: disc;
+  padding-left: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #fff;
+  border-radius: 5px;
+  margin: 0;
+  display: inline-block;
+  width: calc(100% - 30px);
+}
+
+.directions p {
+  color: #555;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
 .main-nav li {
   margin: 0 1rem; /* 項目同士の隙間を調整 */
 }
@@ -41,4 +97,54 @@ h2 {
 
 .footer__title h2 {
   text-align: center !important;
+}
+
+/* clearfix クラスのスタイル */
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ナビゲーションバーを横並びにする */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8;
+  padding: 10px 20px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0;
+  padding: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* ロゴのスタイル */
+.img-logo {
+  width: 200px; /* 画像の幅を小さくする */
+  height: auto;
+  margin-right: 10px; /* 画像とメニューの間を適切に調整 */
+}
+
+nav ul div {
+  margin-right: 0;
+}
+
+.transfont {
+  white-space: nowrap;
 }
