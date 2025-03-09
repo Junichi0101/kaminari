@@ -364,6 +364,7 @@ header {
 
 .button__block--inner {
   background: url(/image/transfar_buttom.png);
+  background-color: black;
   padding: 2px;
   margin: 25px auto;
   text-align: center;
@@ -377,6 +378,7 @@ header {
 .button__block--inner a {
   border: 1px solid #b8b8b8;
   background: url(images/button_cursor.png) no-repeat 95% center;
+  background-color: black;
   color: #fff;
   display: inline-block;
   padding: 10px 0px 10px;
