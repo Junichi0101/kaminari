@@ -38,3 +38,78 @@ h2 {
   font-family: 'Tegaki', sans-serif !important;
   font-size: large;
 }
+
+/* ★★★ 全体のスタイル ★★★ */
+/* ★★★ 全体のスタイル ★★★ */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', serif; /* Serif系フォントでクラシカル＆高級感を演出 */
+  color: #333;
+}
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #8c7732; /* ややゴールド寄りの色 */
+}
+
+/* ★★★ セクション全体のスタイル ★★★ */
+.store-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+.store-section + .store-section {
+  margin-top: 60px; /* セクション間に余白を入れる */
+}
+.store-section h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  color: #8c7732;
+  border-left: 6px solid #d8c9a3; /* ゴールド系のラインを左に配置 */
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+/* ★★★ 店舗情報の2カラムレイアウト ★★★ */
+.store-content {
+  display: flex;
+  flex-wrap: wrap; /* 画面幅が狭い場合に折り返すため */
+  gap: 20px;
+}
+.store-text {
+  flex: 1 1 300px; /* 左側：テキスト */
+}
+.store-text p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+.store-photo-container {
+  flex: 1 1 300px; /* 右側：写真 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ★★★ 写真サイズの指定 ★★★ */
+.store-photo {
+  width: 350px; /* 画像の幅を固定（例） */
+  height: 260px; /* アスペクト比を保持して高さを自動調整 */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ★★★ 地図の埋め込み ★★★ */
+.map-container {
+  margin-top: 30px;
+}
+.map-container iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 5px;
+}
