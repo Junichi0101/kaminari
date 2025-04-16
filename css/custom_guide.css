@@ -148,3 +148,464 @@ nav ul div {
 .transfont {
   white-space: nowrap;
 }
+
+/* 和招縁アクセスページ専用スタイル - 2025年4月版 */
+
+/* 和招縁アクセスページ専用スタイル - 2025年4月版（修正版） */
+
+/* ベースコンテナ */
+.washouen-access-container * {
+  box-sizing: border-box;
+}
+
+.washouen-access-container {
+  font-family: '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E',
+    'MS P明朝', 'MS 明朝', serif;
+  margin: 0 auto;
+  padding: 32px 16px;
+  background-color: #fff8ee;
+  color: #2b2118;
+  line-height: 1.6;
+  max-width: 1200px;
+  font-size: 16px; /* 基準フォントサイズを明示 */
+}
+
+/* ヘッダー部分 */
+.washouen-access-title {
+  text-align: center;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.washouen-access-title h2 {
+  font-size: 35px;
+  display: inline-block;
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #8e3200;
+}
+
+.washouen-access-description {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 18px;
+}
+
+/* アラート表示 */
+.washouen-access-alert {
+  background: #fff2cc;
+  border-left: 4px solid #e67e22;
+  padding: 16px;
+  margin-bottom: 32px;
+  border-radius: 4px;
+}
+
+.washouen-access-alert h3 {
+  color: #d35400;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.washouen-access-alert p {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+/* 店舗比較セクション */
+.washouen-access-compare {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 32px 0;
+  padding: 16px;
+  border-radius: 4px;
+  background: #f9f5f0;
+}
+
+.washouen-access-compare-col {
+  flex: 1 1 400px;
+  padding: 16px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.washouen-access-compare-col h4 {
+  text-align: center;
+  margin-top: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #d7a86e;
+  color: #8e3200;
+  font-size: 20px;
+}
+
+.washouen-access-compare-item {
+  display: flex;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.washouen-access-compare-label {
+  font-weight: bold;
+  width: 100px;
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.washouen-access-compare-value {
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+/* 店舗選択見出し - 線を削除 */
+.washouen-access-store-select-heading {
+  text-align: center;
+  margin-bottom: 16px;
+  color: #8e3200;
+  font-size: 20px;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+/* 店舗選択ボタン */
+.washouen-access-store-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.washouen-access-store-button {
+  display: inline-block;
+  padding: 16px 32px;
+  border: 2px solid #8e3200;
+  border-radius: 8px;
+  background: white;
+  color: #8e3200;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+  width: 280px; /* ボタンサイズ拡大 */
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.washouen-access-store-button:hover {
+  background: #8e3200;
+  color: white;
+}
+
+.active-store-button {
+  background: #8e3200;
+  color: white;
+}
+
+/* 店舗詳細セクション */
+.washouen-access-store {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 32px;
+  scroll-margin-top: 20px;
+}
+
+.washouen-access-store h3 {
+  color: #8e3200;
+  font-size: 29px;
+  margin-top: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #d7a86e;
+  text-align: center;
+}
+
+.washouen-access-store-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 32px;
+  background: #f9f5f0;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.washouen-access-store-photo {
+  flex: 1 1 300px;
+}
+
+.washouen-access-store-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 2px solid #8e3200;
+}
+
+.washouen-access-store-info {
+  flex: 1 1 300px;
+}
+
+.washouen-access-address {
+  margin-bottom: 16px;
+}
+
+.washouen-access-address p {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.washouen-access-label {
+  font-weight: bold;
+  margin-right: 8px;
+  color: #8e3200;
+  font-size: 16px;
+}
+
+/* 地図関連 */
+.washouen-access-map {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #d7a86e;
+}
+
+.washouen-access-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.washouen-access-map-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.washouen-access-map-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #4285f4;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  font-size: 16px;
+  min-width: 200px; /* 最小幅を指定 */
+  justify-content: center; /* 中央揃え */
+}
+
+.washouen-access-map-button:hover {
+  background-color: #3367d6;
+}
+
+.washouen-access-map-button svg {
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+}
+
+/* アクセス詳細セクション */
+.washouen-access-detail {
+  margin-bottom: 24px;
+  background: white;
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.washouen-access-detail h4 {
+  color: #8e3200;
+  font-size: 21px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px dashed #d7a86e;
+  padding-bottom: 8px;
+}
+
+.washouen-access-detail h4 svg {
+  margin-right: 8px;
+}
+
+.washouen-access-detail ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.washouen-access-detail li {
+  margin-bottom: 12px;
+  position: relative;
+  background: #f9f9f9;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border-left: 3px solid #d7a86e;
+  font-size: 16px;
+}
+
+.washouen-access-step {
+  display: inline-block;
+  background: #8e3200;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.washouen-access-landmark {
+  color: #d96941;
+  font-weight: bold;
+}
+
+/* 画像ギャラリー */
+.washouen-access-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.washouen-access-image-container {
+  flex: 1 1 calc(50% - 4px);
+  position: relative;
+}
+
+.washouen-access-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.washouen-access-image-caption {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 14px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* 問い合わせセクション */
+.washouen-access-contact {
+  background-color: #f3ece1;
+  padding: 16px;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 32px;
+  border: 1px dashed #d7a86e;
+}
+
+.washouen-access-contact p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+/* 汎用ボタン */
+.washouen-access-button {
+  display: inline-block;
+  background-color: #8e3200;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 8px;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  min-width: 180px;
+}
+
+.washouen-access-button:hover {
+  background-color: #7a2900;
+}
+
+/* トップリンク */
+.washouen-access-top-link {
+  display: block;
+  text-align: right;
+  margin: 16px 0;
+  text-decoration: none;
+  color: #8e3200;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.washouen-access-top-link:hover {
+  text-decoration: underline;
+}
+
+/* アイコン */
+.washouen-access-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* アクセシビリティ用 */
+.washouen-access-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* スムーズスクロール */
+html.washouen-scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .washouen-access-container {
+    padding: 16px;
+  }
+
+  .washouen-access-title h2 {
+    font-size: 28px;
+  }
+
+  .washouen-access-store {
+    padding: 16px;
+  }
+
+  .washouen-access-map {
+    height: 300px;
+  }
+
+  .washouen-access-image-container {
+    flex: 1 1 100%;
+  }
+
+  .washouen-access-store-button {
+    width: 100%;
+  }
+
+  .washouen-access-map-buttons {
+    flex-direction: column;
+  }
+
+  .washouen-access-map-button {
+    width: 100%;
+  }
+}

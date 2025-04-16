@@ -3,889 +3,1201 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>お品書き | 鮨 匠</title>
+    <title>和招縁 - アクセス情報 | 塩町店・福中店の詳しい場所案内</title>
+    <meta
+      name="description"
+      content="和招縁（わしょうえん）の塩町店と福中店の詳しい場所案内です。写真付きで道順を説明していますので、初めての方でも迷わずにお越しいただけます。"
+    />
+    <!-- 既存サイトに影響を与えないよう、クラス名にプレフィックスを追加 -->
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&display=swap');
-
-      /* リセットとベーススタイル */
-      * {
-        margin: 0;
-        padding: 0;
+      /* アクセスページ専用スタイル - washouen-access- というプレフィックスで影響範囲を限定 */
+      .washouen-access-container * {
         box-sizing: border-box;
       }
 
-      body {
-        font-family: 'Noto Serif JP', serif;
-        background-color: #f9f7f2;
-        color: #333;
+      .washouen-access-container {
+        font-family: '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E',
+          'MS P明朝', 'MS 明朝', serif;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        background-color: #fff8ee;
+        color: #2b2118;
         line-height: 1.6;
-        overflow-x: hidden;
-      }
-
-      img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      /* ヘッダーとナビゲーション */
-      header {
-        background-color: #0d0d0d;
-        color: #fff;
-        padding: 25px 0;
-        text-align: center;
-        border-bottom: 1px solid #b8965e;
-        position: relative;
-      }
-
-      .logo {
-        font-size: 28px;
-        font-weight: 500;
-        letter-spacing: 4px;
-        color: #b8965e;
-      }
-
-      nav {
-        background-color: #0d0d0d;
-        padding: 15px 0;
-        border-bottom: 3px solid #b8965e;
-      }
-
-      .desktop-nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-      }
-
-      .desktop-nav li {
-        margin: 0 25px;
-      }
-
-      .desktop-nav a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 16px;
-        letter-spacing: 2px;
-        transition: color 0.3s;
-      }
-
-      .desktop-nav a:hover {
-        color: #b8965e;
-      }
-
-      /* モバイルナビゲーション */
-      .mobile-nav-toggle {
-        display: none;
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 24px;
-        position: absolute;
-        top: 25px;
-        right: 20px;
-        cursor: pointer;
-        z-index: 1000;
-      }
-
-      .mobile-nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(13, 13, 13, 0.98);
-        z-index: 999;
-        padding: 80px 20px 40px;
-        overflow-y: auto;
-      }
-
-      .mobile-nav.active {
-        display: block;
-      }
-
-      .mobile-nav ul {
-        list-style: none;
-      }
-
-      .mobile-nav li {
-        margin: 20px 0;
-        text-align: center;
-      }
-
-      .mobile-nav a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-        letter-spacing: 2px;
-        display: block;
-        padding: 10px;
-        transition: color 0.3s;
-      }
-
-      .mobile-nav a:hover {
-        color: #b8965e;
-      }
-
-      /* メインコンテンツ */
-      .container {
         max-width: 1200px;
-        margin: 50px auto;
-        padding: 0 20px;
       }
 
-      h1 {
+      .washouen-access-title {
         text-align: center;
-        margin-bottom: 60px;
-        font-size: 32px;
-        position: relative;
-        font-weight: 500;
-        letter-spacing: 8px;
-        color: #0d0d0d;
-      }
-
-      h1::after {
-        content: '';
-        display: block;
-        width: 80px;
-        height: 2px;
-        background-color: #b8965e;
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .store-section {
-        margin-bottom: 100px;
+        margin-bottom: 2rem;
         position: relative;
       }
 
-      .store-title {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 28px;
-        position: relative;
-        padding-bottom: 15px;
-        font-weight: 500;
-        letter-spacing: 4px;
-      }
-
-      .store-title::after {
-        content: '';
-        display: block;
-        width: 60px;
-        height: 2px;
-        background-color: #b8965e;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .menu-category {
-        margin-bottom: 80px;
-        background-color: rgba(255, 255, 255, 0.7);
-        padding: 40px;
-        border: 1px solid #e0d5c0;
-      }
-
-      .category-title {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 24px;
-        color: #0d0d0d;
-        position: relative;
+      .washouen-access-title h2 {
+        font-size: 2.2rem;
         display: inline-block;
-        padding: 0 30px;
-        letter-spacing: 3px;
-        font-weight: 500;
+        margin: 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #8e3200;
       }
 
-      .category-title::before,
-      .category-title::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        width: 20px;
-        height: 1px;
-        background-color: #b8965e;
-      }
-
-      .category-title::before {
-        left: 0;
-      }
-
-      .category-title::after {
-        right: 0;
-      }
-
-      .menu-category h3 {
-        width: fit-content;
-        margin: 0 auto 30px;
-      }
-
-      .category-description {
+      .washouen-access-description {
         text-align: center;
-        margin-bottom: 40px;
-        font-size: 16px;
-        line-height: 1.8;
-        color: #666;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        letter-spacing: 0.5px;
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
       }
 
-      /* アシンメトリックグリッドレイアウト */
-      .menu-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
-        gap: 30px;
-        margin-bottom: 40px;
+      .washouen-access-alert {
+        background: #fff2cc;
+        border-left: 4px solid #e67e22;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        border-radius: 4px;
       }
 
-      .featured-item {
-        grid-column: 1;
-        grid-row: 1 / span 2;
-        background-color: #fff;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        border: 1px solid #e0d5c0;
-        transition: all 0.4s;
+      .washouen-access-alert h3 {
+        color: #d35400;
+        margin-top: 0;
+        font-size: 1.2rem;
       }
 
-      .featured-item:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      .washouen-access-alert p {
+        margin-bottom: 0.5rem;
       }
 
-      .featured-image {
+      .washouen-access-store-select {
+        background: #f3ece1;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .washouen-access-store-select h3 {
+        margin-top: 0;
+        color: #8e3200;
+      }
+
+      .washouen-access-store-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        margin: 2rem 0;
+      }
+
+      .washouen-access-store-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        border: 2px solid #8e3200;
+        border-radius: 8px;
+        background: white;
+        color: #8e3200;
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-decoration: none;
+        width: 250px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .washouen-access-store-button:hover {
+        background: #8e3200;
+        color: white;
+      }
+
+      .active-store-button {
+        background: #8e3200;
+        color: white;
+      }
+
+      .washouen-access-compare {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 2rem 0;
+        padding: 1rem;
+        border-radius: 4px;
+        background: #f9f5f0;
+      }
+
+      .washouen-access-compare-col {
+        flex: 1 1 400px;
+        padding: 1rem;
+        background: white;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .washouen-access-compare-col h4 {
+        text-align: center;
+        margin-top: 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #d7a86e;
+        color: #8e3200;
+      }
+
+      .washouen-access-compare-item {
+        display: flex;
+        margin-bottom: 0.8rem;
+        align-items: center;
+      }
+
+      .washouen-access-compare-label {
+        font-weight: bold;
+        width: 100px;
+        flex-shrink: 0;
+      }
+
+      .washouen-access-compare-value {
+        flex-grow: 1;
+      }
+
+      .washouen-access-store {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        scroll-margin-top: 20px;
+      }
+
+      .washouen-access-store h3 {
+        color: #8e3200;
+        font-size: 1.8rem;
+        margin-top: 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #d7a86e;
+        text-align: center;
+      }
+
+      .washouen-access-store-summary {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        background: #f9f5f0;
+        padding: 1rem;
+        border-radius: 4px;
+      }
+
+      .washouen-access-store-photo {
+        flex: 1 1 300px;
+      }
+
+      .washouen-access-store-photo img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        border: 2px solid #8e3200;
+      }
+
+      .washouen-access-store-info {
+        flex: 1 1 300px;
+      }
+
+      .washouen-access-address {
+        margin-bottom: 1rem;
+      }
+
+      .washouen-access-label {
+        font-weight: bold;
+        margin-right: 0.5rem;
+        color: #8e3200;
+      }
+
+      .washouen-access-map {
         width: 100%;
         height: 400px;
-        object-fit: cover;
-        border-bottom: 1px solid #e0d5c0;
-      }
-
-      .featured-info {
-        padding: 30px;
-        text-align: center;
-      }
-
-      .featured-name {
-        font-weight: 500;
-        margin-bottom: 15px;
-        font-size: 22px;
-        letter-spacing: 2px;
-        color: #0d0d0d;
-      }
-
-      .featured-description {
-        font-size: 16px;
-        color: #666;
-        line-height: 1.8;
-        letter-spacing: 0.5px;
-      }
-
-      .menu-item {
-        background-color: #fff;
+        margin-bottom: 1.5rem;
+        border-radius: 4px;
         overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: all 0.4s;
-        border: 1px solid #e0d5c0;
+        border: 1px solid #d7a86e;
       }
 
-      .menu-item:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      .washouen-access-map iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
       }
 
-      .menu-image {
+      .washouen-access-map-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .washouen-access-map-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: #4285f4;
+        color: white;
+        padding: 0.6rem 1.2rem;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+        font-weight: bold;
+      }
+
+      .washouen-access-map-button:hover {
+        background-color: #3367d6;
+      }
+
+      .washouen-access-map-button svg {
+        margin-right: 0.5rem;
+        width: 18px;
+        height: 18px;
+      }
+
+      .washouen-access-mini-map {
+        width: 100%;
+        height: 250px;
+        margin: 1rem 0;
+        border-radius: 4px;
+        overflow: hidden;
+        border: 1px solid #d7a86e;
+      }
+
+      .washouen-access-mini-map iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .washouen-access-detail {
+        margin-bottom: 1.5rem;
+        background: white;
+        padding: 1rem;
+        border-radius: 4px;
+        border: 1px solid #eee;
+      }
+
+      .washouen-access-detail h4 {
+        color: #8e3200;
+        font-size: 1.3rem;
+        margin-top: 0;
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px dashed #d7a86e;
+        padding-bottom: 0.5rem;
+      }
+
+      .washouen-access-detail h4 svg {
+        margin-right: 0.5rem;
+      }
+
+      .washouen-access-detail ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      .washouen-access-detail li {
+        margin-bottom: 0.8rem;
+        position: relative;
+        background: #f9f9f9;
+        padding: 0.6rem 0.8rem;
+        border-radius: 4px;
+        border-left: 3px solid #d7a86e;
+      }
+
+      .washouen-access-step {
+        display: inline-block;
+        background: #8e3200;
+        color: white;
+        padding: 0.2rem 0.5rem;
+        border-radius: 3px;
+        font-size: 0.9rem;
+        margin-right: 0.5rem;
+      }
+
+      .washouen-access-landmark {
+        color: #d96941;
+        font-weight: bold;
+      }
+
+      .washouen-access-images {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .washouen-access-image-container {
+        flex: 1 1 calc(50% - 0.25rem);
+        position: relative;
+      }
+
+      .washouen-access-image {
         width: 100%;
         height: 180px;
         object-fit: cover;
-        border-bottom: 1px solid #e0d5c0;
+        border-radius: 4px;
+        border: 1px solid #ddd;
       }
 
-      .menu-info {
-        padding: 20px;
-        text-align: center;
-      }
-
-      .menu-name {
-        font-weight: 500;
-        margin-bottom: 10px;
-        font-size: 18px;
-        letter-spacing: 1px;
-        color: #0d0d0d;
-      }
-
-      .menu-description {
-        font-size: 14px;
-        color: #666;
-        line-height: 1.6;
-        letter-spacing: 0.5px;
-      }
-
-      .seasonal-tag {
-        display: inline-block;
-        background-color: #b8965e;
+      .washouen-access-image-caption {
+        background: rgba(0, 0, 0, 0.7);
         color: white;
-        padding: 4px 12px;
-        font-size: 12px;
-        border-radius: 2px;
-        margin-bottom: 10px;
-        letter-spacing: 1px;
+        padding: 0.5rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: 0.9rem;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
       }
 
-      .chef-tag {
-        display: inline-block;
-        background-color: #333;
-        color: white;
-        padding: 4px 12px;
-        font-size: 12px;
-        border-radius: 2px;
-        margin-bottom: 10px;
-        letter-spacing: 1px;
-      }
-
-      .standard-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        margin-top: 40px;
-      }
-
-      /* フッター */
-      footer {
-        background-color: #0d0d0d;
-        color: #fff;
+      .washouen-access-contact {
+        background-color: #f3ece1;
+        padding: 1rem;
+        border-radius: 4px;
         text-align: center;
-        padding: 30px 0;
-        margin-top: 80px;
-        border-top: 3px solid #b8965e;
+        margin-top: 2rem;
+        border: 1px dashed #d7a86e;
       }
 
-      footer p {
-        margin: 8px 0;
-        font-size: 14px;
-        color: #ccc;
-        letter-spacing: 1px;
+      .washouen-access-contact p {
+        margin: 0.5rem 0;
       }
 
-      /* スクロールトップボタン */
-      .scroll-top {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background-color: #b8965e;
-        color: #fff;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        z-index: 100;
+      .washouen-access-button {
+        display: inline-block;
+        background-color: #8e3200;
+        color: white;
+        padding: 0.6rem 1.2rem;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 0.5rem;
+        transition: background-color 0.3s;
       }
 
-      .scroll-top.active {
-        opacity: 1;
-        visibility: visible;
+      .washouen-access-button:hover {
+        background-color: #7a2900;
       }
 
-      .scroll-top:hover {
-        background-color: #a38449;
+      .washouen-access-top-link {
+        display: block;
+        text-align: right;
+        margin: 1rem 0;
+        text-decoration: none;
+        color: #8e3200;
+        font-weight: bold;
       }
 
-      /* メディアクエリ - タブレット */
-      @media (max-width: 900px) {
-        .desktop-nav {
-          display: none;
+      .washouen-access-top-link:hover {
+        text-decoration: underline;
+      }
+
+      /* レスポンシブデザイン */
+      @media (max-width: 768px) {
+        .washouen-access-container {
+          padding: 1rem;
         }
 
-        .mobile-nav-toggle {
-          display: block;
+        .washouen-access-title h2 {
+          font-size: 1.8rem;
         }
 
-        .menu-grid {
-          grid-template-columns: 1fr 1fr;
+        .washouen-access-store {
+          padding: 1rem;
         }
 
-        .featured-item {
-          grid-column: 1 / span 2;
-          grid-row: 1;
-        }
-
-        .featured-image {
+        .washouen-access-map {
           height: 300px;
         }
 
-        .standard-grid {
-          grid-template-columns: repeat(2, 1fr);
+        .washouen-access-image-container {
+          flex: 1 1 100%;
         }
 
-        .menu-category {
-          padding: 30px 20px;
-        }
-
-        h1 {
-          font-size: 28px;
-          letter-spacing: 6px;
-        }
-
-        .store-title {
-          font-size: 24px;
-        }
-
-        .category-title {
-          font-size: 20px;
+        .washouen-access-store-button {
+          width: 100%;
         }
       }
 
-      /* メディアクエリ - スマートフォン */
-      @media (max-width: 600px) {
-        .logo {
-          font-size: 22px;
-        }
+      /* アイコン用スタイル */
+      .washouen-access-icon {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        margin-right: 0.5rem;
+        vertical-align: middle;
+      }
 
-        .container {
-          margin: 30px auto;
-        }
+      /* アクセシビリティ対応 */
+      .washouen-access-sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
 
-        h1 {
-          font-size: 24px;
-          letter-spacing: 4px;
-          margin-bottom: 40px;
-        }
-
-        h1::after {
-          width: 60px;
-          bottom: -10px;
-        }
-
-        .menu-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        .featured-item {
-          grid-column: 1;
-        }
-
-        .featured-image {
-          height: 250px;
-        }
-
-        .featured-info {
-          padding: 20px;
-        }
-
-        .featured-name {
-          font-size: 20px;
-        }
-
-        .featured-description {
-          font-size: 14px;
-        }
-
-        .standard-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        .menu-category {
-          padding: 20px 15px;
-          margin-bottom: 50px;
-        }
-
-        .category-description {
-          font-size: 14px;
-        }
-
-        .store-title {
-          font-size: 20px;
-          margin-bottom: 30px;
-        }
-
-        .category-title {
-          font-size: 18px;
-          padding: 0 20px;
-          margin-bottom: 30px;
-        }
-
-        .category-title::before,
-        .category-title::after {
-          width: 15px;
-        }
-
-        .menu-item {
-          margin-bottom: 0;
-        }
-
-        .menu-image {
-          height: 160px;
-        }
-
-        .menu-name {
-          font-size: 16px;
-        }
-
-        .menu-description {
-          font-size: 13px;
-        }
-
-        .scroll-top {
-          bottom: 20px;
-          right: 20px;
-          width: 40px;
-          height: 40px;
-        }
+      /* スムーズスクロール */
+      html {
+        scroll-behavior: smooth;
       }
     </style>
   </head>
-
   <body>
-    <header>
-      <div class="logo">鮨 匠</div>
-      <button class="mobile-nav-toggle">☰</button>
-    </header>
-    <nav class="desktop-nav">
-      <ul>
-        <li>
-          <a href="index.html">ホーム</a>
-        </li>
-        <li>
-          <a href="menu.html">お品書き</a>
-        </li>
-        <li>
-          <a href="about.html">店舗案内</a>
-        </li>
-        <li>
-          <a href="philosophy.html">料理哲学</a>
-        </li>
-        <li>
-          <a href="contact.html">ご予約・お問い合わせ</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="mobile-nav">
-      <ul>
-        <li>
-          <a href="index.html">ホーム</a>
-        </li>
-        <li>
-          <a href="menu.html">お品書き</a>
-        </li>
-        <li>
-          <a href="about.html">店舗案内</a>
-        </li>
-        <li>
-          <a href="philosophy.html">料理哲学</a>
-        </li>
-        <li>
-          <a href="contact.html">ご予約・お問い合わせ</a>
-        </li>
-      </ul>
-    </div>
-    <div class="container">
-      <h1>お品書き</h1>
+    <!-- メインコンテンツ - すべてのクラスにプレフィックスを追加して影響範囲を限定 -->
+    <div class="washouen-access-container">
+      <section class="washouen-access-title" id="washouen-top">
+        <h2>アクセス情報</h2>
+      </section>
+
+      <div class="washouen-access-description">
+        <p>
+          和招縁では、
+          <strong style="color: #8e3200">塩町店</strong>
+          と
+          <strong style="color: #8e3200">福中店</strong>
+          の2店舗を運営しております。
+          <br />
+          それぞれ特徴の異なる店舗ですので、ご予約・ご来店の際はお間違えのないようご注意ください。
+        </p>
+      </div>
+
+      <!-- 店舗間違い防止の注意事項 -->
+      <div class="washouen-access-alert">
+        <h3>
+          <svg
+            class="washouen-access-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 8V12M12 16H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          ご来店前に必ずご確認ください
+        </h3>
+        <p>
+          以前、店舗をお間違えになったお客様が多くいらっしゃいました。店舗ごとに
+          <strong>場所・メニュー・雰囲気</strong>
+          が異なりますので、ご予約やご来店の際は店舗名を必ずご確認ください。
+        </p>
+        <p>
+          <strong>「塩町店」</strong>
+          と
+          <strong>「福中店」</strong>
+          は約5km離れています。電話でのお問い合わせも店舗ごとに異なる番号となっておりますので、ご注意ください。
+        </p>
+      </div>
+
+      <!-- 店舗の違いを明確に -->
+      <section class="washouen-access-compare">
+        <div class="washouen-access-compare-col">
+          <h4>塩町店</h4>
+          <div class="washouen-access-compare-item">
+            <div class="washouen-access-compare-label">特徴</div>
+            <div class="washouen-access-compare-value">
+              赤い暖簾が目印の本店。伝統的な和の空間でゆったりとお食事をお楽しみいただけます。
+            </div>
+          </div>
+          <div class="washouen-access-compare-item">
+            <div class="washouen-access-compare-label">場所</div>
+            <div class="washouen-access-compare-value">○○線「塩町駅」東口より徒歩5分</div>
+          </div>
+          <div class="washouen-access-compare-item">
+            <div class="washouen-access-compare-label">電話番号</div>
+            <div class="washouen-access-compare-value">
+              <strong>000-111-2222</strong>
+              （塩町店直通）
+            </div>
+          </div>
+          <div class="washouen-access-compare-item">
+            <div class="washouen-access-compare-label">定休日</div>
+            <div class="washouen-access-compare-value">毎週水曜日</div>
+          </div>
+        </div>
+        <div class="washouen-access-compare-col">
+          <h4>福中店</h4>
+          <div class="washouen-access-compare-item">
+            <div class="washouen-access-compare-label">特徴</div>
+            <div class="washouen-access-compare-value">
+              茶色の門構えが特徴的な新店舗。モダンな和空間でカジュアルにお食事をお楽しみいただけます。
+            </div>
+          </div>
+          <div class="washouen-access-compare-item">
+            <div class="washouen-access-compare-label">場所</div>
+            <div class="washouen-access-compare-value">○○線「福中駅」西口より徒歩8分</div>
+          </div>
+          <div class="washouen-access-compare-item">
+            <div class="washouen-access-compare-label">電話番号</div>
+            <div class="washouen-access-compare-value">
+              <strong>000-333-4444</strong>
+              （福中店直通）
+            </div>
+          </div>
+          <div class="washouen-access-compare-item">
+            <div class="washouen-access-compare-label">定休日</div>
+            <div class="washouen-access-compare-value">毎週月曜日</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 店舗選択 -->
+      <div>
+        <h3 style="text-align: center; margin-bottom: 1rem">ご来店予定の店舗を選択してください</h3>
+        <div class="washouen-access-store-buttons">
+          <a href="#shiomachi" class="washouen-access-store-button">塩町店</a>
+          <a href="#fukunaka" class="washouen-access-store-button">福中店</a>
+        </div>
+      </div>
+
       <!-- 塩町店 -->
-      <div class="store-section">
-        <h2 class="store-title">塩町店</h2>
-        <!-- 握り -->
-        <div class="menu-category">
-          <h3 class="category-title">握り</h3>
-          <p class="category-description">
-            厳選した旬の魚介を使い、熟練の職人が一貫一貫丁寧に握る鮨。日本各地から取り寄せた最高級の食材と、代々受け継がれてきた技で、本物の江戸前鮨をお楽しみいただけます。
-          </p>
-          <div class="menu-grid">
-            <!-- 大きな特集商品 -->
-            <div class="featured-item">
-              <div class="chef-tag">料理長おすすめ</div>
-              <img src="/api/placeholder/400/400" alt="特選 大トロ" class="featured-image" />
-              <div class="featured-info">
-                <div class="featured-name">特選 大トロ</div>
-                <div class="featured-description">
-                  最高級の本鮪大トロをじっくりと熟成させ、旨味を最大限に引き出しました。口の中でとろける食感と芳醇な香りをお楽しみください。特に脂の乗った部位を厳選し、絶妙な温度で握ります。
-                </div>
-              </div>
-            </div>
-            <!-- 右側の通常サイズの商品 -->
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="本鮪" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">本鮪</div>
-                <div class="menu-description">
-                  厳選された本鮪の赤身を熟成させ、職人が丁寧に握りました。
-                </div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="中トロ" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">中トロ</div>
-                <div class="menu-description">
-                  程よい脂がのった本鮪の中トロは、口の中でとろける食感が特徴です。
-                </div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="炙り大トロ" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">炙り大トロ</div>
-                <div class="menu-description">
-                  肉厚の大トロを炙ることで、より一層香りと旨味を引き立てております。
-                </div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="seasonal-tag">季節限定</div>
-              <img src="/api/placeholder/260/180" alt="金目鯛" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">金目鯛</div>
-                <div class="menu-description">
-                  脂の乗った金目鯛を昆布締めにし、旨味を凝縮させました。
-                </div>
-              </div>
-            </div>
+      <section id="shiomachi" class="washouen-access-store">
+        <h3>和招縁 塩町店</h3>
+
+        <div class="washouen-access-store-summary">
+          <div class="washouen-access-store-photo">
+            <img
+              src="/api/placeholder/600/400"
+              alt="和招縁 塩町店の外観"
+              title="和招縁 塩町店 - 赤い暖簾が目印です"
+            />
           </div>
-          <!-- 追加の商品をスタンダードグリッドで表示 -->
-          <div class="standard-grid">
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="のどぐろ" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">のどぐろ</div>
-                <div class="menu-description">
-                  白身のトロと称される高級魚。上品な甘みと舌触りをご堪能ください。
-                </div>
-              </div>
+          <div class="washouen-access-store-info">
+            <div class="washouen-access-address">
+              <p>
+                <span class="washouen-access-label">住所:</span>
+                〒670-0904 兵庫県姫路市塩町１７７ アールビル 1F
+              </p>
+              <p>
+                <span class="washouen-access-label">電話番号:</span>
+                <strong>000-111-2222</strong>
+                （塩町店直通）
+              </p>
+              <p>
+                <span class="washouen-access-label">営業時間:</span>
+                11:30〜14:00、17:30〜22:00（L.O. 21:00）
+              </p>
+              <p>
+                <span class="washouen-access-label">定休日:</span>
+                毎週水曜日
+              </p>
             </div>
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="うに" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">うに</div>
-                <div class="menu-description">
-                  北海道産の最高級バフンウニ。濃厚な味わいと磯の香りが広がります。
-                </div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="穴子" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">穴子</div>
-                <div class="menu-description">
-                  特製のタレで丁寧に焼き上げた穴子。ふわっとした食感をお楽しみください。
-                </div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="seasonal-tag">季節限定</div>
-              <img src="/api/placeholder/260/180" alt="とり貝" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">とり貝</div>
-                <div class="menu-description">
-                  初夏の風物詩。歯ごたえと甘みが特徴の貝を、薄く引いてご提供します。
-                </div>
-              </div>
+            <div>
+              <p>
+                <strong style="color: #8e3200">■ 塩町店の特徴：</strong>
+                <br />
+                赤い暖簾が目印の本店。伝統的な和の空間でゆったりとお食事をお楽しみいただけます。
+              </p>
             </div>
           </div>
         </div>
-        <!-- 鍋コース (塩町店) -->
-        <div class="menu-category">
-          <h3 class="category-title">鍋コース</h3>
-          <p class="category-description">
-            厳選された旬の食材を贅沢に使用した鍋コース。素材本来の旨味を引き出す特製出汁と共に、季節ごとの味わいをお楽しみいただけます。お二人様からご用意しております。
-          </p>
-          <div class="menu-grid">
-            <!-- 大きな特集商品 -->
-            <div class="featured-item">
-              <div class="chef-tag">料理長おすすめ</div>
-              <img src="/api/placeholder/400/400" alt="活きあわび鍋" class="featured-image" />
-              <div class="featured-info">
-                <div class="featured-name">活きあわび鍋</div>
-                <div class="featured-description">
-                  活きたあわびを含む海の幸をふんだんに使用した贅沢な鍋コース。あわびの旨味が溶け込んだ出汁は絶品です。付け合わせの季節の野菜と共に、素材本来の風味をお楽しみください。最後は特製の雑炊で締めくくります。
-                </div>
-              </div>
-            </div>
-            <!-- 右側の通常サイズの商品 -->
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="特選海鮮寄せ鍋" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">特選海鮮寄せ鍋</div>
-                <div class="menu-description">
-                  厳選された新鮮な魚介と季節の野菜を使用した特製出汁の鍋コース。
-                </div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="ふぐちり鍋" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">ふぐちり鍋</div>
-                <div class="menu-description">
-                  下関直送の国産とらふぐを贅沢に使用した、当店自慢のふぐ鍋。
-                </div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="和牛すき焼き鍋" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">和牛すき焼き鍋</div>
-                <div class="menu-description">
-                  A5ランクの和牛と厳選された野菜を特製割り下で味わう鍋コース。
-                </div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="seasonal-tag">季節限定</div>
-              <img src="/api/placeholder/260/180" alt="松茸土瓶蒸し" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">松茸土瓶蒸し</div>
-                <div class="menu-description">
-                  秋の味覚、松茸の香りを存分に楽しめる季節限定の一品。
-                </div>
-              </div>
-            </div>
+
+        <div class="washouen-access-map">
+          <!-- 塩町店のGoogle Maps埋め込み -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270.1983526010977!2d134.6861227!3d34.9409069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3554e12cea67e7eb%3A0xb064fcd6a1e7661f!2z44CSNjcwLTA5MDQg5YW15bqr55yM5aeQ6Lys5biC5aGK55S677yR77yX77yX!5e0!3m2!1sja!2sjp!4v1713439289371!5m2!1sja!2sjp"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <!-- Google Map検索ボタン -->
+        <div class="washouen-access-map-buttons">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=和招縁+塩町店+姫路市塩町１７７"
+            class="washouen-access-map-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="10 8 16 12 10 16 10 8"></polygon>
+            </svg>
+            Googleマップで開く
+          </a>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=兵庫県姫路市塩町１７７"
+            class="washouen-access-map-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+            ルート検索
+          </a>
+        </div>
+
+        <div class="washouen-access-detail">
+          <h4>
+            <svg
+              class="washouen-access-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 5V19M15 5L9 11M15 5L21 11M9 5V19M9 5L3 11M9 5L15 11"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            電車でお越しの方
+          </h4>
+          <ul>
+            <li>
+              <span class="washouen-access-step">STEP 1</span>
+              ○○線「塩町駅」
+              <strong>東口</strong>
+              を出ます（
+              <span style="color: red">※西口ではありません</span>
+              ）
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 2</span>
+              駅前の
+              <span class="washouen-access-landmark">時計塔</span>
+              が見える方角に進みます
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 3</span>
+              <span class="washouen-access-landmark">○○商店街</span>
+              を直進し、赤い郵便ポストのある交差点を右折
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 4</span>
+              50mほど進むと左手に
+              <span class="washouen-access-landmark">赤い暖簾</span>
+              が見えます（徒歩約5分）
+            </li>
+          </ul>
+        </div>
+
+        <div class="washouen-access-detail">
+          <h4>
+            <svg
+              class="washouen-access-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 16V20M20 16V20M4 12H20M4 9H20M6 17H18M7 4H17C18.1046 4 19 4.89543 19 6V17H5V6C5 4.89543 5.89543 4 7 4Z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            バスでお越しの方
+          </h4>
+          <ul>
+            <li>
+              <span class="washouen-access-step">STEP 1</span>
+              ○○駅より「○○市民会館行き」バスに乗車
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 2</span>
+              「塩町一丁目」バス停で下車（約10分）
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 3</span>
+              バス停の目の前にある
+              <span class="washouen-access-landmark">コンビニエンスストア</span>
+              の方向に進みます
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 4</span>
+              <span class="washouen-access-landmark">緑の看板</span>
+              がある角を左折すると当店が見えます（徒歩約2分）
+            </li>
+          </ul>
+        </div>
+
+        <div class="washouen-access-detail">
+          <h4>
+            <svg
+              class="washouen-access-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 11L19 11M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            お車でお越しの方
+          </h4>
+          <ul>
+            <li>
+              <span class="washouen-access-step">STEP 1</span>
+              ○○高速道路「○○インターチェンジ」を降りて右折
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 2</span>
+              <span class="washouen-access-landmark">○○病院</span>
+              のある交差点を左折
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 3</span>
+              <span class="washouen-access-landmark">○○小学校</span>
+              を過ぎて2つ目の信号を右折
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 4</span>
+              200mほど進んだ左手に専用駐車場があります（5台・無料）
+            </li>
+          </ul>
+        </div>
+
+        <!-- 写真でわかりやすく案内 -->
+        <h4 style="margin-top: 2rem; color: #8e3200; text-align: center">
+          写真で見る道案内 - 塩町店
+        </h4>
+        <div class="washouen-access-images">
+          <div class="washouen-access-image-container">
+            <img
+              src="/api/placeholder/400/300"
+              alt="塩町駅東口の様子"
+              class="washouen-access-image"
+            />
+            <div class="washouen-access-image-caption">①塩町駅東口を出たところ</div>
           </div>
-          <!-- 追加の商品をスタンダードグリッドで表示 -->
-          <div class="standard-grid">
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="蟹すき鍋" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">蟹すき鍋</div>
-                <div class="menu-description">
-                  北海道産の厳選されたタラバガニを使用した豪華な鍋コース。
-                </div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="seasonal-tag">冬限定</div>
-              <img src="/api/placeholder/260/180" alt="極上あんこう鍋" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">極上あんこう鍋</div>
-                <div class="menu-description">
-                  冬の味覚の王様「あんこう」を使用した濃厚な味わいの鍋。
-                </div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="季節の特選鍋" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">季節の特選鍋</div>
-                <div class="menu-description">
-                  四季折々の最上級食材を使用した、料理長厳選の特別鍋コース。
-                </div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="牡蠣鍋" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">牡蠣鍋</div>
-                <div class="menu-description">
-                  厳選された牡蠣の旨味が溶け込んだ濃厚な出汁が特徴の鍋コース。
-                </div>
-              </div>
-            </div>
+          <div class="washouen-access-image-container">
+            <img
+              src="/api/placeholder/400/300"
+              alt="商店街入口の様子"
+              class="washouen-access-image"
+            />
+            <div class="washouen-access-image-caption">②目印となる時計塔と商店街入口</div>
+          </div>
+          <div class="washouen-access-image-container">
+            <img
+              src="/api/placeholder/400/300"
+              alt="右折すべき交差点の様子"
+              class="washouen-access-image"
+            />
+            <div class="washouen-access-image-caption">③この赤いポストで右折します</div>
+          </div>
+          <div class="washouen-access-image-container">
+            <img
+              src="/api/placeholder/400/300"
+              alt="和招縁 塩町店の外観"
+              class="washouen-access-image"
+            />
+            <div class="washouen-access-image-caption">④赤い暖簾が目印の当店外観</div>
           </div>
         </div>
-      </div>
+
+        <!-- お問い合わせセクション -->
+        <div class="washouen-access-contact">
+          <p>
+            ご予約・お問い合わせは
+            <strong>塩町店直通</strong>
+            のお電話から
+          </p>
+          <p>
+            <strong style="font-size: 1.2rem">TEL: 000-111-2222</strong>
+            （塩町店）
+          </p>
+        </div>
+
+        <a href="#washouen-top" class="washouen-access-top-link">▲ ページの先頭へ戻る</a>
+      </section>
+
       <!-- 福中店 -->
-      <div class="store-section">
-        <h2 class="store-title">福中店</h2>
-        <!-- 魚料理 -->
-        <div class="menu-category">
-          <h3 class="category-title">魚料理</h3>
-          <p class="category-description">
-            日本各地から届く厳選された魚介を使った多彩な料理の数々。素材の持ち味を活かした調理法で、至福のひとときをお届けします。
-          </p>
-          <div class="menu-grid">
-            <!-- 大きな特集商品 -->
-            <div class="featured-item">
-              <div class="chef-tag">料理長おすすめ</div>
-              <img src="/api/placeholder/400/400" alt="特選刺身盛り合わせ" class="featured-image" />
-              <div class="featured-info">
-                <div class="featured-name">特選刺身盛り合わせ</div>
-                <div class="featured-description">
-                  その日最高の鮮魚を料理長が厳選した、豪華な盛り合わせ。四季折々の旬の魚を、その魚に合った切り方と熟成で最高の状態でお召し上がりいただけます。彩り豊かな盛り付けと共に、目でも舌でもお楽しみください。
-                </div>
-              </div>
-            </div>
-            <!-- 右側の通常サイズの商品 -->
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="のどぐろの塩焼き" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">のどぐろの塩焼き</div>
-                <div class="menu-description">脂がのったのどぐろを職人が丁寧に焼き上げました。</div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="金目鯛の煮付け" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">金目鯛の煮付け</div>
-                <div class="menu-description">特製の出汁でじっくりと煮込んだ金目鯛の煮付け。</div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="鮑の踊り焼き" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">鮑の踊り焼き</div>
-                <div class="menu-description">活きた鮑を贅沢に使用した、香ばしい踊り焼き。</div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="seasonal-tag">季節限定</div>
-              <img src="/api/placeholder/260/180" alt="伊勢海老の味噌汁" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">伊勢海老の味噌汁</div>
-                <div class="menu-description">伊勢海老の風味が溶け出した、贅沢な味噌汁。</div>
-              </div>
-            </div>
+      <section id="fukunaka" class="washouen-access-store">
+        <h3>和招縁 福中店</h3>
+
+        <div class="washouen-access-store-summary">
+          <div class="washouen-access-store-photo">
+            <img
+              src="/api/placeholder/600/400"
+              alt="和招縁 福中店の外観"
+              title="和招縁 福中店 - 茶色の門が目印です"
+            />
           </div>
-          <!-- 追加の商品をスタンダードグリッドで表示 -->
-          <div class="standard-grid">
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="天然鰻の蒲焼" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">天然鰻の蒲焼</div>
-                <div class="menu-description">希少な天然鰻を丁寧に焼き上げた、伝統の一品。</div>
-              </div>
+          <div class="washouen-access-store-info">
+            <div class="washouen-access-address">
+              <p>
+                <span class="washouen-access-label">住所:</span>
+                〒670-0017 兵庫県姫路市福中町７８
+              </p>
+              <p>
+                <span class="washouen-access-label">電話番号:</span>
+                <strong>000-333-4444</strong>
+                （福中店直通）
+              </p>
+              <p>
+                <span class="washouen-access-label">営業時間:</span>
+                11:30〜14:30、17:00〜22:30（L.O. 21:30）
+              </p>
+              <p>
+                <span class="washouen-access-label">定休日:</span>
+                毎週月曜日
+              </p>
             </div>
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="名物 海鮮丼" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">名物 海鮮丼</div>
-                <div class="menu-description">
-                  厳選された旬の魚介をふんだんに使用した贅沢な海鮮丼。
-                </div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="seasonal-tag">冬限定</div>
-              <img src="/api/placeholder/260/180" alt="寒ぶり照り焼き" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">寒ぶり照り焼き</div>
-                <div class="menu-description">冬に脂がのった寒ぶりを、特製のタレで照り焼きに。</div>
-              </div>
-            </div>
-            <div class="menu-item">
-              <img src="/api/placeholder/260/180" alt="鮮魚のカルパッチョ" class="menu-image" />
-              <div class="menu-info">
-                <div class="menu-name">鮮魚のカルパッチョ</div>
-                <div class="menu-description">新鮮な魚介をオリーブオイルとハーブで香り高く。</div>
-              </div>
+            <div>
+              <p>
+                <strong style="color: #8e3200">■ 福中店の特徴：</strong>
+                <br />
+                茶色の門構えが特徴的な新店舗。モダンな和空間でカジュアルにお食事をお楽しみいただけます。
+              </p>
             </div>
           </div>
         </div>
-      </div>
+
+        <div class="washouen-access-map">
+          <!-- 福中店のGoogle Maps埋め込み -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3269.7701048358395!2d134.6876072!3d34.9501566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3554e17b77c02bc9%3A0xcc3f7bccf8e1bd8!2z44CSNjcwLTAwMTcg5YW15bqr55yM5aeQ6Lys5biC56aP5Lit55S677yX77yY!5e0!3m2!1sja!2sjp!4v1713439347839!5m2!1sja!2sjp"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <!-- Google Map検索ボタン -->
+        <div class="washouen-access-map-buttons">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=和招縁+福中店+姫路市福中町７８"
+            class="washouen-access-map-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="10 8 16 12 10 16 10 8"></polygon>
+            </svg>
+            Googleマップで開く
+          </a>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=兵庫県姫路市福中町７８"
+            class="washouen-access-map-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+            ルート検索
+          </a>
+        </div>
+
+        <div class="washouen-access-detail">
+          <h4>
+            <svg
+              class="washouen-access-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 5V19M15 5L9 11M15 5L21 11M9 5V19M9 5L3 11M9 5L15 11"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            電車でお越しの方
+          </h4>
+          <ul>
+            <li>
+              <span class="washouen-access-step">STEP 1</span>
+              ○○線「福中駅」
+              <strong>西口</strong>
+              改札を出ます（
+              <span style="color: red">※東口ではありません</span>
+              ）
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 2</span>
+              右手のエスカレーターで1階に降り、正面の
+              <span class="washouen-access-landmark">大きな横断歩道</span>
+              を渡ります
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 3</span>
+              <span class="washouen-access-landmark">○○デパート</span>
+              の横の道を進み、
+              <span class="washouen-access-landmark">青い屋根の建物</span>
+              がある角を左折
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 4</span>
+              約150m進み、
+              <span class="washouen-access-landmark">茶色の門</span>
+              がある建物が当店です（徒歩約8分）
+            </li>
+          </ul>
+        </div>
+
+        <div class="washouen-access-detail">
+          <h4>
+            <svg
+              class="washouen-access-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 16V20M20 16V20M4 12H20M4 9H20M6 17H18M7 4H17C18.1046 4 19 4.89543 19 6V17H5V6C5 4.89543 5.89543 4 7 4Z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            バスでお越しの方
+          </h4>
+          <ul>
+            <li>
+              <span class="washouen-access-step">STEP 1</span>
+              ○○駅より「○○総合病院行き」バスに乗車
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 2</span>
+              「福中公園前」バス停で下車（約15分）
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 3</span>
+              バス停から見える
+              <span class="washouen-access-landmark">緑色のマンション</span>
+              方向に進みます
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 4</span>
+              <span class="washouen-access-landmark">公園入口</span>
+              を通り過ぎて2つ目の角を右折すると、当店が見えます（徒歩約3分）
+            </li>
+          </ul>
+        </div>
+
+        <div class="washouen-access-detail">
+          <h4>
+            <svg
+              class="washouen-access-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 11L19 11M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            お車でお越しの方
+          </h4>
+          <ul>
+            <li>
+              <span class="washouen-access-step">STEP 1</span>
+              ○○高速道路「○○インターチェンジ」を降ります
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 2</span>
+              最初の信号を直進し、
+              <span class="washouen-access-landmark">大きなガソリンスタンド</span>
+              のある交差点を右折
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 3</span>
+              <span class="washouen-access-landmark">○○スーパー</span>
+              を過ぎて、
+              <span class="washouen-access-landmark">高層マンション</span>
+              がある交差点を左折
+            </li>
+            <li>
+              <span class="washouen-access-step">STEP 4</span>
+              300mほど進むと右手に当店専用駐車場（8台・無料）があります
+            </li>
+          </ul>
+        </div>
+
+        <!-- 写真でわかりやすく案内 -->
+        <h4 style="margin-top: 2rem; color: #8e3200; text-align: center">
+          写真で見る道案内 - 福中店
+        </h4>
+        <div class="washouen-access-images">
+          <div class="washouen-access-image-container">
+            <img
+              src="/api/placeholder/400/300"
+              alt="福中駅西口の様子"
+              class="washouen-access-image"
+            />
+            <div class="washouen-access-image-caption">①福中駅西口を出たところ</div>
+          </div>
+          <div class="washouen-access-image-container">
+            <img
+              src="/api/placeholder/400/300"
+              alt="駅前の大きな交差点"
+              class="washouen-access-image"
+            />
+            <div class="washouen-access-image-caption">②この横断歩道を渡ります</div>
+          </div>
+          <div class="washouen-access-image-container">
+            <img
+              src="/api/placeholder/400/300"
+              alt="青い屋根の建物"
+              class="washouen-access-image"
+            />
+            <div class="washouen-access-image-caption">③青い屋根の建物で左折</div>
+          </div>
+          <div class="washouen-access-image-container">
+            <img
+              src="/api/placeholder/400/300"
+              alt="和招縁 福中店の外観"
+              class="washouen-access-image"
+            />
+            <div class="washouen-access-image-caption">④茶色の門が目印の当店外観</div>
+          </div>
+        </div>
+
+        <!-- お問い合わせセクション -->
+        <div class="washouen-access-contact">
+          <p>
+            ご予約・お問い合わせは
+            <strong>福中店直通</strong>
+            のお電話から
+          </p>
+          <p>
+            <strong style="font-size: 1.2rem">TEL: 000-333-4444</strong>
+            （福中店）
+          </p>
+        </div>
+
+        <a href="#washouen-top" class="washouen-access-top-link">▲ ページの先頭へ戻る</a>
+      </section>
+
+      <!-- 交通機関情報 -->
+      <section style="text-align: center; margin: 3rem 0 2rem">
+        <h3 style="color: #8e3200; margin-bottom: 1rem">交通機関情報</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center">
+          <a href="#" class="washouen-access-button">○○線 時刻表</a>
+          <a href="#" class="washouen-access-button">○○市バス路線図</a>
+          <a href="#" class="washouen-access-button">周辺駐車場情報</a>
+        </div>
+      </section>
     </div>
+
+    <!-- スムーズスクロール機能とボタン切り替えのJavaScript -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // ボタン要素を取得
+        const shiomachiButton = document.querySelector('a[href="#shiomachi"]')
+        const fukunakaButton = document.querySelector('a[href="#fukunaka"]')
+
+        // スムーズスクロール関数
+        function smoothScroll(target) {
+          const element = document.querySelector(target)
+          if (element) {
+            window.scrollTo({
+              top: element.offsetTop - 20, // 少し上部にスペースを確保
+              behavior: 'smooth',
+            })
+          }
+        }
+
+        // アクティブボタンのスタイル更新関数
+        function updateActiveButton(activeButton) {
+          // 全てのボタンからアクティブクラスを削除
+          document.querySelectorAll('.washouen-access-store-button').forEach((btn) => {
+            btn.classList.remove('active-store-button')
+          })
+
+          // アクティブなボタンにクラスを追加
+          activeButton.classList.add('active-store-button')
+        }
+
+        // ボタンのクリックイベント設定
+        shiomachiButton.addEventListener('click', function (e) {
+          e.preventDefault()
+          smoothScroll('#shiomachi')
+          updateActiveButton(this)
+        })
+
+        fukunakaButton.addEventListener('click', function (e) {
+          e.preventDefault()
+          smoothScroll('#fukunaka')
+          updateActiveButton(this)
+        })
+
+        // URL内のハッシュを確認して初期状態を設定
+        const hash = window.location.hash
+        if (hash === '#fukunaka') {
+          updateActiveButton(fukunakaButton)
+          setTimeout(() => {
+            smoothScroll('#fukunaka')
+          }, 100)
+        } else if (hash === '#shiomachi' || hash === '') {
+          // デフォルトは塩町店を選択状態に
+          updateActiveButton(shiomachiButton)
+          if (hash === '#shiomachi') {
+            setTimeout(() => {
+              smoothScroll('#shiomachi')
+            }, 100)
+          }
+        }
+      })
+    </script>
   </body>
 </html>
