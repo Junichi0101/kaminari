@@ -153,7 +153,7 @@ nav ul div {
 
 /* 和招縁アクセスページ専用スタイル - 2025年4月版（修正版） */
 
-/* ベースコンテナ */
+/* アクセスページ専用スタイル - washouen-access- というプレフィックスで影響範囲を限定 */
 .washouen-access-container * {
   box-sizing: border-box;
 }
@@ -290,6 +290,7 @@ nav ul div {
   width: 280px; /* ボタンサイズ拡大 */
   text-align: center;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .washouen-access-store-button:hover {
@@ -297,7 +298,7 @@ nav ul div {
   color: white;
 }
 
-.active-store-button {
+.washouen-access-store-button.active {
   background: #8e3200;
   color: white;
 }
@@ -310,6 +311,11 @@ nav ul div {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   margin-bottom: 32px;
   scroll-margin-top: 20px;
+  display: none; /* 初期状態は非表示 */
+}
+
+.washouen-access-store.active {
+  display: block; /* activeクラスが付いたときだけ表示 */
 }
 
 .washouen-access-store h3 {
@@ -322,17 +328,10 @@ nav ul div {
 }
 
 .washouen-access-store-summary {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  margin-bottom: 32px;
   background: #f9f5f0;
   padding: 16px;
   border-radius: 4px;
-}
-
-.washouen-access-store-photo {
-  flex: 1 1 300px;
+  margin-bottom: 32px;
 }
 
 .washouen-access-store-photo img {
@@ -340,10 +339,7 @@ nav ul div {
   height: auto;
   border-radius: 4px;
   border: 2px solid #8e3200;
-}
-
-.washouen-access-store-info {
-  flex: 1 1 300px;
+  margin-bottom: 16px;
 }
 
 .washouen-access-address {
@@ -475,8 +471,8 @@ nav ul div {
 }
 
 .washouen-access-image-container {
-  flex: 1 1 calc(50% - 4px);
   position: relative;
+  margin-bottom: 16px;
 }
 
 .washouen-access-image {
@@ -531,6 +527,27 @@ nav ul div {
 
 .washouen-access-button:hover {
   background-color: #7a2900;
+  color: white;
+  text-decoration: none;
+}
+
+/* 交通機関情報エリア */
+.washouen-access-transit {
+  text-align: center;
+  margin: 3rem 0 2rem;
+}
+
+.washouen-access-transit h3 {
+  color: #8e3200;
+  margin-bottom: 1rem;
+  font-size: 20px;
+}
+
+.washouen-access-transit-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
 /* トップリンク */
@@ -608,4 +625,62 @@ html.washouen-scroll-smooth {
   .washouen-access-map-button {
     width: 100%;
   }
+
+  .washouen-access-compare-col {
+    margin-bottom: 16px;
+  }
+}
+
+/* h3タグの基本スタイル */
+.washouen-access-container h3 {
+  color: #8e3200;
+  font-size: 24px;
+  margin: 24px 0 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+/* 店舗情報セクションのh3 */
+.washouen-access-store h3 {
+  color: #8e3200;
+  font-size: 29px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #d7a86e;
+  text-align: center;
+}
+
+/* アラート内のh3 */
+.washouen-access-alert h3 {
+  color: #d35400;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 店舗選択エリアのh3 */
+.washouen-access-store-select h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #8e3200;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* 交通機関情報セクションのh3 */
+.washouen-access-transit h3 {
+  color: #8e3200;
+  margin-bottom: 16px;
+  font-size: 20px;
+  text-align: center;
+}
+/* 店舗情報比較セクションのタイトル */
+.washouen-access-compare-title {
+  text-align: center;
+  color: #8e3200;
+  font-size: 24px;
+  margin: 24px 0 16px;
+  font-weight: bold;
 }
