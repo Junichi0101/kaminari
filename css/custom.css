@@ -52,14 +52,19 @@ nav a {
 nav a:hover {
   color: #0073e6;
 }
+
+/* noto-sans-jp-700 - japanese */
 @font-face {
-  font-family: 'Tegaki'; /* 任意のフォント名（後で使用する名前） */
-  src: url('../font/tegaki.ttf') format('truetype'); /* ファイルのパスとフォーマット指定 */
-  font-weight: normal; /* 必要に応じて指定 */
-  font-style: normal; /* 必要に応じて指定 */
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/noto-sans-jp-v53-japanese-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 h2 {
-  font-family: 'Tegaki', sans-serif !important; /* 任意のフォント名を指定 */
+  font-family: 'Noto Sans JP', sans-serif !important;
+  font-weight: 700; /* ← これを必ず書く */
   text-align: center;
   font-size: 42px !important;
 }
