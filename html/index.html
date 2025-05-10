@@ -9,6 +9,10 @@
     <link rel="shortcut icon" href="wp/wp-content/themes/wp_kaminari/images/favicon.ico" />
     <link rel="dns-prefetch" href="../s.w.org/index.html" />
   
+    <!-- Google Fonts (Noto Sans JP & Noto Serif JP) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 
     <style type="text/css">
       img.wp-smiley,
@@ -44,6 +48,167 @@
         margin: 0 !important;
       }
     </style>
+
+    <!-- ▼▼▼ 改善CSS ▼▼▼ -->
+    <style>
+      /* === グローバル調整 === */
+      :root {
+        --brand-color: #C3A26F; /* 元の提案のブランド色 */
+        --background-light: #FFFFFF;
+        --background-alt: #F6F5E8;
+        --text-color-base: #333333;
+      }
+
+      body {
+        color: var(--text-color-base);
+      }
+
+      /* ① 画面最上部の余白調整 */
+      .main-content > main > div:first-child > .omoi-section-background, /* 「和招縁の思い」が最初の場合 */
+      .main-content > main > div:first-child > .back-ground, /* 「初めての方へ」などが最初の場合 */
+      .main-content > main > .container:first-child {
+        padding-top: 40px;
+      }
+      /* 各セクション共通の上下余白ベース */
+      .main-content > main > div > .omoi-section-background,
+      .main-content > main > div > .back-ground,
+      .main-content > main > .container > .top__block {
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+       /* 最上部のみpadding-topを上書き */
+      .main-content > main > div:first-child > .omoi-section-background,
+      .main-content > main > div:first-child > .back-ground,
+      .main-content > main > .container:first-child > .top__block.top__block02 {
+         padding-top: 40px;
+      }
+
+
+      /* ② 見出しは中央、本文は左寄せ + 幅制限 */
+      .txt__block {
+        text-align: left;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 16px;
+        line-height: 1.9;
+        font-weight: 400;
+      }
+      .txt__block.text-center {
+          text-align: center;
+      }
+      .col-md-6 .txt__block, .col-md-12 .txt__block {
+        max-width: 100%;
+      }
+
+
+      /* ③ タイポグラフィの改善 (h2) */
+      h2, .footer__title h2 { /* フッターのh2も対象に */
+        font-family: 'Noto Serif JP', serif;
+        font-weight: 700;
+        font-size: 38px;
+        letter-spacing: 0.1em;
+        text-align: center;
+        position: relative;
+        padding-bottom: 0.7em;
+        margin-top: 0;
+        margin-bottom: 1.5em;
+        color: var(--text-color-base);
+      }
+
+      h2::after, .footer__title h2::after { /* フッターのh2も対象に */
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: var(--brand-color);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .menu-item h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-weight: 600;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        font-size: 1.5em;
+      }
+
+
+      /* ④ セクション間のメリハリ */
+      /* 1. 和招縁の思い (.omoi-section-background を使用) */
+      .top__omoi--wrap > .omoi-section-background {
+        background-color: var(--background-light);
+      }
+      /* 2. 初めての方へ (.back-ground を使用) */
+      .top__block01--wrap > .back-ground {
+        background-color: var(--background-alt);
+        border-top: 4px solid rgba(195, 162, 111, 0.15);
+        border-bottom: 4px solid rgba(195, 162, 111, 0.15);
+      }
+      /* 3. お品書き (.container > .top__block) */
+      .container > .top__block.top__block02 {
+        background-color: var(--background-light);
+      }
+      /* 4. 店舗ギャラリー (親の.back-groundに適用) */
+      .main-content > main > .back-ground:has(.top__block05) {
+        background-color: var(--background-alt);
+        border-top: 4px solid rgba(195, 162, 111, 0.15);
+        border-bottom: 4px solid rgba(195, 162, 111, 0.15);
+      }
+
+      /* ⑤ CTAボタンのスタイル (元の黒ベースに戻し、余白を調整) */
+      .button__block--inner a {
+        /* 元のCSSファイル (main.css や style.css) で定義されているスタイルが基本となる想定 */
+        /* こちらでは、特定の調整のみ行うか、完全に上書きする場合は詳細な指定が必要 */
+        /* 例: 元のスタイルに加えて、微調整する場合 */
+        display: inline-block; /* aタグなので念のため */
+        text-decoration: none !important; /* 下線は常に削除 */
+        transition: opacity 0.3s ease; /* ホバー効果は汎用的に追加 */
+      }
+      .button__block--inner a:hover {
+        opacity: 0.8; /* シンプルなホバー効果 */
+      }
+      .button__block--wrap {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        text-align: center; /* ボタンのコンテナを中央揃えに */
+      }
+      /* 元のデザインに戻す場合、既存のCSSがボタンの見た目を定義しているはずです。 */
+      /* .button__black .button__block--inner a のようなセレクタでスタイルが適用されているか確認。 */
+      /* もし、このファイルでボタンのスタイルを完全に再定義する必要がある場合は、元のスタイルをここに記述します。 */
+      /* 今回は、余白の指定と、汎用的なホバー効果のみ追加します。 */
+
+
+      /* その他の調整 */
+      h3.gallery {
+        text-align: center;
+        font-family: 'Noto Serif JP', serif;
+        font-weight: 600;
+        margin-top: 2em;
+        margin-bottom: 1em;
+        font-size: 1.8em;
+      }
+
+      /* フッターの調整 */
+      footer {
+        padding-top: 40px; /* フッター上部の余白 */
+        padding-bottom: 20px; /* フッター下部の余白 */
+      }
+      .footer__info {
+        margin-bottom: 30px; /* タイトルとコピーライトの間の余白 */
+      }
+      /* フッターのh2のアンダーラインがコンテナ幅を超える場合、調整が必要な可能性 */
+      .footer__title h2 {
+        font-size: 32px; /* フッターの見出しは少し小さくしても良いかも */
+        margin-bottom: 1em; /* コピーライトとの余白を調整 */
+      }
+
+    </style>
+    <!-- ▲▲▲ 改善CSS ▲▲▲ -->
+
   </head>
   <body class="home blog">
     <div id="fb-root"></div>
@@ -68,8 +233,6 @@
       <li ><a href="index.html">ホーム</a></li>
       <li><a href="beginners.html">初めての方へ</a></li>
       <li><a href="menu.html">お品書き</a></li>
-      <!-- <li><a href="guide_fukunaka.html">当店への道案内</a></li> -->
-        <!-- ▼ ドロップダウン部分 ▼ -->
         <li class="dropdown">
           <a href="guide.html"
              class="dropdown-toggle"
@@ -78,14 +241,13 @@
              aria-haspopup="true"
              aria-expanded="false">
             当店への道案内
-            <span class="caret"></span> <!-- 下向き矢印を表示 -->
+            <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
             <li><a href="guide_fukunaka.html">福中店</a></li>
             <li><a href="guide_shiomachi.html">塩町店</a></li>
           </ul>
         </li>
-        <!-- ▲ ドロップダウン部分 ▲ -->
       <li><a href="about.html">店舗概要</a></li>
     </ul>
   </nav>
@@ -97,24 +259,48 @@
         <div class="main-content">
           <main>
             <!--/*▼基本的にここから下を編集*/-->
+
+            <!-- ▼ 和招縁の思い ここから ▼ -->
+            <div class="top__omoi--wrap">
+              <!-- クラス名を .omoi-section-background に変更 -->
+              <div class="omoi-section-background">
+                <div class="container">
+                  <div class="top__block">
+                    <h2>和 招 縁 の 思 い</h2>
+                    <div class="txt__block text-center">
+                      数ある店舗の中から「和招縁」にご関心頂き誠にありがとうございます。<br>
+                      <br>
+                      和招縁は、食生活がおびやかされている現代、<br>
+                      安全で身体 に良い物を吟味し四季「旬」を大切に、<br>
+                      お客様に和みながら美味しく料理を食べて頂きたい。<br>
+                      <br>
+                      和招縁でお会いする方々に素敵なご縁が出来る場所であってほしい。<br>
+                      <br>
+                      そんな思いを込めて和招縁を開業 いたしました。
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ▲ 和招縁の思い ここまで ▲ -->
+
             <div class="top__block01--wrap">
               <div class="back-ground">
                 <div class="container">
                   <div class="top__block top__block01">
                     <h2>初めての方へ</h2>
-                    <img class="img-responsive beginners_img" src="../image/beginner.png" alt="和招縁 初めての方へ" />
                     <div class="top__block01--row top__block01--row01">
                       <div class="clearfix">
                         <div class="row">
-                          <div class="txt__block">
-                            数ある寿司店の中から「和招縁」にご関心をお寄せいただき、誠にありがとうございます。<br>
-                            私たちの使命は、「地元の恵みを活かした本物のおいしさを届け、一貫一貫から幸せを創り出すこと」です。 
+                          <div class="txt__block text-center">
+                            ホームページをご覧頂き有難うございます。<br>
+                            初めての方でも気軽にお立ち寄りいただき「また来たい!」と思える店を目指しスタッフ一同日々精進しております。
                             <br />
-                            <br />生まれ育ったこの土地で水揚げされた、旬の魚を厳選してお鮨を握っています。素材が持つ旨みを最大限に引き出し、その時々にふさわしい食材や調理方法を取り入れながら、お客様一人ひとりに寄り添った逸品をご提供するよう心がけています。 
+                            <br />ぜひ、当店ならではの味わいとおもてなしを心ゆくまでお楽しみください。 
                             <br />
-                            <br />初めての方でも気軽にお立ち寄りいただき、「また来たい」「地元から愛され続けるお店だ」と感じていただけるような場所を目指し、スタッフ一同、日々精進しております。 
+                            <br />皆様のご来店を心よりお待ちしております。 
                             <br />
-                            <br />当店は、二店舗ございますので、以下のボタンより、ご希望の店舗をご確認ください。
+                            <br />当店は二店舗ございますので、以下のボタンよりご希望の店舗をご確認下さい。
                           </div>
                         </div>
                       </div>
@@ -133,7 +319,7 @@
                           <img class="img-responsive" src="../image/yuhi.png" alt="和招縁 吟味された鮮魚" />
                           <h2>塩町店のコンセプト</h2>
                           <div class="txt__block top__block01--txt01">
-                            伝統的な寿司の技と味わいを大切にし、厳選された上質な魚介類を使用した本格寿司をご提供しております。格式高い空間で、特別なひとときをお過ごしください。
+                            鮨をメインに提供しております。店主は瀬戸内海の離島(家島)で生まれ、島の豊かな海で獲れる新鮮な魚介で育ちました。その自慢の地元の恵みを活かした本物のおいしさと店主のひと手間加えた熟練の技が光る握りを真心こめてご提供いたします。目の前で職人の技が見れるカウンターがおすすめです。掘りごたつのテーブル席も完備しております。
                           </div>
                           <div class="button__block--wrap">
                             <div class="button__block--inner">
@@ -144,11 +330,11 @@
                         <div class="col-md-6 center">
                           <img class="img-responsive" src="../image/katuo.png" alt="和招縁 寿司の基本シャリ" />
                           <h2>福中店のコンセプト</h2>
-                          <div class="txt__block top__block01--txt02">店内に設けた生け簀からその場で調理する鮮度抜群の地元の魚を中心としたお料理をご用意しております。3階建ての洗練された空間で、贅沢なひとときをお楽しみいただけます。</div>
-                        </div>
-                        <div class="button__block--wrap">
-                          <div class="button__block--inner">
-                            <a href="beginners.html" >▶福中店を初めてのご利用のお客様へ</a >
+                          <div class="txt__block top__block01--txt02">活魚・一品料理をメインに提供しております。瀬戸内海の荒波にもまれ育った活魚を水槽から直前に出し調理いたします。お客様のお好みの調理法「生・焼・煮・揚・蒸・にぎり」にて天然魚の本当の旨みを色々な形でご堪 नोन下さい。二階、三階は完全個室です。接待や大切な方とのお食事など幅広いシーンにおすすめです。一階はカウンターも完備しております。</div>
+                          <div class="button__block--wrap">
+                            <div class="button__block--inner">
+                              <a href="beginners.html" >▶福中店を初めてのご利用のお客様へ</a >
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -162,42 +348,38 @@
             <!-- top__block01--wrap -->
             <div class="container">
               <div class="top__block top__block02">
-                <!-- <div class="line_vertical"></div> -->
                 <section class="sushi-menu">
                   <h2>お品書き</h2>
                   <div class="menu-items">
                     <div class="menu-item">
                       <img src="../image/katuo.png" alt="大トロ握り">
                       <h3>大トロ握り</h3>
-                      <p>最高級の大トロを使用し、とろける食感と深い旨味が特徴。</p>
+                      <p class="txt__block">最高級の大トロを使用し、とろける食感と深い旨味が特徴。</p>
                     </div>
                     <div class="menu-item">
                       <img src="../image/sushi.jpg" alt="中トロ握り">
                       <h3>中トロ握り</h3>
-                      <p>脂と旨味のバランスが絶妙。上品な味わいをご堪能ください。</p>
+                      <p class="txt__block">脂と旨味のバランスが絶妙。上品な味わいをご堪能ください。</p>
                     </div>
                     <div class="menu-item">
                       <img src="../image/susidukuri.png" alt="鯛の握り">
                       <h3>鯛の握り</h3>
-                      <p>新鮮な鯛を厳選し、繊細な味わいを引き出しました。</p>
+                      <p class="txt__block">新鮮な鯛を厳選し、繊細な味わいを引き出しました。</p>
                     </div>
                     <div class="menu-item">
                       <img src="../image/kaisen.png" alt="穴子握り">
                       <h3>穴子握り</h3>
-                      <p>柔らかい穴子に秘伝のタレを絡めた逸品。</p>
+                      <p class="txt__block">柔らかい穴子に秘伝のタレを絡めた逸品。</p>
                     </div>
                   </div>
                 </section>
-                <!-- top__block02--row02 -->
                 <div class="button__block--wrap button__black">
                   <div class="button__block--inner">
                     <a href="menu.html">お品書きを見る</a>
                   </div>
                 </div>
               </div>
-              <!-- top__block03 -->
             </div>
-            <!-- //.container end-->
             <div class="back-ground">
               <div class="container">
                 <div class="top__block top__block05">
@@ -205,39 +387,35 @@
                   <h3 class="gallery">塩町店</h3>
                   <div class="clearfix">
                     <div class="row">
-        <!-- 1行目 -->
-        <div class="gallery-row">
-          <div class="gallery-item">
-              <!-- 写真サイズ 400px × 320px -->
-              <img src="/image/shiomachi/1.JPG" alt="写真 1">
-          </div>
-          <div class="gallery-item">
-              <img src="/image/shiomachi/2.jpg" alt="写真 2">
-          </div>
-          <div class="gallery-item">
-              <img src="/image/shiomachi/3.jpg" alt="写真 3">
-          </div>
-          <div class="gallery-item">
-              <img src="/image/shiomachi/4.JPG" alt="写真 4">
-          </div>
-      </div>
-      <h3 class="gallery">福中店</h3>
-      <!-- 2行目 -->
-      <div class="gallery-row">
-          <div class="gallery-item">
-              <!-- 写真サイズ 400px × 320px -->
-              <img src="/image/fukunaka/1.JPG" alt="写真 5">
-          </div>
-          <div class="gallery-item">
-              <img src="/image/fukunaka/2.JPG" alt="写真 6">
-          </div>
-          <div class="gallery-item">
-              <img src="/image/fukunaka/3.JPG" alt="写真 7">
-          </div>
-          <div class="gallery-item">
-              <img src="/image/fukunaka/4.JPG" alt="写真 8">
-          </div>
-      </div>
+                      <div class="gallery-row">
+                        <div class="gallery-item">
+                          <img src="/image/shiomachi/1.JPG" alt="塩町店 店内写真1">
+                        </div>
+                        <div class="gallery-item">
+                          <img src="/image/shiomachi/2.jpg" alt="塩町店 店内写真2">
+                        </div>
+                        <div class="gallery-item">
+                          <img src="/image/shiomachi/3.jpg" alt="塩町店 店内写真3">
+                        </div>
+                        <div class="gallery-item">
+                          <img src="/image/shiomachi/4.JPG" alt="塩町店 店内写真4">
+                        </div>
+                      </div>
+                      <h3 class="gallery">福中店</h3>
+                      <div class="gallery-row">
+                        <div class="gallery-item">
+                          <img src="/image/fukunaka/1.JPG" alt="福中店 店内写真1">
+                        </div>
+                        <div class="gallery-item">
+                          <img src="/image/fukunaka/2.JPG" alt="福中店 店内写真2">
+                        </div>
+                        <div class="gallery-item">
+                          <img src="/image/fukunaka/3.JPG" alt="福中店 店内写真3">
+                        </div>
+                        <div class="gallery-item">
+                          <img src="/image/fukunaka/4.JPG" alt="福中店 店内写真4">
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="button__block--wrap button__black">
@@ -251,47 +429,35 @@
                     </div>
                   </div>
                 </div>
-                <!-- top__block05 -->
               </div>
-              <!-- //.container end-->
-              <!--/*▼基本的にここから上を編集*/-->
-              <!-- .main-content end-->
+            </div>
             </main>
           </div>
         </div>
       </div>
-      <!-- マップを表示する -->
+
       <div class="map-container">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d818.7443620173344!2d134.68707140419764!3d34.83165953317169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3554e0138af315ed%3A0x1e77ee41b6aee837!2z5ZKM5oub57iBIOWhqeeUuuW6lw!5e0!3m2!1sja!2sjp!4v1738245031317!5m2!1sja!2sjp" width="800" height="600" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-    </body>
-    <div class="container">
-      <div class="footer__info">
-        <div class="footer__title">
-          <h2>和招縁</h2>
+
+    <footer>
+      <div class="container">
+        <div class="footer__info">
+          <div class="footer__title">
+            <h2>和招縁</h2>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- footer__info--wrap -->
-  <div class="copyright-box">
-    <div class="container">
-      <p class="copyright text-center">Copyright &copy;2025 和招縁 All rights Reserved.</p>
-    </div>
-  </div>
-  </footer>
-  <style>
-  @font-face {
-    font-family: 'Noto Sans JP';
-    src: url('/fonts/noto-sans-jp-v53-japanese-700.woff2') format('woff2');
-    font-weight: 700;
-    font-display: swap;
-  }
-  h2 {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 700; /* ここがキー */
-    font-size: 42px;
-    text-align: center;
-  }
-</style>
+      <div class="copyright-box">
+        <div class="container">
+          <p class="copyright text-center">Copyright ©2025 和招縁 All rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 既存の Noto Sans JP @font-face スタイルは、Google Fontsで読み込むため不要であれば削除も検討 -->
+    <style>
+    /* h2のスタイルは上記改善CSSで上書きされる */
+    </style>
+  </body>
 </html>
