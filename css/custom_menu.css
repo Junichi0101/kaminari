@@ -1,4 +1,4 @@
-/* @font-face {
+@font-face {
   font-family: 'Tegaki';
   src: url(../font/tegaki.ttf) format('truetype');
   font-weight: 400;
@@ -42,4 +42,4 @@
 .transfont {
   font-family: 'Tegaki', sans-serif !important;
   font-size: large;
-} */
+}
