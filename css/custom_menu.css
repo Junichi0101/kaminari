@@ -11,7 +11,7 @@
 }
 
 h2 {
-  font-family: 'Tegaki', sans-serif !important; /* 任意のフォント名を指定 */
+  /* font-family: 'Tegaki', sans-serif !important; */
   text-align: center;
   font-size: 36px !important;
 }

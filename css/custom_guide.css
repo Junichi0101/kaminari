@@ -4,13 +4,19 @@
   font-weight: normal; /* 必要に応じて指定 */
   font-style: normal; /* 必要に応じて指定 */
 }
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('../fonts/noto-sans-jp-v53-japanese-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
 
 h2 {
   /* 大きめのフォントサイズで存在感を */
   font-size: 36px !important; /* 任意のフォント名を指定 */
   /* 中央揃えでバランスの良い配置*/
   text-align: left !important;
-  font-family: 'Tegaki', sans-serif !important;
+  /* font-family: 'Tegaki', sans-serif !important; */
 }
 
 /* header */

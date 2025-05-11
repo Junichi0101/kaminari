@@ -85,37 +85,31 @@
 				<div class="container">
 					<div class="row">
 						<div id="nav-menu-1" class="collapse navbar-collapse main-nav">
-							<ul id="header-gloval" class="nav navbar-nav">　 <div class="">
-									<a href="index.html">
-										<img class="img-logo" src="../image/logo.png" alt="和招縁" />
-									</a>
+							<ul id="header-gloval" class="nav navbar-nav">　 
+								<div class="">
+								<a href="index.html">
+									<img class="img-logo" src="../image/logo.png" alt="和招縁" />
+								</a>
 								</div>
 								<li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-20">
-									<a class="transfont" title="ホーム" href="index.html"> ホーム </a>
+									<a class="transfont" title="ホーム" href="index.html">ホーム </a>
 								</li>
-								<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-10 current_page_item menu-item-27 active dropdown">
-									<a class="transfont" title="初めてのお客様へ"> 初めてのお客様へ </a>
-									<ul class="dropdown-menu">
-										<li><a class="transfont" href="beginners.html">福中店</a></li>
-										<li><a class="transfont" href="beginners_fukunaka.html">塩町店</a></li>
-									</ul>
+								<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item menu-item-25 active">
+									<a class="transfont" title="初めてのお客様へ" href="beginners.html">初めてのお客様へ </a>
 								</li>
 								<li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21">
-									<a class="transfont" title="お品書き" href="menu.html"> お品書き </a>
+									<a class="transfont" title="お品書き" href="menu.html">お品書き </a>
 								</li>
-								<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-10 current_page_item menu-item-27 active dropdown">
-									<a class="transfont" href="guide.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 当店への道案内 </a>
-									<ul class="dropdown-menu">
-										<li><a class="transfont" href="guide_fukunaka.html">福中店</a></li>
-										<li><a class="transfont" href="guide_shiomachi.html">塩町店</a></li>
-									</ul>
+								<li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21">
+									<a class="transfont" title="当店への道案内" href="guide.html">当店への道案内 </a>
 								</li>
 								<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26">
-									<a class="transfont" title="店舗概要" href="about.html"> 店舗概要 </a>
+									<a class="transfont" title="店舗概要" href="about.html">店舗概要 </a>
 								</li>
 							</ul>
 						</div>
 					</div>
+				</div>
 			</nav>
 	</header>
 	<aside>
@@ -637,6 +631,20 @@
         padding: 10px 20px;
     }
 }
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url('/fonts/noto-sans-jp-v53-japanese-700.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+  }
+  h2 {
+    font-family: 'Noto Sans JP', sans-serif !important;
+    font-weight: 700; /* ここがキー */
+    font-size: 42px;
+    text-align: center;
+  }
+
+
 </style>
     <!-- JavaScriptスクリプト -->
 		<script>

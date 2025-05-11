@@ -10,5 +10,5 @@ h2 {
   font-size: 36px !important; /* 任意のフォント名を指定 */
   /* 中央揃えでバランスの良い配置 */
   text-align: left;
-  font-family: 'Tegaki', sans-serif !important;
+  /* font-family: 'Tegaki', sans-serif !important; */
 }

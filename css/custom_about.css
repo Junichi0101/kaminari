@@ -6,7 +6,7 @@
 }
 h2 {
   /* 任意のフォント名を指定 */
-  font-family: 'Tegaki', sans-serif !important;
+  /* font-family: 'Tegaki', sans-serif !important; */
   /* 大きめのフォントサイズで存在感を */
   font-size: 36px;
   /* 中央揃えでバランスの良い配置 */
