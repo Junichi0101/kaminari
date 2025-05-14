@@ -1,75 +1,45 @@
-@font-face {
-  font-family: 'Tegaki'; /* 任意のフォント名（後で使用する名前） */
-  src: url('../font/tegaki.ttf') format('truetype'); /* ファイルのパスとフォーマット指定 */
-  font-weight: normal; /* 必要に応じて指定 */
-  font-style: normal; /* 必要に応じて指定 */
+/* @font-face {
+  font-family: 'Tegaki';
+  src: url(../font/tegaki.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 .osinagaki {
   text-align: left;
   font-size: 20px;
   padding: 3%;
 }
-
-h2 {
-  /* font-family: 'Tegaki', sans-serif !important; */
+.menuPage main h2.title,
+.menuPage main h2.store-title {
   text-align: center;
   font-size: 36px !important;
 }
-
 .font-left h2 {
   text-align: left !important;
 }
-
 .kaisen img {
-  /* 画像をブロック要素にすることで margin: auto が有効になります */
   display: block;
-
-  /* 左右のマージンを自動設定して中央配置に */
   margin: 0 auto;
-
-  /* 画像が親要素の幅を超えないようにし、レスポンシブに対応 */
   max-width: 100%;
-
-  /* アスペクト比を維持して高さを自動調整 */
   height: auto;
-
-  /* 画像に柔らかい印象と立体感を与える影を追加 */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-  /* 角を丸めて上品な印象に */
   border-radius: 8px;
-
-  /* ホバー時の変化にスムーズなアニメーションを追加 */
   transition: transform 0.3s ease;
 }
-
-/* マウスホバー時に画像を少し拡大して強調する効果 */
 .kaisen img:hover {
   transform: scale(1.05);
 }
-
-/* header */
 .main-nav ul {
   list-style: none;
   margin: 0;
-  padding: 30px;
-
-  /* Flexboxを有効化 */
+  padding: 0;
   display: flex;
-
-  /* 子要素（li）を左右中央に配置 */
   justify-content: center;
-
-  /* 上下方向の中央寄せ（高さを指定するか、行揃えを調整したい場合） 
-     align-items: center;
-  */
 }
-
 .main-nav li {
-  margin: 0 1rem; /* 項目同士の隙間を調整 */
+  margin: 0 1rem;
 }
-
 .transfont {
   font-family: 'Tegaki', sans-serif !important;
   font-size: large;
-}
+} */

@@ -1,61 +1,24 @@
 @font-face {
-  font-family: 'Tegaki'; /* 任意のフォント名（後で使用する名前） */
-  src: url('../font/tegaki.ttf') format('truetype'); /* ファイルのパスとフォーマット指定 */
-  font-weight: normal; /* 必要に応じて指定 */
-  font-style: normal; /* 必要に応じて指定 */
+  font-family: 'Tegaki';
+  src: url(../font/tegaki.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
-h2 {
-  /* 任意のフォント名を指定 */
-  /* font-family: 'Tegaki', sans-serif !important; */
-  /* 大きめのフォントサイズで存在感を */
-  font-size: 36px;
-  /* 中央揃えでバランスの良い配置 */
-  text-align: left !important;
-}
-
-/* header */
-.main-nav ul {
+/* .main-nav ul {
   list-style: none;
   margin: 0;
-  padding: 30px;
-
-  /* Flexboxを有効化 */
+  padding: 0;
   display: flex;
-
-  /* 子要素（li）を左右中央に配置 */
   justify-content: center;
-
-  /* 上下方向の中央寄せ（高さを指定するか、行揃えを調整したい場合） 
-     align-items: center;
-  */
 }
-
 .main-nav li {
-  margin: 0 1rem; /* 項目同士の隙間を調整 */
-}
-
+  margin: 0 1rem;
+} */
 .transfont {
   font-family: 'Tegaki', sans-serif !important;
   font-size: large;
 }
-
-/* ★★★ 全体のスタイル ★★★ */
-/* ★★★ 全体のスタイル ★★★ */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Times New Roman', serif; /* Serif系フォントでクラシカル＆高級感を演出 */
-  color: #333;
-}
-h1 {
-  margin: 0;
-  font-size: 2rem;
-  letter-spacing: 2px;
-  color: #8c7732; /* ややゴールド寄りの色 */
-}
-
-/* ★★★ セクション全体のスタイル ★★★ */
-.store-section {
+.aboutPage .store-section {
   max-width: 1000px;
   margin: 40px auto;
   background-color: #fff;
@@ -63,51 +26,46 @@ h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 30px;
 }
-.store-section + .store-section {
-  margin-top: 60px; /* セクション間に余白を入れる */
+.aboutPage .store-section + .store-section {
+  margin-top: 60px;
 }
-.store-section h2 {
+.aboutPage .store-section h2 {
   margin-top: 0;
   font-size: 1.8rem;
   color: #8c7732;
-  border-left: 6px solid #d8c9a3; /* ゴールド系のラインを左に配置 */
+  border-left: 6px solid #d8c9a3;
   padding-left: 10px;
   margin-bottom: 20px;
+  text-align: left;
 }
-
-/* ★★★ 店舗情報の2カラムレイアウト ★★★ */
-.store-content {
+.aboutPage .store-content {
   display: flex;
-  flex-wrap: wrap; /* 画面幅が狭い場合に折り返すため */
+  flex-wrap: wrap;
   gap: 20px;
 }
-.store-text {
-  flex: 1 1 300px; /* 左側：テキスト */
+.aboutPage .store-text {
+  flex: 1 1 300px;
 }
-.store-text p {
+.aboutPage .store-text p {
   margin: 8px 0;
   line-height: 1.6;
 }
-.store-photo-container {
-  flex: 1 1 300px; /* 右側：写真 */
+.aboutPage .store-photo-container {
+  flex: 1 1 300px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-/* ★★★ 写真サイズの指定 ★★★ */
-.store-photo {
-  width: 350px; /* 画像の幅を固定（例） */
-  height: 260px; /* アスペクト比を保持して高さを自動調整 */
+.aboutPage .store-photo {
+  width: 350px;
+  height: 260px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-/* ★★★ 地図の埋め込み ★★★ */
-.map-container {
+.aboutPage .map-container {
   margin-top: 30px;
 }
-.map-container iframe {
+.aboutPage .map-container iframe {
   width: 100%;
   height: 300px;
   border: 0;

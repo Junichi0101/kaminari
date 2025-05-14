@@ -1,37 +1,64 @@
+/* custom.css の修正案 */
+
+/* === 基本スタイル === */
 div.back-ground {
-  background-color: beige !important;
+  background-color: beige !important; /* 必要であれば残す */
 }
 div.col-md-6.center {
   display: grid;
-  place-items: center; /* 水平・垂直ともに中央配置 */
+  place-items: center;
 }
 
+/* .carousel__out_frame は現在のHTMLでは使用されていないため、コメントアウトまたは削除を検討 */
+/*
 .carousel__out_frame {
   background: url(../image/haikei_v2.png) !important;
 }
+*/
 
+/* === 全画面ビデオのスタイル (HTMLの #fullscreen-video を対象) === */
+/* このスタイルはインラインCSSで定義するため、custom.cssからは削除するか、
+   インラインCSSと完全に同じ内容にする（重複を避けるため削除推奨）*/
+/*
 #fullscreen-video {
-  position: block; /* 画面に対する相対位置を固定 */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* viewport幅いっぱいに広げる */
-  height: auto; /* viewport高さいっぱいに広げる */
-  object-fit: cover; /* 動画のアスペクト比を維持しつつ、要素を覆うように表示 */
-  z-index: -1; /* 動画を背景に配置 */
-}
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: -10; /* 他のどの要素よりも後ろに配置 */
+/* } */
 
+/* === ヘッダースタイル (HTMLの header.site-header を対象) === */
+/* custom.css の header スタイルは、インラインで定義する site-header と競合するため、
+   役割を明確にする。ここでは custom.css の header 定義は一旦コメントアウトし、
+   インラインCSSでの .site-header の制御を優先する。 */
+
+/*
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #fff;
-}
+  background-color: #fff; /* ← これが問題だった可能性 */
+/* } */
 
+/*
 .logo img {
   height: 50px;
 }
+*/
 
+/* custom.css のナビゲーションスタイル (HTMLの nav#global-nav を対象) */
+/* インラインCSSで #global-nav のスタイルを詳細に定義しているため、
+   custom.css での nav スタイルは競合を避けるためにコメントアウトするか、
+   インラインのスタイルと役割分担を明確にする。
+   ここでは、インラインのスタイルを優先する前提でコメントアウト。
+*/
+/*
 nav ul {
   display: flex;
   list-style: none;
@@ -52,31 +79,36 @@ nav a {
 nav a:hover {
   color: #0073e6;
 }
+*/
 
+/* === フォント定義 === */
 /* noto-sans-jp-700 - japanese */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Noto Sans JP';
   font-style: normal;
   font-weight: 700;
-  src: url('/fonts/noto-sans-jp-v53-japanese-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/noto-sans-jp-v53-japanese-700.woff2') format('woff2');
 }
 
+/* === 見出しスタイル === */
 h2 {
-  font-family: 'Noto Sans JP', sans-serif !important;
-  font-weight: 700; /* ← これを必ず書く */
+  font-family: 'Noto Sans JP', sans-serif !important; /* インラインの Noto Serif JP と競合 */
+  font-weight: 700;
   text-align: center;
-  font-size: 42px !important;
+  font-size: 42px !important; /* インラインの 38px と競合 */
+  /* インラインCSSの h2 スタイルとどちらを優先するか決定が必要 */
+  /* ここでは custom.css の指定が強いが、インラインの意図も確認 */
 }
 
+/* === マップ === */
 .map-container {
-  width: 100%; /* 親要素に合わせて幅を100%にする */
+  width: 100%;
   height: 0;
-  padding-bottom: 30%; /* 高さを幅の75%にする */
+  padding-bottom: 30%; /* アスペクト比 (例: 10:3) */
   position: relative;
   overflow: hidden;
 }
-
 .map-container iframe {
   position: absolute;
   top: 0;
@@ -85,37 +117,39 @@ h2 {
   height: 100% !important;
 }
 
+/* === 画像 === */
 .annai_img {
   width: 100%;
   height: auto;
 }
-
 .beginners_img {
   width: 100%;
   height: 300px !important;
 }
 
+/* === お品書き (インラインCSSと重複・競合する部分あり) === */
 .sushi-menu {
-  background-color: #fff;
-  padding: 50px 20px;
+  /* background-color: #fff; /* インラインで .top__block02 に指定あり */
+  padding: 50px 20px; /* インラインの .top__block の padding と調整 */
   text-align: center;
-  font-family: 'Georgia', serif;
+  font-family: 'Georgia', serif; /* インラインの Noto Sans/Serif と競合 */
 }
 .sushi-menu h2 {
-  font-size: 36px;
+  /* h2 のグローバルスタイルと競合 */
+  font-size: 36px !important; /* さらに競合 */
   color: #333;
   margin-bottom: 40px;
 }
-/* 商品リストのレイアウト */
 .menu-items {
+  /* インラインCSSの .menu-items と同じセレクタ */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 30px; /* インラインでは20px */
 }
-/* 各商品のスタイル */
 .menu-item {
-  width: 250px;
+  /* インラインCSSの .menu-item と同じセレクタ */
+  width: 250px; /* インラインでは flex-basis と max-width で制御 */
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 20px;
@@ -128,10 +162,10 @@ h2 {
 }
 .menu-item img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 10px; /* インラインでは4px */
 }
 .menu-item h3 {
-  font-size: 24px;
+  font-size: 24px; /* インラインでは1.5em */
   color: #555;
   margin: 15px 0 10px;
 }
@@ -146,17 +180,14 @@ h2 {
   margin-top: 10px;
 }
 
-/**** ヘッダー ***/
-/* ヘッダー全体のスタイル */
-
+/* === custom.css 下部のヘッダースタイル (これは現在のHTML構造と合わないため削除) === */
+/*
 header {
   position: relative;
   width: 100%;
-  height: 100vh; /* 画面いっぱいの高さ */
+  height: 100vh;
   overflow: hidden;
 }
-
-/* 動画背景のスタイル */
 header video {
   position: absolute;
   top: 0;
@@ -166,15 +197,12 @@ header video {
   object-fit: cover;
   z-index: 1;
 }
-
-/* ナビゲーションのスタイル */
 nav {
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 2;
   padding: 20px 0;
-  /* 半透明の背景で文字を見やすく */
   background: rgba(0, 0, 0, 0.4);
 }
 nav ul {
@@ -197,8 +225,6 @@ nav ul li a {
 nav ul li a:hover {
   color: #ccc;
 }
-
-/* レスポンシブ対応：画面幅が狭い場合 */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -214,4 +240,4 @@ nav ul li a:hover {
     font-family: 'Tamanegi', serif !important;
   }
 }
-/**** ヘッダーここまで ***/
+*/
