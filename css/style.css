@@ -1541,7 +1541,7 @@ h3.gallery {
   font-family: 'Yu Mincho', 'MS Mincho', serif;
   font-size: 25px;
   font-weight: 500;
-  position: relative;
+  /* position: relative; */
   display: inline-block;
   padding: 0 60px;
   margin: 30px auto 25px;

@@ -300,46 +300,40 @@
       .video-background-section {
         position: relative;
         width: 100%;
-        height: 100vh; /* ★変更: ビューポート全体の高さにする */
-        overflow: hidden;
-        /* margin-top: var(--header-height); /* ★削除: ヘッダーと重なるようにする */
+        display: flex;
+        flex-direction: column; /* 縦方向に要素を並べる */
+        overflow: visible;
+        height: auto; /* 高さを自動調整に変更 */
       }
 
       .omoi-background-video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
+        position: relative; /* absoluteからrelativeに変更 */
+        width: 100%;
         height: auto;
+        top: 0;
+        left: 0;
+        transform: none; /* 変形をリセット */
         z-index: 1;
-        object-fit: cover;
       }
 
       .omoi-content-overlay {
         position: relative;
         z-index: 2;
         width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-        padding-top: var(
-          --header-height
-        ); /* ★追加: ヘッダーとコンテンツが重ならないように上部パディング */
+        padding: 60px 20px;
+        background-color: #fff; /* 背景色を設定（お好みで変更可） */
+        display: block;
+        height: auto;
       }
 
       /* 和招縁の思いセクション内のテキストスタイル */
+      /* ビデオ上のテキスト色を調整（背景が白になるため） */
       .video-background-section h2,
       .video-background-section .txt__block {
-        color: var(--text-color-on-video);
-        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+        color: var(--text-color-base); /* 通常のテキスト色に変更 */
+        text-shadow: none; /* テキストの影を削除 */
       }
+
       .video-background-section h2 {
         font-family: 'Noto Serif JP', serif;
         font-weight: 700;
@@ -351,15 +345,7 @@
         margin-bottom: 1em;
       }
       .video-background-section h2::after {
-        content: '';
-        display: block;
-        width: 60px;
-        height: 3px;
-        background-color: var(--brand-color-on-video);
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        background-color: var(--brand-color); /* 下線の色を通常に戻す */
       }
       .video-background-section .txt__block {
         max-width: 720px;
@@ -884,12 +870,7 @@
                   </div>
                   <div class="button__block--wrap button__black">
                     <div class="button__block--inner">
-                      <a href="guide_shiomachi.html">店舗への道案内（塩町店）</a>
-                    </div>
-                  </div>
-                  <div class="button__block--wrap button__black">
-                    <div class="button__block--inner">
-                      <a href="guide_fukunaka.html">店舗への道案内（福中店）</a>
+                      <a href="guide.html">店舗への道案内</a>
                     </div>
                   </div>
                 </div>
