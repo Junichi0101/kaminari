@@ -12,9 +12,7 @@
       name="keywords"
       content="兵庫県,姫路市,姫路駅,和招縁,寿司,sushi,美味しい,おすすめ,寿司屋,新鮮,口コミ"
     />
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>お品書き | 和招縁</title>
-    <!--Font Awesome-->
     <link
       rel="stylesheet"
       href="../maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
@@ -77,24 +75,33 @@
       }
     </style>
   </head>
-  <body class="page-template-default page page-id-8">
-    <div id="fb-root"></div>
-    <script>
-      ;(function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0]
-        if (d.getElementById(id)) return
-        js = d.createElement(s)
-        js.id = id
-        js.src = '../connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8&appId=133455143677459'
-        fjs.parentNode.insertBefore(js, fjs)
-      })(document, 'script', 'facebook-jssdk')
-    </script>
+
+  <body class="page-template-default page page-id-6">
     <header>
       <div id="wrap" class="head container">
         <h1 class="cleartext">兵庫県姫路市で寿司屋をお探しならJR姫路駅徒歩7分の「和招縁」へ</h1>
         <div class="row">
-          <div class="col-md-4 head__tel">
+          <div class="mobile-logo-container">
+            <a href="index.html" class="mobile-logo-link">
+              <img
+                class="img-logo"
+                src="../image/logo.png"
+                alt="和招縁"
+                style="max-width: 200px; margin: 10px auto; display: block"
+              />
+            </a>
+          </div>
+          <div class="col-md-8 col-xs-9 pc-only-header-col">
+            <a href="index.html" class="pc-logo-link">
+              <img
+                class="img-logo"
+                src="../image/logo.png"
+                alt="和招縁"
+                style="max-width: 200px; margin-top: 10px; display: none"
+              />
+            </a>
+          </div>
+          <div class="col-md-4 col-xs-3 head__tel">
             <div class="head__img">
               <script>
                 YAHOO = window.YAHOO || {}
@@ -111,25 +118,24 @@
           </div>
         </div>
       </div>
-      <nav class="navbar navbar-default m0" role="navigation">
-        <div class="navbar-header">
-          <button
-            type="button"
-            class="navbar-toggle"
-            data-toggle="collapse"
-            data-target="#nav-menu-1"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div id="nav-menu-1" class="collapse navbar-collapse main-nav">
+      <div>
+        <nav class="navbar navbar-default m0" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button
+                class="hamburger-button"
+                aria-label="メニューを開閉"
+                aria-expanded="false"
+                aria-controls="global-nav"
+              >
+                <span class="hamburger-button__line"></span>
+                <span class="hamburger-button__line"></span>
+                <span class="hamburger-button__line"></span>
+              </button>
+            </div>
+            <div id="nav-menu-1" class="main-nav">
               <ul id="header-gloval" class="nav navbar-nav">
-                <div>
+                <div class="pc-only-logo">
                   <a href="index.html">
                     <img class="img-logo" src="../image/logo.png" alt="和招縁" />
                   </a>
@@ -142,20 +148,20 @@
                 </li>
                 <li
                   id="menu-item-25"
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"
+                  class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item menu-item-25 active"
                 >
                   <a class="transfont" title="初めてのお客様へ" href="beginners.html">
                     初めてのお客様へ
                   </a>
                 </li>
                 <li
-                  id="menu-item-21-menu"
-                  class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-8 current_page_item menu-item-21 active"
+                  id="menu-item-21a"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"
                 >
                   <a class="transfont" title="お品書き" href="menu.html">お品書き</a>
                 </li>
                 <li
-                  id="menu-item-21-guide"
+                  id="menu-item-21b"
                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"
                 >
                   <a class="transfont" title="当店への道案内" href="guide.html">当店への道案内</a>
@@ -169,9 +175,21 @@
               </ul>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
+
+    <nav id="global-nav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="beginners.html">初めての方へ</a></li>
+        <li><a href="menu.html">お品書き</a></li>
+        <li><a href="guide.html">当店への道案内</a></li>
+        <li><a href="about.html">店舗概要</a></li>
+        <li><a href="contact.html">お問合せ</a></li>
+      </ul>
+    </nav>
+
     <aside>
       <div class="container-fluid">
         <div class="row">
@@ -182,8 +200,6 @@
         <div id="post-8" class="p-8 menuPage">
           <div class="main-content">
             <main>
-              <!--/*▼基本的にここから下を編集*/-->
-              <!--ここはメイン-->
               <section>
                 <div class="page__post">
                   <div class="page__content">
@@ -193,14 +209,12 @@
                           <div class="menu__block menu__block01">
                             <h2 class="title">塩町店</h2>
                           </div>
-                          <!-- 握り -->
                           <div class="menu-category">
                             <h3 class="category-title">握り</h3>
                             <p class="category-description">
                               厳選した旬の魚介を使い、熟練の職人が一貫一貫丁寧に握る鮨。日本各地から取り寄せた最高級の食材と、代々受け継がれてきた技で、本物の江戸前鮨をお楽しみいただけます。
                             </p>
                             <div class="menu-grid">
-                              <!-- 大きな特集商品 -->
                               <div class="featured-item is-left">
                                 <div class="chef-tag">料理長おすすめ</div>
                                 <img
@@ -215,7 +229,6 @@
                                   </div>
                                 </div>
                               </div>
-                              <!-- 右側の通常サイズの商品 -->
                               <div class="menu-item-main">
                                 <img src="/image/260_180.png" alt="本鮪" class="menu-image" />
                                 <div class="menu-info">
@@ -254,67 +267,16 @@
                                 </div>
                               </div>
                             </div>
-                            <!-- 追加の商品をスタンダードグリッドで表示 -->
-                            <!-- <div class="standard-grid">
-                              <div class="menu-item-main">
-                                <img
-                                  src="/image/260_180.png"
-                                  alt="のどぐろ"
-                                  class="menu-image"
-                                />
-                                <div class="menu-info">
-                                  <div class="menu-name">のどぐろ</div>
-                                  <div class="menu-description">
-                                    白身のトロと称される高級魚。上品な甘みと舌触りをご堪能ください。
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="menu-item-main">
-                                <img src="/image/260_180.png" alt="うに" class="menu-image" />
-                                <div class="menu-info">
-                                  <div class="menu-name">うに</div>
-                                  <div class="menu-description">
-                                    北海道産の最高級バフンウニ。濃厚な味わいと磯の香りが広がります。
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="menu-item-main">
-                                <img src="/image/260_180.png" alt="穴子" class="menu-image" />
-                                <div class="menu-info">
-                                  <div class="menu-name">穴子</div>
-                                  <div class="menu-description">
-                                    特製のタレで丁寧に焼き上げた穴子。ふわっとした食感をお楽しみください。
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="menu-item-main">
-                                <div class="seasonal-tag">季節限定</div>
-                                <img
-                                  src="/image/260_180.png"
-                                  alt="とり貝"
-                                  class="menu-image"
-                                />
-                                <div class="menu-info">
-                                  <div class="menu-name">とり貝</div>
-                                  <div class="menu-description">
-                                    初夏の風物詩。歯ごたえと甘みが特徴の貝を、薄く引いてご提供します。
-                                  </div>
-                                </div>
-                              </div>
-                            </div> -->
                           </div>
-                          <!-- 福中店 -->
                           <div class="row">
                             <div class="store-section">
                               <h2 class="store-title">福中店</h2>
-                              <!-- 魚料理 -->
                               <div class="menu-category">
                                 <h3 class="category-title">魚料理</h3>
                                 <p class="category-description">
                                   日本各地から届く厳選された魚介を使った多彩な料理の数々。素材の持ち味を活かした調理法で、至福のひとときをお届けします。
                                 </p>
                                 <div class="menu-grid">
-                                  <!-- 大きな特集商品 -->
                                   <div class="featured-item is-left">
                                     <div class="chef-tag">料理長おすすめ</div>
                                     <img
@@ -329,7 +291,6 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <!-- 右側の通常サイズの商品 -->
                                   <div class="menu-item-main">
                                     <img
                                       src="/image/260_180.png"
@@ -384,76 +345,18 @@
                                     </div>
                                   </div>
                                 </div>
-                                <!-- 追加の商品をスタンダードグリッドで表示 -->
-                                <!-- <div class="standard-grid">
-                                <div class="menu-item-main">
-                                  <img
-                                    src="/image/260_180.png"
-                                    alt="天然鰻の蒲焼"
-                                    class="menu-image"
-                                  />
-                                  <div class="menu-info">
-                                    <div class="menu-name">天然鰻の蒲焼</div>
-                                    <div class="menu-description">
-                                      希少な天然鰻を丁寧に焼き上げた、伝統の一品。
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="menu-item-main">
-                                  <img
-                                    src="/image/260_180.png"
-                                    alt="名物 海鮮丼"
-                                    class="menu-image"
-                                  />
-                                  <div class="menu-info">
-                                    <div class="menu-name">名物 海鮮丼</div>
-                                    <div class="menu-description">
-                                      厳選された旬の魚介をふんだんに使用した贅沢な海鮮丼。
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="menu-item-main">
-                                  <div class="seasonal-tag">冬限定</div>
-                                  <img
-                                    src="/image/260_180.png"
-                                    alt="寒ぶり照り焼き"
-                                    class="menu-image"
-                                  />
-                                  <div class="menu-info">
-                                    <div class="menu-name">寒ぶり照り焼き</div>
-                                    <div class="menu-description">
-                                      冬に脂がのった寒ぶりを、特製のタレで照り焼きに。
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="menu-item-main">
-                                  <img
-                                    src="/image/260_180.png"
-                                    alt="鮮魚のカルパッチョ"
-                                    class="menu-image"
-                                  />
-                                  <div class="menu-info">
-                                    <div class="menu-name">鮮魚のカルパッチョ</div>
-                                    <div class="menu-description">
-                                      新鮮な魚介をオリーブオイルとハーブで香り高く。
-                                    </div>
-                                  </div>
-                                </div>
-                              </div> -->
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="store-section">
                               <h2 class="store-title">共通</h2>
-                              <!-- 鍋コース (塩町店) -->
                               <div class="menu-category">
                                 <h3 class="category-title">鍋コース</h3>
                                 <p class="category-description">
                                   厳選された旬の食材を贅沢に使用した鍋コース。素材本来の旨味を引き出す特製出汁と共に、季節ごとの味わいをお楽しみいただけます。お二人様からご用意しております。
                                 </p>
                                 <div class="menu-grid">
-                                  <!-- 大きな特集商品 -->
                                   <div class="featured-item is-left">
                                     <div class="chef-tag">料理長おすすめ</div>
                                     <img
@@ -468,7 +371,6 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <!-- 真ん中 -->
                                   <div class="featured-item is-center">
                                     <img
                                       src="/image/400_400.png"
@@ -482,8 +384,6 @@
                                       </div>
                                     </div>
                                   </div>
-
-                                  <!-- 右 -->
                                   <div class="featured-item is-right">
                                     <img
                                       src="/image/400_400.png"
@@ -497,135 +397,24 @@
                                       </div>
                                     </div>
                                   </div>
-
-                                  <!-- 右側の通常サイズの商品 -->
-                                  <!-- <div class="menu-item-main">
-					<img src="/image/260_180.png" alt="特選海鮮寄せ鍋" class="menu-image" />
-					<div class="menu-info">
-					<div class="menu-name">特選海鮮寄せ鍋
-					</div>
-					<div class="menu-description">厳選された新鮮な魚介と季節の野菜を使用した特製出汁の鍋コース。 
-					</div>
-					</div>
-					</div>
-					<div class="menu-item-main">
-					<img src="/image/260_180.png" alt="ふぐちり鍋" class="menu-image" />
-					<div class="menu-info">
-					<div class="menu-name">ふぐちり鍋
-					</div>
-					<div class="menu-description">下関直送の国産とらふぐを贅沢に使用した、当店自慢のふぐ鍋。 
-					</div>
-					</div>
-					</div>
-					<div class="menu-item-main">
-					<img src="/image/260_180.png" alt="和牛すき焼き鍋" class="menu-image" />
-					<div class="menu-info">
-					<div class="menu-name">和牛すき焼き鍋
-					</div>
-					<div class="menu-description">A5ランクの和牛と厳選された野菜を特製割り下で味わう鍋コース。 
-					</div>
-					</div>
-					</div>
-					<div class="menu-item-main">
-					<div class="seasonal-tag">季節限定
-					</div>
-					<img src="/image/260_180.png" alt="松茸土瓶蒸し" class="menu-image" />
-					<div class="menu-info">
-					<div class="menu-name">松茸土瓶蒸し
-					</div>
-					<div class="menu-description">秋の味覚、松茸の香りを存分に楽しめる季節限定の一品。 
-					</div>
-					</div>
-					</div> -->
                                 </div>
-                                <!-- 追加の商品をスタンダードグリッドで表示 -->
-                                <!-- <div class="standard-grid">
-                                                      <div class="menu-item-main">
-                                                        <img
-                                                          src="/image/260_180.png"
-                                                          alt="蟹すき鍋"
-                                                          class="menu-image"
-                                                        />
-                                                        <div class="menu-info">
-                                                          <div class="menu-name">蟹すき鍋</div>
-                                                          <div class="menu-description">
-                                                            北海道産の厳選されたタラバガニを使用した豪華な鍋コース。
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                      <div class="menu-item-main">
-                                                        <div class="seasonal-tag">冬限定</div>
-                                                        <img
-                                                          src="/image/260_180.png"
-                                                          alt="極上あんこう鍋"
-                                                          class="menu-image"
-                                                        />
-                                                        <div class="menu-info">
-                                                          <div class="menu-name">極上あんこう鍋</div>
-                                                          <div class="menu-description">
-                                                            冬の味覚の王様「あんこう」を使用した濃厚な味わいの鍋。
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                      <div class="menu-item-main">
-                                                        <img
-                                                          src="/image/260_180.png"
-                                                          alt="季節の特選鍋"
-                                                          class="menu-image"
-                                                        />
-                                                        <div class="menu-info">
-                                                          <div class="menu-name">季節の特選鍋</div>
-                                                          <div class="menu-description">
-                                                            四季折々の最上級食材を使用した、料理長厳選の特別鍋コース。
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                      <div class="menu-item-main">
-                                                        <img
-                                                          src="/image/260_180.png"
-                                                          alt="牡蠣鍋"
-                                                          class="menu-image"
-                                                        />
-                                                        <div class="menu-info">
-                                                          <div class="menu-name">牡蠣鍋</div>
-                                                          <div class="menu-description">
-                                                            厳選された牡蠣の旨味が溶け込んだ濃厚な出汁が特徴の鍋コース。
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                    </div> -->
                               </div>
                             </div>
                           </div>
                         </div>
-                        <!-- menu__block03--row02 -->
                       </div>
-                      <!-- menu__block03 -->
                     </div>
-                    <!-- row -->
                   </div>
-                  <!-- container -->
                 </div>
-                <!-- menu -->
               </section>
             </main>
           </div>
         </div>
-        <!--//特定記事カテゴリ抽出｜最新記事除外-->
-        <!--/*▼基本的にここから上を編集*/-->
-        <!-- .main-content end-->
       </div>
-      <!-- //#post-slug end-->
-      <!-- .row end-->
     </aside>
-    <!--
-<div class="container">
-<div class="goto__block"><a id="page-top" href="#wrap"><img class="img-responsive" src="wp/wp-content/themes/wp_kaminari/images/go_to_top.png" alt="和招縁 ページの先頭へ" /></a></div>
-</div>
--->
+
     <footer>
       <div class="container">
-        <!-- フッターメニュー-->
         <div id="footernav" class="list-group">
           <ul id="footerlist" class="footermenu footernavbar">
             <li
@@ -666,7 +455,6 @@
             </li>
           </ul>
         </div>
-        <!-- //フッターメニュー-->
       </div>
       <div class="footer__logoblock">
         <div class="line__pt"></div>
@@ -680,7 +468,6 @@
           </div>
         </div>
       </div>
-      <!-- footer__info--wrap -->
       <div class="copyright-box">
         <div class="container">
           <p class="copyright text-center">Copyright ©2025 和招縁 All rights Reserved.</p>
@@ -690,11 +477,26 @@
     <script type="text/javascript" src="wp/wp-includes/js/wp-embed.min0155.js?ver=4.7.29"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&display=swap');
-      /* リセットとベーススタイル */
+
+      :root {
+        --brand-color: #c3a26f;
+        --text-color-base: #333333;
+        --header-height-for-menu: 70px;
+      }
+
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+        color: var(--text-color-base);
+      }
+
+      body.no-scroll {
+        overflow: hidden;
       }
 
       img {
@@ -702,87 +504,126 @@
         height: auto;
         display: block;
       }
-      .logo {
-        font-size: 28px;
-        font-weight: 500;
-        letter-spacing: 4px;
-        color: #b8965e;
-      }
-      .desktop-nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-      }
 
-      .desktop-nav li {
-        margin: 0 25px;
-      }
-      .desktop-nav a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 16px;
-        letter-spacing: 2px;
-        transition: color 0.3s;
-      }
-
-      .desktop-nav a:hover {
-        color: #b8965e;
-      }
-      /* モバイルナビゲーション */
-      .mobile-nav-toggle {
+      /* ハンバーガーボタン */
+      .hamburger-button {
         display: none;
-        background: none;
+        background: transparent;
         border: none;
-        color: #fff;
-        font-size: 24px;
-        position: absolute;
-        top: 25px;
-        right: 20px;
         cursor: pointer;
-        z-index: 1000;
+        padding: 10px;
+        z-index: 1010;
       }
 
-      .mobile-nav {
+      .hamburger-button__line {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-color-base);
+        margin: 5px 0;
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease,
+          background-color 0.3s ease;
+      }
+
+      .hamburger-button[aria-expanded='true'] .hamburger-button__line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .hamburger-button[aria-expanded='true'] .hamburger-button__line:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger-button[aria-expanded='true'] .hamburger-button__line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      /* グローバルナビ（モバイル・タブレット用） */
+      #global-nav {
         display: none;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
-        background-color: rgba(13, 13, 13, 0.98);
-        z-index: 999;
-        padding: 80px 20px 40px;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.98);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        padding-top: var(--header-height-for-menu);
         overflow-y: auto;
+        z-index: 1005;
       }
 
-      .mobile-nav.active {
+      #global-nav.is-active {
         display: block;
+        transform: translateX(0);
       }
 
-      .mobile-nav ul {
+      #global-nav ul {
         list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
       }
 
-      .mobile-nav li {
+      #global-nav ul li {
         margin: 20px 0;
-        text-align: center;
       }
 
-      .mobile-nav a {
-        color: #fff;
+      #global-nav ul li a {
         text-decoration: none;
-        font-size: 18px;
-        letter-spacing: 2px;
-        display: block;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 700;
+        font-size: 1.2em;
+        color: var(--text-color-base);
         padding: 10px;
-        transition: color 0.3s;
+        position: relative;
+        display: block;
+        transition: color 0.3s ease;
       }
 
-      .mobile-nav a:hover {
-        color: #b8965e;
+      #global-nav ul li a:hover {
+        color: var(--brand-color);
       }
+
+      #global-nav ul li a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--brand-color);
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+      }
+
+      #global-nav ul li a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      /* ヘッダー基本レイアウト */
+      .head .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .mobile-logo-container {
+        display: none;
+      }
+
+      .pc-only-header-col {
+        display: block;
+      }
+
+      /* 見出しスタイル */
       h1 {
         text-align: center;
         margin-bottom: 60px;
@@ -805,6 +646,21 @@
         transform: translateX(-50%);
       }
 
+      @font-face {
+        font-family: 'Noto Sans JP';
+        src: url('/fonts/noto-sans-jp-v53-japanese-700.woff2') format('woff2');
+        font-weight: 700;
+        font-display: swap;
+      }
+
+      h2 {
+        font-family: 'Noto Sans JP', sans-serif !important;
+        font-weight: 700;
+        font-size: 42px;
+        text-align: center;
+      }
+
+      /* メニューページ特有のスタイル */
       .store-section {
         margin-bottom: 100px;
         position: relative;
@@ -816,6 +672,7 @@
         padding: 40px;
         border: 1px solid #e0d5c0;
       }
+
       .category-title {
         text-align: center;
         margin-bottom: 40px;
@@ -826,6 +683,8 @@
         padding: 0 30px;
         letter-spacing: 3px;
         font-weight: 500;
+        width: fit-content;
+        margin: 0 auto 30px;
       }
 
       .category-title::before,
@@ -846,11 +705,6 @@
         right: 0;
       }
 
-      .menu-category h3 {
-        width: fit-content;
-        margin: 0 auto 30px;
-      }
-
       .category-description {
         text-align: center;
         margin-bottom: 40px;
@@ -862,7 +716,7 @@
         margin-right: auto;
         letter-spacing: 0.5px;
       }
-      /* アシンメトリックグリッドレイアウト */
+
       .menu-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -872,7 +726,6 @@
       }
 
       .featured-item {
-        /* grid-column: 1; */
         grid-row: 1 / span 2;
         background-color: #fff;
         overflow: hidden;
@@ -916,9 +769,11 @@
       .is-left {
         grid-column: 1;
       }
+
       .is-center {
         grid-column: 2;
       }
+
       .is-right {
         grid-column: 3;
       }
@@ -992,7 +847,6 @@
         margin-top: 40px;
       }
 
-      /* スクロールトップボタン */
       .scroll-top {
         position: fixed;
         bottom: 30px;
@@ -1022,15 +876,111 @@
         background-color: #a38449;
       }
 
-      * メディアクエリ - タブレット */ @media (max-width: 900px) {
-        .desktop-nav {
+      /* PC用スタイル */
+      @media (min-width: 1025px) {
+        .hamburger-button {
           display: none;
         }
 
-        .mobile-nav-toggle {
+        .main-nav ul#header-gloval {
+          display: flex !important;
+          justify-content: center;
+          width: 100%;
+        }
+
+        .navbar-header {
+          width: auto;
+          justify-content: flex-start;
+          padding-right: 0;
+        }
+
+        .head .row .mobile-logo-container {
+          display: none !important;
+        }
+
+        .head .row .pc-only-header-col {
+          display: block !important;
+        }
+
+        .pc-only-logo {
           display: block;
         }
 
+        .main-nav {
+          display: block !important;
+        }
+
+        #nav-menu-1.main-nav ul#header-gloval {
+          display: flex;
+          align-items: center;
+        }
+
+        #nav-menu-1.main-nav ul#header-gloval li {
+          margin: 0 15px;
+        }
+      }
+
+      /* タブレット・モバイル用スタイル */
+      @media (max-width: 1024px) {
+        .hamburger-button {
+          display: block;
+        }
+
+        .main-nav ul#header-gloval {
+          display: none !important;
+        }
+
+        .navbar-header {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          padding-right: 15px;
+        }
+
+        /* モバイルロゴコンテナ表示 */
+        .head .row .mobile-logo-container {
+          display: block !important;
+        }
+
+        .head .row .pc-only-header-col {
+          display: none !important;
+        }
+
+        .pc-only-logo {
+          display: none;
+        }
+
+        /* モバイルロゴコンテナを中央配置 */
+        .mobile-logo-container {
+          width: 100%;
+          text-align: center;
+          margin: 0 auto;
+          padding: 0 15px;
+        }
+
+        .mobile-logo-link {
+          display: inline-block;
+        }
+
+        .mobile-logo-link img {
+          margin: 10px auto;
+        }
+
+        /* 予約ボタンエリアの調整 */
+        .head__tel {
+          position: absolute;
+          right: 15px;
+          top: 10px;
+        }
+
+        /* ヘッダーrow内の位置調整 */
+        .head .row {
+          position: relative;
+          flex-direction: column;
+        }
+
+        /* メニューグリッドの調整 */
         .menu-grid {
           grid-template-columns: 1fr 1fr;
         }
@@ -1062,16 +1012,8 @@
         }
       }
 
-      /* メディアクエリ - スマートフォン */
+      /* スマホ用スタイル */
       @media (max-width: 600px) {
-        .logo {
-          font-size: 22px;
-        }
-
-        .container {
-          margin: 30px auto;
-        }
-
         h1 {
           font-size: 24px;
           letter-spacing: 4px;
@@ -1138,10 +1080,6 @@
           width: 15px;
         }
 
-        .menu-item {
-          margin-bottom: 0;
-        }
-
         .menu-image {
           height: 160px;
         }
@@ -1160,19 +1098,43 @@
           width: 40px;
           height: 40px;
         }
-      }
-      @font-face {
-        font-family: 'Noto Sans JP';
-        src: url('/fonts/noto-sans-jp-v53-japanese-700.woff2') format('woff2');
-        font-weight: 700;
-        font-display: swap;
-      }
-      h2 {
-        font-family: 'Noto Sans JP', sans-serif !important;
-        font-weight: 700; /* ここがキー */
-        font-size: 42px;
-        text-align: center;
+
+        .hamburger-button {
+          top: 15px;
+          right: 15px;
+        }
+
+        .mobile-logo-container {
+          top: 10px;
+        }
       }
     </style>
   </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburgerButton = document.querySelector('.hamburger-button')
+      const globalNav = document.getElementById('global-nav')
+      const body = document.body
+
+      if (hamburgerButton && globalNav) {
+        hamburgerButton.addEventListener('click', function () {
+          const expanded = this.getAttribute('aria-expanded') === 'true' || false
+          this.setAttribute('aria-expanded', !expanded)
+          globalNav.classList.toggle('is-active')
+          body.classList.toggle('no-scroll')
+        })
+
+        const navLinks = globalNav.querySelectorAll('a')
+        navLinks.forEach((link) => {
+          link.addEventListener('click', function () {
+            if (globalNav.classList.contains('is-active')) {
+              hamburgerButton.setAttribute('aria-expanded', 'false')
+              globalNav.classList.remove('is-active')
+              body.classList.remove('no-scroll')
+            }
+          })
+        })
+      }
+    })
+  </script>
 </html>
