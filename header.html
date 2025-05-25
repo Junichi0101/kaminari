@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>汎用ヘッダー実装例</title>
+
+    <!-- 汎用ヘッダーCSS -->
+    <style>
+      /* ========================================
+   汎用ヘッダーCSS - レスポンシブ対応
+   ======================================== */
+
+      /* CSS変数の定義 - サイトに合わせて色やサイズを調整してください */
+      :root {
+        --header-brand-color: #c3a26f; /* ブランドカラー */
+        --header-text-color: #333333; /* テキストカラー */
+        --header-bg-color: #ffffff; /* ヘッダー背景色 */
+        --header-height: 70px; /* ヘッダー高さ */
+        --header-font-family: 'Noto Sans JP', sans-serif; /* フォント */
+      }
+
+      /* ========================================
+   ベーススタイル
+   ======================================== */
+
+      /* スクロール無効化用クラス（ハンバーガーメニュー展開時） */
+      body.no-scroll {
+        overflow: hidden;
+      }
+
+      /* ========================================
+   ヘッダー基本レイアウト
+   ======================================== */
+
+      /* ヘッダーコンテナのレイアウト */
+      .head .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* モバイルロゴコンテナ（デフォルトは非表示） */
+      .mobile-logo-container {
+        display: none;
+      }
+
+      /* PC用ヘッダー列 */
+      .pc-only-header-col {
+        display: block;
+      }
+
+      /* PC用ロゴエリア */
+      .pc-only-logo {
+        display: block;
+      }
+
+      /* ========================================
+   ハンバーガーボタン
+   ======================================== */
+
+      .hamburger-button {
+        display: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1010;
+      }
+
+      /* ハンバーガーボタンの3本線 */
+      .hamburger-button__line {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--header-text-color);
+        margin: 5px 0;
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease,
+          background-color 0.3s ease;
+      }
+
+      /* ハンバーガーボタン展開時のアニメーション */
+      .hamburger-button[aria-expanded='true'] .hamburger-button__line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .hamburger-button[aria-expanded='true'] .hamburger-button__line:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger-button[aria-expanded='true'] .hamburger-button__line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      /* ========================================
+   グローバルナビゲーション（モバイル・タブレット用）
+   ======================================== */
+
+      #global-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.98);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        padding-top: var(--header-height);
+        overflow-y: auto;
+        z-index: 1005;
+      }
+
+      /* グローバルナビ展開時 */
+      #global-nav.is-active {
+        display: block;
+        transform: translateX(0);
+      }
+
+      /* グローバルナビのリスト */
+      #global-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+      }
+
+      #global-nav ul li {
+        margin: 20px 0;
+      }
+
+      /* グローバルナビのリンク */
+      #global-nav ul li a {
+        text-decoration: none;
+        font-family: var(--header-font-family);
+        font-weight: 700;
+        font-size: 1.2em;
+        color: var(--header-text-color);
+        padding: 10px;
+        position: relative;
+        display: block;
+        transition: color 0.3s ease;
+      }
+
+      #global-nav ul li a:hover {
+        color: var(--header-brand-color);
+      }
+
+      /* ホバー時の下線アニメーション */
+      #global-nav ul li a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--header-brand-color);
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+      }
+
+      #global-nav ul li a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      /* ========================================
+   PC用ナビゲーション
+   ======================================== */
+
+      /* PC用メインナビゲーション */
+      .main-nav {
+        display: block;
+      }
+
+      .main-nav ul#header-gloval {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .main-nav ul#header-gloval li {
+        margin: 0 15px;
+      }
+
+      /* ========================================
+   レスポンシブ対応
+   ======================================== */
+
+      /* PC版（1025px以上） */
+      @media (min-width: 1025px) {
+        /* ハンバーガーボタンを非表示 */
+        .hamburger-button {
+          display: none !important;
+        }
+
+        /* PC用ナビゲーションを表示 */
+        .main-nav ul#header-gloval {
+          display: flex !important;
+        }
+
+        /* ナビバーヘッダーの調整 */
+        .navbar-header {
+          width: auto;
+          justify-content: flex-start;
+          padding-right: 0;
+        }
+
+        /* モバイルロゴを非表示 */
+        .head .row .mobile-logo-container {
+          display: none !important;
+        }
+
+        /* PC用ヘッダー列を表示 */
+        .head .row .pc-only-header-col {
+          display: block !important;
+        }
+
+        /* PC用ロゴを表示 */
+        .pc-only-logo {
+          display: block;
+        }
+      }
+
+      /* タブレット・モバイル版（1024px以下） */
+      @media (max-width: 1024px) {
+        /* ハンバーガーボタンを表示 */
+        .hamburger-button {
+          display: block;
+        }
+
+        /* PC用ナビゲーションを非表示 */
+        .main-nav ul#header-gloval {
+          display: none !important;
+        }
+
+        /* ナビバーヘッダーの調整 */
+        .navbar-header {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          padding-right: 15px;
+        }
+
+        /* モバイルロゴコンテナを表示 */
+        .head .row .mobile-logo-container {
+          display: block !important;
+        }
+
+        /* PC用ヘッダー列を非表示 */
+        .head .row .pc-only-header-col {
+          display: none !important;
+        }
+
+        /* PC用ロゴを非表示 */
+        .pc-only-logo {
+          display: none;
+        }
+
+        /* モバイルロゴコンテナの中央配置 */
+        .mobile-logo-container {
+          width: 100%;
+          text-align: center;
+          margin: 0 auto;
+          padding: 0 15px;
+        }
+
+        .mobile-logo-link {
+          display: inline-block;
+        }
+
+        .mobile-logo-link img {
+          margin: 10px auto;
+          display: block;
+        }
+
+        /* ヘッダーrowの調整 */
+        .head .row {
+          position: relative;
+          flex-direction: column;
+        }
+
+        /* 予約ボタンなど右上の要素がある場合の配置 */
+        .head__tel {
+          position: absolute;
+          right: 15px;
+          top: 10px;
+        }
+      }
+
+      /* スマホ版の微調整（600px以下） */
+      @media (max-width: 600px) {
+        /* 必要に応じてスマホ版の追加調整 */
+        .hamburger-button {
+          padding: 8px;
+        }
+
+        .mobile-logo-container {
+          padding: 0 10px;
+        }
+
+        /* グローバルナビのフォントサイズ調整 */
+        #global-nav ul li a {
+          font-size: 1.1em;
+        }
+      }
+
+      /* ========================================
+   使用方法メモ
+   ======================================== 
+   
+   1. HTML構造の例：
+      <header>
+        <div class="head container">
+          <div class="row">
+            <!-- モバイル用ロゴ -->
+            <div class="mobile-logo-container">
+              <a href="/" class="mobile-logo-link">
+                <img src="logo.png" alt="ロゴ">
+              </a>
+            </div>
+            
+            <!-- PC用ヘッダー列 -->
+            <div class="pc-only-header-col">
+              <!-- PC用ロゴなど -->
+            </div>
+            
+            <!-- 右側の要素（予約ボタンなど） -->
+            <div class="head__tel">
+              <!-- 内容 -->
+            </div>
+          </div>
+        </div>
+        
+        <nav class="navbar">
+          <div class="container">
+            <!-- ハンバーガーボタン -->
+            <div class="navbar-header">
+              <button class="hamburger-button" aria-label="メニューを開閉" aria-expanded="false">
+                <span class="hamburger-button__line"></span>
+                <span class="hamburger-button__line"></span>
+                <span class="hamburger-button__line"></span>
+              </button>
+            </div>
+            
+            <!-- PC用ナビゲーション -->
+            <div class="main-nav">
+              <ul id="header-gloval">
+                <li><a href="/">ホーム</a></li>
+                <li><a href="/about">会社概要</a></li>
+                <!-- 他のメニュー項目 -->
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      
+      <!-- モバイル用グローバルナビ -->
+      <nav id="global-nav">
+        <ul>
+          <li><a href="/">ホーム</a></li>
+          <li><a href="/about">会社概要</a></li>
+          <!-- 他のメニュー項目 -->
+        </ul>
+      </nav>
+   
+   2. JavaScriptも必要です（別途設置）：
+      - ハンバーガーボタンのクリックイベント
+      - グローバルナビの開閉制御
+      - body.no-scrollクラスの追加/削除
+   
+   3. カスタマイズ：
+      - CSS変数を変更してブランドカラーやフォントを調整
+      - メディアクエリのブレークポイントを必要に応じて変更
+      - 追加のスタイルを上書きまたは追加
+   
+   ======================================== */
+    </style>
+
+    <!-- サイト固有のCSS -->
+    <style>
+      /* サイト固有のスタイルを追加 */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans JP', sans-serif;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* ロゴのスタイル例 */
+      .img-logo {
+        max-width: 200px;
+        height: auto;
+      }
+
+      /* ナビゲーションリンクのスタイル例 */
+      .main-nav a {
+        color: #333;
+        text-decoration: none;
+        padding: 10px 15px;
+        transition: color 0.3s;
+      }
+
+      .main-nav a:hover {
+        color: #c3a26f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header>
+      <div class="head container">
+        <div class="row">
+          <!-- モバイル用ロゴコンテナ -->
+          <div class="mobile-logo-container">
+            <a href="/" class="mobile-logo-link">
+              <img class="img-logo" src="/path/to/logo.png" alt="サイト名" />
+            </a>
+          </div>
+
+          <!-- PC用ヘッダー列 -->
+          <div class="pc-only-header-col">
+            <!-- PC用のロゴやその他の要素をここに配置 -->
+            <a href="/" class="pc-logo-link">
+              <img class="img-logo" src="/path/to/logo.png" alt="サイト名" />
+            </a>
+          </div>
+
+          <!-- 右側の要素（オプション：予約ボタンなど） -->
+          <div class="head__tel">
+            <a href="tel:0000000000" class="tel-button">
+              <span>お電話でのご予約</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ナビゲーションバー -->
+      <nav class="navbar">
+        <div class="container">
+          <!-- モバイル用ハンバーガーボタン -->
+          <div class="navbar-header">
+            <button
+              class="hamburger-button"
+              aria-label="メニューを開閉"
+              aria-expanded="false"
+              aria-controls="global-nav"
+            >
+              <span class="hamburger-button__line"></span>
+              <span class="hamburger-button__line"></span>
+              <span class="hamburger-button__line"></span>
+            </button>
+          </div>
+
+          <!-- PC用メインナビゲーション -->
+          <div class="main-nav">
+            <ul id="header-gloval">
+              <!-- PC用ロゴ（ナビゲーション内に配置する場合） -->
+              <div class="pc-only-logo">
+                <a href="/">
+                  <img class="img-logo" src="/path/to/logo.png" alt="サイト名" />
+                </a>
+              </div>
+
+              <!-- メニュー項目 -->
+              <li><a href="/">ホーム</a></li>
+              <li><a href="/about">会社概要</a></li>
+              <li><a href="/services">サービス</a></li>
+              <li><a href="/products">製品情報</a></li>
+              <li><a href="/contact">お問い合わせ</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- モバイル・タブレット用グローバルナビ -->
+    <nav id="global-nav">
+      <ul>
+        <li><a href="/">ホーム</a></li>
+        <li><a href="/about">会社概要</a></li>
+        <li><a href="/services">サービス</a></li>
+        <li><a href="/products">製品情報</a></li>
+        <li><a href="/contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <main>
+      <div class="container">
+        <h1>メインコンテンツ</h1>
+        <p>ここにページのメインコンテンツが入ります。</p>
+        <!-- 以下、各ページのコンテンツ -->
+      </div>
+    </main>
+
+    <!-- 汎用ヘッダーJavaScript -->
+    <script>
+      // ========================================
+      // 汎用ヘッダーJavaScript - ハンバーガーメニュー制御
+      // ========================================
+
+      document.addEventListener('DOMContentLoaded', function () {
+        // 要素の取得
+        const hamburgerButton = document.querySelector('.hamburger-button')
+        const globalNav = document.getElementById('global-nav')
+        const body = document.body
+
+        // ハンバーガーボタンとグローバルナビが存在する場合のみ処理
+        if (hamburgerButton && globalNav) {
+          // ハンバーガーボタンのクリックイベント
+          hamburgerButton.addEventListener('click', function () {
+            // aria-expanded属性の切り替え
+            const expanded = this.getAttribute('aria-expanded') === 'true' || false
+            this.setAttribute('aria-expanded', !expanded)
+
+            // グローバルナビの表示/非表示切り替え
+            globalNav.classList.toggle('is-active')
+
+            // スクロール無効化の切り替え
+            body.classList.toggle('no-scroll')
+          })
+
+          // グローバルナビ内のリンククリック時の処理
+          const navLinks = globalNav.querySelectorAll('a')
+          navLinks.forEach((link) => {
+            link.addEventListener('click', function () {
+              // メニューが開いている場合は閉じる
+              if (globalNav.classList.contains('is-active')) {
+                hamburgerButton.setAttribute('aria-expanded', 'false')
+                globalNav.classList.remove('is-active')
+                body.classList.remove('no-scroll')
+              }
+            })
+          })
+
+          // ESCキーでメニューを閉じる
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && globalNav.classList.contains('is-active')) {
+              hamburgerButton.setAttribute('aria-expanded', 'false')
+              globalNav.classList.remove('is-active')
+              body.classList.remove('no-scroll')
+            }
+          })
+
+          // ウィンドウリサイズ時の処理（PC表示に戻った時にメニューを閉じる）
+          let resizeTimer
+          window.addEventListener('resize', function () {
+            clearTimeout(resizeTimer)
+            resizeTimer = setTimeout(function () {
+              if (window.innerWidth > 1024 && globalNav.classList.contains('is-active')) {
+                hamburgerButton.setAttribute('aria-expanded', 'false')
+                globalNav.classList.remove('is-active')
+                body.classList.remove('no-scroll')
+              }
+            }, 250)
+          })
+
+          // オプション：メニュー外クリックで閉じる機能
+          document.addEventListener('click', function (e) {
+            if (
+              globalNav.classList.contains('is-active') &&
+              !globalNav.contains(e.target) &&
+              !hamburgerButton.contains(e.target)
+            ) {
+              hamburgerButton.setAttribute('aria-expanded', 'false')
+              globalNav.classList.remove('is-active')
+              body.classList.remove('no-scroll')
+            }
+          })
+        }
+
+        // ========================================
+        // オプション：スムーススクロール機能
+        // ========================================
+
+        // ページ内リンクのスムーススクロール
+        const anchorLinks = document.querySelectorAll('a[href^="#"]')
+        anchorLinks.forEach((link) => {
+          link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href')
+
+            // #のみの場合はページトップへ
+            if (href === '#') {
+              e.preventDefault()
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+              })
+              return
+            }
+
+            // ターゲット要素が存在する場合
+            const target = document.querySelector(href)
+            if (target) {
+              e.preventDefault()
+              const targetPosition = target.getBoundingClientRect().top + window.pageYOffset
+              const headerHeight = document.querySelector('header')?.offsetHeight || 0
+
+              window.scrollTo({
+                top: targetPosition - headerHeight - 20, // ヘッダー高さ + 余白
+                behavior: 'smooth',
+              })
+            }
+          })
+        })
+
+        // ========================================
+        // オプション：ヘッダー固定時のスクロール処理
+        // ========================================
+
+        /*
+  // ヘッダーを固定表示にする場合は以下のコメントを解除
+  const header = document.querySelector('header');
+  let lastScrollTop = 0;
+  
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // 下スクロール時にヘッダーを隠す、上スクロール時に表示
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      // 下スクロール
+      header.style.transform = 'translateY(-100%)';
+    } else {
+      // 上スクロール
+      header.style.transform = 'translateY(0)';
+    }
+    
+    lastScrollTop = scrollTop;
+  });
+  */
+      })
+
+      // ========================================
+      // 使用方法
+      // ========================================
+      /*
+1. このスクリプトをHTMLの</body>タグの直前、または外部ファイルとして読み込んでください
+
+2. 必要な要素：
+   - .hamburger-button: ハンバーガーボタン
+   - #global-nav: モバイル用グローバルナビゲーション
+   - aria-expanded属性: アクセシビリティのため
+
+3. オプション機能：
+   - スムーススクロール: ページ内リンクの動作
+   - ヘッダー固定: スクロール時の表示/非表示制御
+   - メニュー外クリックで閉じる: UX向上
+
+4. カスタマイズ：
+   - ブレークポイント（1024px）は必要に応じて変更
+   - アニメーション速度はCSSで調整
+   - 追加の機能は必要に応じて実装
+*/
+    </script>
+  </body>
+</html>
+
+<!-- 
+========================================
+実装時の注意事項
+========================================
+
+1. ロゴの配置パターン：
+   - パターンA: ヘッダー上部にロゴ、その下にナビゲーション
+   - パターンB: ナビゲーション内にロゴを配置
+   - 不要な方のロゴ要素は削除してください
+
+2. 必須要素：
+   - .hamburger-button: ハンバーガーボタン
+   - #global-nav: モバイル用ナビゲーション
+   - .mobile-logo-container: モバイル用ロゴ
+   - .main-nav: PC用ナビゲーション
+
+3. オプション要素：
+   - .head__tel: 電話番号や予約ボタンなど
+   - .pc-only-logo: ナビゲーション内のロゴ
+
+4. カスタマイズポイント：
+   - CSS変数でカラーやサイズを調整
+   - メディアクエリのブレークポイント変更
+   - ナビゲーションのレイアウト変更
+
+5. アクセシビリティ：
+   - aria-label: スクリーンリーダー用ラベル
+   - aria-expanded: メニューの開閉状態
+   - aria-controls: 制御対象の指定
+
+6. パフォーマンス：
+   - 不要な要素は削除
+   - CSSとJSは最適化・圧縮を推奨
+   - フォントは必要なウェイトのみ読み込み
+-->
