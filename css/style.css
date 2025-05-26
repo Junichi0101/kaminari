@@ -60,7 +60,7 @@ a:hover {
 
 .line__pt {
   height: 4px;
-  background: url(/images/line_pt.png) repeat-x;
+  background: url(images/line_pt.png) repeat-x;
   background-size: contain;
 }
 
@@ -138,7 +138,7 @@ a:hover {
 --------------------------------------*/
 
 header {
-  background: url(/images/header_gra.png) repeat-x 0 100%;
+  background: url(images/header_gra.png) repeat-x 0 100%;
   border-bottom: 1px solid #dedede;
 }
 
@@ -208,7 +208,7 @@ header {
 }
 
 .header_menu__title h2 {
-  background-image: url(/images/header_menu.png);
+  background-image: url(/image/header_menu.png);
 }
 
 .carousel-indicators {
@@ -232,7 +232,7 @@ header {
 }
 
 .carousel__out_frame {
-  background: url(/images/slide_bg.png) no-repeat;
+  background: url(images/slide_bg.png) no-repeat;
   background-size: 100%;
 }
 
@@ -328,7 +328,7 @@ header {
 }
 
 .footer__info--wrap {
-  background: url(/images/footer_bottom_bg.png) repeat-x 0 bottom;
+  background: url(images/footer_bottom_bg.png) repeat-x 0 bottom;
 }
 
 .footermenu li {
@@ -377,7 +377,7 @@ header {
 
 .button__block--inner a {
   border: 1px solid #b8b8b8;
-  background: url(/images/button_cursor.png) no-repeat 95% center;
+  background: url(images/button_cursor.png) no-repeat 95% center;
   background-color: black;
   color: #fff;
   display: inline-block;
@@ -403,12 +403,12 @@ header {
 }
 
 .top__block01--wrap {
-  background: url(/images/top_beginner_bg.png) no-repeat 0 bottom,
-    url(/images/top_beginner_gra.png) repeat-x 0 bottom;
+  background: url(images/top_beginner_bg.png) no-repeat 0 bottom,
+    url(images/top_beginner_gra.png) repeat-x 0 bottom;
 }
 
 .top__block04--wrap {
-  background: url(/images/top_blog_bg.png);
+  background: url(images/top_blog_bg.png);
 }
 
 .top__block01 .title__img img {
@@ -484,7 +484,7 @@ header {
 }
 
 .top__block03--row {
-  background: url(/images/list_cursor.png) no-repeat 14px 51%;
+  background: url(images/list_cursor.png) no-repeat 14px 51%;
 }
 
 .top__block03--row a,
@@ -545,7 +545,7 @@ header {
 
 .blog__loop--button a {
   border: 1px solid #b8b8b8;
-  background: url(/images/button_cursor.png) no-repeat 95% center;
+  background: url(images/button_cursor.png) no-repeat 95% center;
   color: #fff;
   display: inline-block;
   padding: 14px 0px 14px;
@@ -556,7 +556,7 @@ header {
 }
 
 .blog__button--inner {
-  background: url(/images/button_gray.png);
+  background: url(images/button_gray.png);
   padding: 2px;
   text-align: center;
   display: inline-block;
@@ -595,11 +595,11 @@ header {
 .news__title {
   border-bottom: 1px dashed #cec7c7;
   margin-top: 35px;
-  background: url(/images/header_gra.png) repeat-x 0 100%;
+  background: url(images/header_gra.png) repeat-x 0 100%;
 }
 
 .news__post--loop h3 {
-  background: url(/images/list_point.png) no-repeat 10px 30%;
+  background: url(images/list_point.png) no-repeat 10px 30%;
   padding: 0px 5px 10px 35px;
   letter-spacing: 2px;
   margin: 0;
@@ -669,7 +669,7 @@ header {
 
 .pagenate__back a {
   border: 1px solid #b8b8b8;
-  background: url(/images/button_cursor.png) no-repeat 95% center;
+  background: url(images/button_cursor.png) no-repeat 95% center;
   color: #fff;
   display: inline-block;
   padding: 14px 0px 14px;
@@ -685,7 +685,7 @@ header {
 }
 
 .pagenate__back .button__block--inner {
-  background: url(/images/button_gray.png);
+  background: url(images/button_gray.png);
   padding: 2px;
   margin: 25px auto 0;
   text-align: center;
@@ -745,15 +745,15 @@ header {
 }
 
 .contact__table .about__row04 td {
-  background: url(/images/header_gra.png) repeat-x 0 100%;
+  background: url(images/header_gra.png) repeat-x 0 100%;
 }
 
 .contact__table .about__row05a {
-  background: url(/images/header_gra.png) repeat-x 0 100%;
+  background: url(images/header_gra.png) repeat-x 0 100%;
 }
 
 .contact__table .about__row04 th {
-  background: url(/images/header_gra.png) repeat-x 0 100%;
+  background: url(images/header_gra.png) repeat-x 0 100%;
 }
 
 .contact {
@@ -762,7 +762,7 @@ header {
 }
 
 .contact__cage {
-  background: url(/images/line_pt.png);
+  background: url(images/line_pt.png);
   background-size: contain;
   padding: 4px;
 }
@@ -794,7 +794,7 @@ span.red {
 }
 
 .about__tr {
-  background: url(/images/header_gra.png) repeat-x 0 100%;
+  background: url(images/header_gra.png) repeat-x 0 100%;
   border-bottom: 1px solid #dedede;
 }
 
@@ -840,12 +840,12 @@ span.red {
 }
 
 .maru__black {
-  background: url(/images/icon_black.png) no-repeat 5px 6px;
+  background: url(images/icon_black.png) no-repeat 5px 6px;
   padding-left: 37px;
 }
 
 .maru__red {
-  background: url(/images/sushi_icon01.png) no-repeat 5px 6px;
+  background: url(images/sushi_icon01.png) no-repeat 5px 6px;
   padding-left: 37px;
 }
 
@@ -940,7 +940,7 @@ span.red {
 
 .line__menu {
   height: 8px;
-  background: url(/images/menu_gra.png) repeat-x;
+  background: url(images/menu_gra.png) repeat-x;
 }
 
 .menu__block03 {
@@ -1008,7 +1008,7 @@ span.red {
   color: #2a2a2a;
   font-size: 15px;
   padding-left: 20px;
-  background: url(/images/icon_hishigata.png) no-repeat 0px 19px;
+  background: url(images/icon_hishigata.png) no-repeat 0px 19px;
   position: relative;
 }
 
@@ -1075,7 +1075,7 @@ span.red {
 }
 
 .menu__block03--row02 h4 {
-  background: url(/images/icon_maru_blue.png) no-repeat;
+  background: url(images/icon_maru_blue.png) no-repeat;
   padding-left: 25px;
   font-size: 14px;
   margin-top: 55px;
@@ -1312,7 +1312,7 @@ span.red {
   .news__post--loop h3 {
     padding: 0px 5px 0px 20px;
     margin: 0;
-    background: url(/images/list_point.png) no-repeat 0px 30%;
+    background: url(images/list_point.png) no-repeat 0px 30%;
     font-size: 17px;
   }
 
