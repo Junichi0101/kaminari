@@ -195,7 +195,7 @@ header {
 }
 
 .pagetitle__block {
-  background-image: url(/image/osinagaki_head.png);
+  background-image: url(../image/osinagaki_head.png);
   /*background-repeat: no-repeat;*/
   border-bottom: 1px solid #dfdbdb;
 }
@@ -208,7 +208,7 @@ header {
 }
 
 .header_menu__title h2 {
-  background-image: url(/image/header_menu.png);
+  background-image: url(../image/header_menu.png);
 }
 
 .carousel-indicators {
@@ -363,7 +363,7 @@ header {
 }
 
 .button__block--inner {
-  background: url(/image/transfar_buttom.png);
+  background: url(../image/transfar_buttom.png);
   background-color: black;
   padding: 2px;
   margin: 25px auto;
@@ -372,7 +372,7 @@ header {
 }
 
 .button__black .button__block--inner {
-  background: url(/image/transfar_buttom.png);
+  background: url(../image/transfar_buttom.png);
 }
 
 .button__block--inner a {
