@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="兵庫県姫路市で寿司屋をお探しならJR姫路駅徒歩7分の「和招縁」へ"
+    />
+    <meta
+      name="keywords"
+      content="兵庫県,姫路市,姫路駅,和招縁,寿司,sushi,美味しい,おすすめ,寿司屋,新鮮,口コミ"
+    />
+    <title>お品書き | 和招縁</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External Libraries -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+
+    <style>
+      /* === CSS Variables === */
+      :root {
+        --brand-primary: #c3a26f;
+        --brand-secondary: #e0c080;
+        --brand-dark: #8b7355;
+        --background-light: #ffffff;
+        --background-cream: #faf9f4;
+        --background-dark: #f6f5e8;
+        --text-primary: #2c2c2c;
+        --text-secondary: #666666;
+        --text-light: #999999;
+        --shadow-light: rgba(0, 0, 0, 0.1);
+        --shadow-medium: rgba(0, 0, 0, 0.15);
+        --shadow-heavy: rgba(0, 0, 0, 0.25);
+        --border-radius: 12px;
+        --border-radius-sm: 8px;
+        --header-height: 70px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* === Global Styles === */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: var(--header-height);
+      }
+
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background-color: var(--background-light);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body.no-scroll {
+        overflow: hidden;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* === Header Styles === */
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--header-height);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px var(--shadow-light);
+        z-index: 1000;
+        transition: var(--transition);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding: 0 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .site-logo a {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--brand-primary);
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        transition: var(--transition);
+      }
+
+      .site-logo a:hover {
+        color: var(--brand-dark);
+        transform: scale(1.05);
+      }
+
+      /* === Mobile Navigation === */
+      .hamburger-button {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1010;
+        transition: var(--transition);
+      }
+
+      .hamburger-line {
+        width: 24px;
+        height: 3px;
+        background: var(--brand-primary);
+        border-radius: 2px;
+        margin: 2px 0;
+        transition: var(--transition);
+        transform-origin: center;
+      }
+
+      .hamburger-button[aria-expanded='true'] .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .hamburger-button[aria-expanded='true'] .hamburger-line:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      .hamburger-button[aria-expanded='true'] .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* === Desktop Navigation === */
+      .main-nav {
+        display: flex;
+      }
+
+      .main-nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .main-nav li {
+        margin: 0 8px;
+      }
+
+      .main-nav a {
+        display: block;
+        padding: 12px 16px;
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 500;
+        border-radius: var(--border-radius-sm);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .main-nav a:hover {
+        color: var(--brand-primary);
+        background: linear-gradient(135deg, var(--background-cream), var(--background-dark));
+        transform: translateY(-2px);
+      }
+
+      .main-nav a.active {
+        color: var(--brand-primary);
+        background: linear-gradient(135deg, var(--background-cream), var(--background-dark));
+        font-weight: 600;
+      }
+
+      .main-nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+
+      .main-nav a:hover::after,
+      .main-nav a.active::after {
+        width: 80%;
+      }
+
+      /* === Mobile Styles === */
+      @media (max-width: 768px) {
+        .hamburger-button {
+          display: flex;
+        }
+
+        .main-nav {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(250, 249, 244, 0.98));
+          backdrop-filter: blur(20px);
+          z-index: 1005;
+          padding-top: var(--header-height);
+          transform: translateX(100%);
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .main-nav.is-active {
+          display: flex;
+          transform: translateX(0);
+        }
+
+        .main-nav ul {
+          flex-direction: column;
+          width: 100%;
+          padding: 40px 20px;
+        }
+
+        .main-nav li {
+          margin: 8px 0;
+        }
+
+        .main-nav a {
+          padding: 20px 24px;
+          font-size: 18px;
+          font-weight: 500;
+          border-radius: var(--border-radius);
+          background: linear-gradient(135deg, var(--background-light), var(--background-cream));
+          box-shadow: 0 4px 12px var(--shadow-light);
+          border: 2px solid transparent;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+          border-color: var(--brand-primary);
+          box-shadow: 0 8px 24px var(--shadow-medium);
+          transform: translateY(-4px);
+        }
+      }
+
+      /* === Page Header === */
+      .page-header {
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+        color: white;
+        padding: calc(var(--header-height) + 60px) 0 60px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .page-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+        opacity: 0.3;
+      }
+
+      .page-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        margin-bottom: 16px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .page-subtitle {
+        font-size: clamp(16px, 3vw, 20px);
+        opacity: 0.9;
+        font-weight: 300;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* === Main Content === */
+      .main-content {
+        padding-top: 0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-alt {
+        background: linear-gradient(135deg, var(--background-cream), var(--background-dark));
+      }
+
+      /* === Filter Navigation === */
+      .filter-nav {
+        background: var(--background-light);
+        padding: 40px 0;
+        border-bottom: 1px solid rgba(195, 162, 111, 0.2);
+        position: sticky;
+        top: var(--header-height);
+        z-index: 100;
+      }
+
+      .filter-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .filter-btn {
+        padding: 12px 24px;
+        background: linear-gradient(135deg, var(--background-cream), var(--background-dark));
+        border: 2px solid transparent;
+        border-radius: var(--border-radius);
+        color: var(--text-secondary);
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .filter-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s;
+      }
+
+      .filter-btn:hover::before {
+        left: 100%;
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+        color: white;
+        border-color: var(--brand-primary);
+        box-shadow: 0 6px 20px var(--shadow-medium);
+        transform: translateY(-2px);
+      }
+
+      /* === Store Section === */
+      .store-section {
+        margin-bottom: 80px;
+      }
+
+      .store-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .store-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(32px, 4vw, 42px);
+        font-weight: 700;
+        color: var(--brand-primary);
+        margin-bottom: 16px;
+        letter-spacing: 0.05em;
+        position: relative;
+        display: inline-block;
+      }
+
+      .store-title::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+        border-radius: 2px;
+        transform: translateX(-50%);
+      }
+
+      .store-subtitle {
+        font-size: clamp(14px, 2.5vw, 16px);
+        color: var(--text-secondary);
+        line-height: 1.8;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* === Category Section === */
+      .category-section {
+        margin-bottom: 80px;
+        background: var(--background-light);
+        border-radius: var(--border-radius);
+        padding: 40px;
+        box-shadow: 0 8px 32px var(--shadow-light);
+      }
+
+      .category-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .category-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(24px, 3vw, 32px);
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 16px;
+        letter-spacing: 0.05em;
+        position: relative;
+        display: inline-block;
+      }
+
+      .category-title::before,
+      .category-title::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 20px;
+        height: 2px;
+        background: var(--brand-primary);
+      }
+
+      .category-title::before {
+        left: -30px;
+      }
+
+      .category-title::after {
+        right: -30px;
+      }
+
+      .category-description {
+        font-size: clamp(14px, 2.5vw, 16px);
+        color: var(--text-secondary);
+        line-height: 1.8;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* === Menu Grid === */
+      .menu-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      @media (min-width: 768px) {
+        .menu-grid {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+      }
+
+      /* === Featured Item === */
+      .featured-item {
+        grid-column: 1 / -1;
+        background: linear-gradient(135deg, var(--background-light), var(--background-cream));
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 12px 40px var(--shadow-medium);
+        transition: var(--transition);
+        position: relative;
+        border: 2px solid var(--brand-primary);
+      }
+
+      .featured-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+      }
+
+      .featured-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px var(--shadow-heavy);
+      }
+
+      .featured-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      @media (min-width: 768px) {
+        .featured-content {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .featured-image-container {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .featured-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      @media (min-width: 768px) {
+        .featured-image {
+          height: 400px;
+        }
+      }
+
+      .featured-item:hover .featured-image {
+        transform: scale(1.1);
+      }
+
+      .chef-badge {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        background: linear-gradient(135deg, #333, #555);
+        color: white;
+        padding: 8px 16px;
+        border-radius: var(--border-radius-sm);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .featured-info {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .featured-name {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(24px, 3vw, 32px);
+        font-weight: 600;
+        color: var(--brand-primary);
+        margin-bottom: 16px;
+        letter-spacing: 0.05em;
+      }
+
+      .featured-description {
+        font-size: clamp(15px, 2.5vw, 17px);
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+      /* === Menu Item === */
+      .menu-item {
+        background: var(--background-light);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 6px 24px var(--shadow-light);
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .menu-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 36px var(--shadow-medium);
+      }
+
+      .menu-image-container {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .menu-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .menu-item:hover .menu-image {
+        transform: scale(1.1);
+      }
+
+      .seasonal-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+        color: white;
+        padding: 6px 12px;
+        border-radius: var(--border-radius-sm);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 8px var(--shadow-medium);
+      }
+
+      .menu-info {
+        padding: 24px;
+      }
+
+      .menu-name {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(18px, 2.5vw, 22px);
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 12px;
+        letter-spacing: 0.05em;
+      }
+
+      .menu-description {
+        font-size: clamp(14px, 2vw, 15px);
+        line-height: 1.7;
+        color: var(--text-secondary);
+      }
+
+      /* === Call to Action === */
+      .cta-section {
+        text-align: center;
+        padding: 80px 0;
+        background: linear-gradient(135deg, var(--background-cream), var(--background-dark));
+      }
+
+      .cta-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(28px, 4vw, 36px);
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 16px;
+        letter-spacing: 0.05em;
+      }
+
+      .cta-description {
+        font-size: clamp(16px, 2.5vw, 18px);
+        color: var(--text-secondary);
+        line-height: 1.8;
+        max-width: 600px;
+        margin: 0 auto 40px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+      }
+
+      @media (min-width: 768px) {
+        .cta-buttons {
+          flex-direction: row;
+          justify-content: center;
+          gap: 24px;
+        }
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 32px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+        cursor: pointer;
+        border: none;
+        min-height: 56px;
+        min-width: 200px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+      }
+
+      .btn:hover::before {
+        left: 100%;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+        color: white;
+        box-shadow: 0 6px 20px var(--shadow-medium);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px var(--shadow-heavy);
+      }
+
+      .btn-secondary {
+        background: linear-gradient(135deg, var(--background-light), var(--background-cream));
+        color: var(--brand-primary);
+        border: 2px solid var(--brand-primary);
+        box-shadow: 0 4px 16px var(--shadow-light);
+      }
+
+      .btn-secondary:hover {
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px var(--shadow-medium);
+      }
+
+      /* === Footer === */
+      .footer {
+        background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+        color: #e0e0e0;
+        padding: 60px 0 30px;
+        text-align: center;
+      }
+
+      .footer-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--brand-secondary);
+        margin-bottom: 20px;
+        letter-spacing: 0.1em;
+      }
+
+      .footer-nav {
+        margin: 40px 0;
+      }
+
+      .footer-nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .footer-nav a {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 14px;
+        transition: var(--transition);
+      }
+
+      .footer-nav a:hover {
+        color: var(--brand-secondary);
+      }
+
+      .footer-content {
+        border-top: 1px solid #444;
+        padding-top: 30px;
+        margin-top: 40px;
+      }
+
+      .copyright {
+        font-size: 14px;
+        color: #aaa;
+      }
+
+      /* === Scroll to Top === */
+      .scroll-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        box-shadow: 0 6px 20px var(--shadow-medium);
+        z-index: 100;
+        font-size: 18px;
+      }
+
+      .scroll-top.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .scroll-top:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px var(--shadow-heavy);
+      }
+
+      /* === Animations === */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* === Scroll Animations === */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* === Mobile Optimizations === */
+      @media (max-width: 768px) {
+        .section {
+          padding: 60px 0;
+        }
+
+        .category-section {
+          padding: 30px 20px;
+          margin-bottom: 60px;
+        }
+
+        .featured-info {
+          padding: 30px 20px;
+        }
+
+        .menu-info {
+          padding: 20px;
+        }
+
+        .filter-nav {
+          padding: 20px 0;
+        }
+
+        .filter-buttons {
+          gap: 8px;
+        }
+
+        .filter-btn {
+          padding: 10px 16px;
+          font-size: 13px;
+        }
+
+        .category-title::before,
+        .category-title::after {
+          width: 15px;
+          left: -25px;
+        }
+
+        .category-title::after {
+          right: -25px;
+        }
+
+        .scroll-top {
+          bottom: 20px;
+          right: 20px;
+          width: 44px;
+          height: 44px;
+          font-size: 16px;
+        }
+      }
+
+      /* === Utility Classes === */
+      .text-center {
+        text-align: center;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .visible {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-content">
+        <div class="site-logo">
+          <a href="index.html">和招縁</a>
+        </div>
+        <button
+          class="hamburger-button"
+          aria-label="メニューを開閉"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <nav class="main-nav" id="main-nav">
+          <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="beginners.html">初めての方へ</a></li>
+            <li><a href="menu.html" class="active">お品書き</a></li>
+            <li><a href="guide.html">当店への道案内</a></li>
+            <li><a href="about.html">店舗概要</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">お品書き</h1>
+        <p class="page-subtitle">旬の食材を活かした、職人の技が光る逸品の数々</p>
+      </div>
+    </section>
+
+    <!-- Filter Navigation -->
+    <nav class="filter-nav">
+      <div class="container">
+        <div class="filter-buttons">
+          <a href="#all" class="filter-btn active" data-filter="all">すべて</a>
+          <a href="#shiomachi" class="filter-btn" data-filter="shiomachi">塩町店</a>
+          <a href="#fukunaka" class="filter-btn" data-filter="fukunaka">福中店</a>
+          <a href="#course" class="filter-btn" data-filter="course">コース料理</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- 塩町店セクション -->
+      <section class="section" data-category="shiomachi">
+        <div class="container">
+          <div class="store-section fade-in">
+            <div class="store-header">
+              <h2 class="store-title">塩町店</h2>
+              <p class="store-subtitle">
+                熟練の職人が一貫一貫丁寧に握る鮨。代々受け継がれてきた技で、本物の江戸前鮨をお楽しみいただけます。
+              </p>
+            </div>
+
+            <div class="category-section fade-in">
+              <div class="category-header">
+                <h3 class="category-title">握り</h3>
+                <p class="category-description">
+                  厳選した旬の魚介を使い、熟練の職人が一貫一貫丁寧に握る鮨。日本各地から取り寄せた最高級の食材と、代々受け継がれてきた技で、本物の江戸前鮨をお楽しみいただけます。
+                </p>
+              </div>
+
+              <div class="menu-grid">
+                <!-- 特選大トロ（おすすめ） -->
+                <div class="featured-item">
+                  <div class="featured-content">
+                    <div class="featured-image-container">
+                      <div class="chef-badge">料理長おすすめ</div>
+                      <img src="image/400_400.png" alt="特選 大トロ" class="featured-image" />
+                    </div>
+                    <div class="featured-info">
+                      <h4 class="featured-name">特選 大トロ</h4>
+                      <p class="featured-description">
+                        最高級の本鮪大トロをじっくりと熟成させ、旨味を最大限に引き出しました。口の中でとろける食感と芳醇な香りをお楽しみください。特に脂の乗った部位を厳選し、絶妙な温度で握ります。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 通常メニュー -->
+                <div class="menu-item">
+                  <div class="menu-image-container">
+                    <img src="image/260_180.png" alt="本鮪" class="menu-image" />
+                  </div>
+                  <div class="menu-info">
+                    <h4 class="menu-name">本鮪</h4>
+                    <p class="menu-description">
+                      厳選された本鮪の赤身を熟成させ、職人が丁寧に握りました。
+                    </p>
+                  </div>
+                </div>
+
+                <div class="menu-item">
+                  <div class="menu-image-container">
+                    <img src="image/260_180.png" alt="中トロ" class="menu-image" />
+                  </div>
+                  <div class="menu-info">
+                    <h4 class="menu-name">中トロ</h4>
+                    <p class="menu-description">
+                      程よい脂がのった本鮪の中トロは、口の中でとろける食感が特徴です。
+                    </p>
+                  </div>
+                </div>
+
+                <div class="menu-item">
+                  <div class="menu-image-container">
+                    <img src="image/260_180.png" alt="炙り大トロ" class="menu-image" />
+                  </div>
+                  <div class="menu-info">
+                    <h4 class="menu-name">炙り大トロ</h4>
+                    <p class="menu-description">
+                      肉厚の大トロを炙ることで、より一層香りと旨味を引き立てております。
+                    </p>
+                  </div>
+                </div>
+
+                <div class="menu-item">
+                  <div class="menu-image-container">
+                    <div class="seasonal-badge">季節限定</div>
+                    <img src="image/260_180.png" alt="金目鯛" class="menu-image" />
+                  </div>
+                  <div class="menu-info">
+                    <h4 class="menu-name">金目鯛</h4>
+                    <p class="menu-description">
+                      脂の乗った金目鯛を昆布締めにし、旨味を凝縮させました。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 福中店セクション -->
+      <section class="section section-alt" data-category="fukunaka">
+        <div class="container">
+          <div class="store-section fade-in">
+            <div class="store-header">
+              <h2 class="store-title">福中店</h2>
+              <p class="store-subtitle">
+                日本各地から届く厳選された魚介を使った多彩な料理の数々。素材の持ち味を活かした調理法で、至福のひとときをお届けします。
+              </p>
+            </div>
+
+            <div class="category-section fade-in">
+              <div class="category-header">
+                <h3 class="category-title">魚料理</h3>
+                <p class="category-description">
+                  日本各地から届く厳選された魚介を使った多彩な料理の数々。素材の持ち味を活かした調理法で、至福のひとときをお届けします。
+                </p>
+              </div>
+
+              <div class="menu-grid">
+                <!-- 特選刺身盛り合わせ（おすすめ） -->
+                <div class="featured-item">
+                  <div class="featured-content">
+                    <div class="featured-image-container">
+                      <div class="chef-badge">料理長おすすめ</div>
+                      <img
+                        src="image/400_400.png"
+                        alt="特選刺身盛り合わせ"
+                        class="featured-image"
+                      />
+                    </div>
+                    <div class="featured-info">
+                      <h4 class="featured-name">特選刺身盛り合わせ</h4>
+                      <p class="featured-description">
+                        その日最高の鮮魚を料理長が厳選した、豪華な盛り合わせ。四季折々の旬の魚を、その魚に合った切り方と熟成で最高の状態でお召し上がりいただけます。彩り豊かな盛り付けと共に、目でも舌でもお楽しみください。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 通常メニュー -->
+                <div class="menu-item">
+                  <div class="menu-image-container">
+                    <img src="image/260_180.png" alt="のどぐろの塩焼き" class="menu-image" />
+                  </div>
+                  <div class="menu-info">
+                    <h4 class="menu-name">のどぐろの塩焼き</h4>
+                    <p class="menu-description">脂がのったのどぐろを職人が丁寧に焼き上げました。</p>
+                  </div>
+                </div>
+
+                <div class="menu-item">
+                  <div class="menu-image-container">
+                    <img src="image/260_180.png" alt="金目鯛の煮付け" class="menu-image" />
+                  </div>
+                  <div class="menu-info">
+                    <h4 class="menu-name">金目鯛の煮付け</h4>
+                    <p class="menu-description">特製の出汁でじっくりと煮込んだ金目鯛の煮付け。</p>
+                  </div>
+                </div>
+
+                <div class="menu-item">
+                  <div class="menu-image-container">
+                    <img src="image/260_180.png" alt="鮑の踊り焼き" class="menu-image" />
+                  </div>
+                  <div class="menu-info">
+                    <h4 class="menu-name">鮑の踊り焼き</h4>
+                    <p class="menu-description">活きた鮑を贅沢に使用した、香ばしい踊り焼き。</p>
+                  </div>
+                </div>
+
+                <div class="menu-item">
+                  <div class="menu-image-container">
+                    <div class="seasonal-badge">季節限定</div>
+                    <img src="image/260_180.png" alt="伊勢海老の味噌汁" class="menu-image" />
+                  </div>
+                  <div class="menu-info">
+                    <h4 class="menu-name">伊勢海老の味噌汁</h4>
+                    <p class="menu-description">伊勢海老の風味が溶け出した、贅沢な味噌汁。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- コース料理セクション -->
+      <section class="section" data-category="course">
+        <div class="container">
+          <div class="store-section fade-in">
+            <div class="store-header">
+              <h2 class="store-title">鍋コース</h2>
+              <p class="store-subtitle">
+                厳選された旬の食材を贅沢に使用した鍋コース。お二人様からご用意しております。
+              </p>
+            </div>
+
+            <div class="category-section fade-in">
+              <div class="category-header">
+                <h3 class="category-title">コース料理</h3>
+                <p class="category-description">
+                  厳選された旬の食材を贅沢に使用した鍋コース。素材本来の旨味を引き出す特製出汁と共に、季節ごとの味わいをお楽しみいただけます。
+                </p>
+              </div>
+
+              <div class="menu-grid">
+                <!-- 活きあわび鍋（おすすめ） -->
+                <div class="featured-item">
+                  <div class="featured-content">
+                    <div class="featured-image-container">
+                      <div class="chef-badge">料理長おすすめ</div>
+                      <img src="image/400_400.png" alt="活きあわび鍋" class="featured-image" />
+                    </div>
+                    <div class="featured-info">
+                      <h4 class="featured-name">活きあわび鍋</h4>
+                      <p class="featured-description">
+                        活きたあわびを含む海の幸をふんだんに使用した贅沢な鍋コース。あわびの旨味が溶け込んだ出汁は絶品です。付け合わせの季節の野菜と共に、素材本来の風味をお楽しみください。最後は特製の雑炊で締めくくります。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action Section -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="fade-in">
+            <h2 class="cta-title">ご予約・お問い合わせ</h2>
+            <p class="cta-description">
+              職人の技と心のこもったおもてなしで、
+              <br />
+              皆様に特別なひとときをご提供いたします。
+            </p>
+            <div class="cta-buttons">
+              <a href="guide.html" class="btn btn-primary">店舗への道案内</a>
+              <a href="beginners.html" class="btn btn-secondary">初めての方へ</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <h2 class="footer-title">和招縁</h2>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="beginners.html">初めての方へ</a></li>
+            <li><a href="menu.html">お品書き</a></li>
+            <li><a href="guide.html">当店への道案内</a></li>
+            <li><a href="about.html">店舗概要</a></li>
+            <li><a href="contact.html">お問合せ</a></li>
+          </ul>
+        </nav>
+        <div class="footer-content">
+          <p class="copyright">Copyright ©2025 和招縁 All rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="ページトップへ戻る">↑</button>
+
+    <!-- JavaScript -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Mobile Navigation
+        const hamburgerButton = document.querySelector('.hamburger-button')
+        const mainNav = document.getElementById('main-nav')
+        const body = document.body
+
+        if (hamburgerButton && mainNav) {
+          hamburgerButton.addEventListener('click', function () {
+            const expanded = this.getAttribute('aria-expanded') === 'true'
+            this.setAttribute('aria-expanded', !expanded)
+            mainNav.classList.toggle('is-active')
+            body.classList.toggle('no-scroll')
+          })
+
+          // Close menu when clicking nav links
+          const navLinks = mainNav.querySelectorAll('a')
+          navLinks.forEach((link) => {
+            link.addEventListener('click', function () {
+              if (mainNav.classList.contains('is-active')) {
+                hamburgerButton.setAttribute('aria-expanded', 'false')
+                mainNav.classList.remove('is-active')
+                body.classList.remove('no-scroll')
+              }
+            })
+          })
+        }
+
+        // Filter Navigation
+        const filterButtons = document.querySelectorAll('.filter-btn')
+        const sections = document.querySelectorAll('[data-category]')
+
+        filterButtons.forEach((button) => {
+          button.addEventListener('click', function (e) {
+            e.preventDefault()
+
+            // Remove active class from all buttons
+            filterButtons.forEach((btn) => btn.classList.remove('active'))
+            this.classList.add('active')
+
+            const filter = this.getAttribute('data-filter')
+
+            // Show/hide sections based on filter
+            sections.forEach((section) => {
+              if (filter === 'all' || section.getAttribute('data-category') === filter) {
+                section.style.display = 'block'
+                section.style.animation = 'fadeIn 0.5s ease-in-out'
+              } else {
+                section.style.display = 'none'
+              }
+            })
+
+            // Smooth scroll to first visible section
+            const firstVisibleSection =
+              filter === 'all' ? sections[0] : document.querySelector(`[data-category="${filter}"]`)
+
+            if (firstVisibleSection) {
+              firstVisibleSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+              })
+            }
+          })
+        })
+
+        // Scroll Animation
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px',
+        }
+
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible')
+            }
+          })
+        }, observerOptions)
+
+        const fadeElements = document.querySelectorAll('.fade-in')
+        fadeElements.forEach((el) => observer.observe(el))
+
+        // Scroll to Top Button
+        const scrollTopButton = document.getElementById('scrollTop')
+
+        window.addEventListener('scroll', function () {
+          if (window.pageYOffset > 300) {
+            scrollTopButton.classList.add('visible')
+          } else {
+            scrollTopButton.classList.remove('visible')
+          }
+        })
+
+        scrollTopButton.addEventListener('click', function () {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          })
+        })
+
+        // Enhanced hover effects for menu items
+        const menuItems = document.querySelectorAll('.menu-item, .featured-item')
+        menuItems.forEach((item) => {
+          item.addEventListener('mouseenter', function () {
+            this.style.transform = 'translateY(-8px)'
+          })
+
+          item.addEventListener('mouseleave', function () {
+            this.style.transform = 'translateY(0)'
+          })
+        })
+
+        // Smooth scrolling for filter navigation
+        const filterNav = document.querySelector('.filter-nav')
+        let lastScrollTop = 0
+
+        window.addEventListener('scroll', function () {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+
+          if (scrollTop > lastScrollTop && scrollTop > 200) {
+            // Scrolling down
+            filterNav.style.transform = 'translateY(-100%)'
+          } else {
+            // Scrolling up
+            filterNav.style.transform = 'translateY(0)'
+          }
+
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop
+        })
+
+        // Image lazy loading optimization
+        const images = document.querySelectorAll('img')
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target
+              img.style.transition = 'opacity 0.3s ease-in-out'
+              img.style.opacity = '1'
+              observer.unobserve(img)
+            }
+          })
+        })
+
+        images.forEach((img) => {
+          img.style.opacity = '0'
+          img.addEventListener('load', () => {
+            img.style.opacity = '1'
+          })
+          imageObserver.observe(img)
+        })
+
+        // Dynamic badge animations
+        const badges = document.querySelectorAll('.chef-badge, .seasonal-badge')
+        badges.forEach((badge) => {
+          badge.addEventListener('animationend', function () {
+            this.style.animation = 'none'
+          })
+        })
+      })
+    </script>
+  </body>
+</html>

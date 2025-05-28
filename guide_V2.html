@@ -1,0 +1,2295 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="兵庫県姫路市で寿司屋をお探しならJR姫路駅徒歩7分の「和招縁」へ。塩町店・福中店の詳しい道案内をご覧いただけます。"
+    />
+    <meta
+      name="keywords"
+      content="兵庫県,姫路市,姫路駅,和招縁,寿司,sushi,美味しい,おすすめ,寿司屋,新鮮,口コミ,道案内,アクセス"
+    />
+    <title>当店への道案内 | 和招縁 - 塩町店・福中店への詳しいアクセス方法</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External Libraries -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+
+    <style>
+      /* === CSS Variables === */
+      :root {
+        --brand-primary: #c3a26f;
+        --brand-secondary: #e0c080;
+        --brand-dark: #8b7355;
+        --background-light: #ffffff;
+        --background-cream: #faf9f4;
+        --background-dark: #f6f5e8;
+        --text-primary: #2c2c2c;
+        --text-secondary: #666666;
+        --text-light: #999999;
+        --warning-color: #dc3545;
+        --success-color: #28a745;
+        --info-color: #17a2b8;
+        --shadow-light: rgba(0, 0, 0, 0.1);
+        --shadow-medium: rgba(0, 0, 0, 0.15);
+        --shadow-heavy: rgba(0, 0, 0, 0.25);
+        --border-radius: 12px;
+        --border-radius-sm: 8px;
+        --header-height: 70px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* === Global Styles === */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: var(--header-height);
+      }
+
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background-color: var(--background-light);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body.no-scroll {
+        overflow: hidden;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* === Loading Animation === */
+      .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+
+      .loading-overlay.loaded {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid var(--background-cream);
+        border-top: 4px solid var(--brand-primary);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* === Header Styles === */
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--header-height);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px var(--shadow-light);
+        z-index: 1000;
+        transition: var(--transition);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding: 0 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .site-logo a {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--brand-primary);
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        transition: var(--transition);
+      }
+
+      .site-logo a:hover {
+        color: var(--brand-dark);
+        transform: scale(1.05);
+      }
+
+      /* === Mobile Navigation === */
+      .hamburger-button {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1010;
+        transition: var(--transition);
+      }
+
+      .hamburger-line {
+        width: 24px;
+        height: 3px;
+        background: var(--brand-primary);
+        border-radius: 2px;
+        margin: 2px 0;
+        transition: var(--transition);
+        transform-origin: center;
+      }
+
+      .hamburger-button[aria-expanded='true'] .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .hamburger-button[aria-expanded='true'] .hamburger-line:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      .hamburger-button[aria-expanded='true'] .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* === Desktop Navigation === */
+      .main-nav {
+        display: flex;
+      }
+
+      .main-nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .main-nav li {
+        margin: 0 8px;
+      }
+
+      .main-nav a {
+        display: block;
+        padding: 12px 16px;
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 500;
+        border-radius: var(--border-radius-sm);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .main-nav a:hover {
+        color: var(--brand-primary);
+        background: linear-gradient(135deg, var(--background-cream), var(--background-dark));
+        transform: translateY(-2px);
+      }
+
+      .main-nav a.active {
+        color: var(--brand-primary);
+        background: linear-gradient(135deg, var(--background-cream), var(--background-dark));
+        font-weight: 600;
+      }
+
+      .main-nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+
+      .main-nav a:hover::after,
+      .main-nav a.active::after {
+        width: 80%;
+      }
+
+      /* === Mobile Styles === */
+      @media (max-width: 768px) {
+        .hamburger-button {
+          display: flex;
+        }
+
+        .main-nav {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(250, 249, 244, 0.98));
+          backdrop-filter: blur(20px);
+          z-index: 1005;
+          padding-top: var(--header-height);
+          transform: translateX(100%);
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .main-nav.is-active {
+          display: flex;
+          transform: translateX(0);
+        }
+
+        .main-nav ul {
+          flex-direction: column;
+          width: 100%;
+          padding: 40px 20px;
+        }
+
+        .main-nav li {
+          margin: 8px 0;
+        }
+
+        .main-nav a {
+          padding: 20px 24px;
+          font-size: 18px;
+          font-weight: 500;
+          border-radius: var(--border-radius);
+          background: linear-gradient(135deg, var(--background-light), var(--background-cream));
+          box-shadow: 0 4px 12px var(--shadow-light);
+          border: 2px solid transparent;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+          border-color: var(--brand-primary);
+          box-shadow: 0 8px 24px var(--shadow-medium);
+          transform: translateY(-4px);
+        }
+      }
+
+      /* === Page Header === */
+      .page-header {
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+        color: white;
+        padding: calc(var(--header-height) + 60px) 0 60px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .page-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+        opacity: 0.3;
+      }
+
+      .page-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        margin-bottom: 16px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .page-subtitle {
+        font-size: clamp(16px, 3vw, 20px);
+        opacity: 0.9;
+        font-weight: 300;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* === Main Content === */
+      .main-content {
+        padding-top: 0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-alt {
+        background: linear-gradient(135deg, var(--background-cream), var(--background-dark));
+      }
+
+      /* === Progress Indicator === */
+      .progress-indicator {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: rgba(195, 162, 111, 0.2);
+        z-index: 999;
+      }
+
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+        width: 0%;
+        transition: width 0.3s ease;
+      }
+
+      /* === Warning Alert === */
+      .warning-alert {
+        background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+        border: 2px solid #ffc107;
+        border-radius: var(--border-radius);
+        padding: 30px;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+        animation: pulseBox 2s ease-in-out infinite;
+      }
+
+      @keyframes pulseBox {
+        0%,
+        100% {
+          box-shadow: 0 4px 20px rgba(255, 193, 7, 0.3);
+        }
+        50% {
+          box-shadow: 0 4px 30px rgba(255, 193, 7, 0.5);
+        }
+      }
+
+      .warning-alert::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #ffc107, #fd7e14);
+      }
+
+      .warning-title {
+        display: flex;
+        align-items: center;
+        font-size: clamp(18px, 3vw, 24px);
+        font-weight: 700;
+        color: #856404;
+        margin-bottom: 16px;
+      }
+
+      .warning-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        color: #ffc107;
+        animation: shake 0.5s ease-in-out infinite alternate;
+      }
+
+      @keyframes shake {
+        0% {
+          transform: translateX(-2px);
+        }
+        100% {
+          transform: translateX(2px);
+        }
+      }
+
+      .warning-text {
+        font-size: clamp(14px, 2.5vw, 16px);
+        line-height: 1.7;
+        color: #856404;
+        margin-bottom: 12px;
+      }
+
+      .warning-highlight {
+        font-weight: 600;
+        color: #dc3545;
+        background: rgba(220, 53, 69, 0.1);
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+
+      /* === Store Comparison === */
+      .comparison-section {
+        margin-bottom: 60px;
+      }
+
+      .comparison-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(24px, 3vw, 32px);
+        font-weight: 600;
+        color: var(--brand-primary);
+        text-align: center;
+        margin-bottom: 40px;
+        letter-spacing: 0.05em;
+      }
+
+      .comparison-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      @media (min-width: 768px) {
+        .comparison-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+        }
+      }
+
+      .comparison-card {
+        background: var(--background-light);
+        border-radius: var(--border-radius);
+        padding: 30px;
+        box-shadow: 0 8px 32px var(--shadow-light);
+        transition: var(--transition);
+        position: relative;
+        border: 2px solid transparent;
+        cursor: pointer;
+      }
+
+      .comparison-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px var(--shadow-medium);
+        border-color: var(--brand-primary);
+      }
+
+      .comparison-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+      }
+
+      .comparison-card-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3vw, 28px);
+        font-weight: 600;
+        color: var(--brand-primary);
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .comparison-item {
+        margin-bottom: 16px;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(195, 162, 111, 0.2);
+      }
+
+      .comparison-item:last-child {
+        border-bottom: none;
+      }
+
+      .comparison-label {
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 4px;
+        font-size: 14px;
+      }
+
+      .comparison-value {
+        color: var(--text-secondary);
+        font-size: clamp(14px, 2.5vw, 15px);
+        line-height: 1.6;
+      }
+
+      .phone-number {
+        font-weight: 700;
+        color: var(--brand-primary);
+        font-size: clamp(16px, 3vw, 18px);
+      }
+
+      /* === Store Selector === */
+      .store-selector {
+        text-align: center;
+        margin-bottom: 60px;
+        position: sticky;
+        top: calc(var(--header-height) + 20px);
+        background: var(--background-light);
+        padding: 20px;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 20px var(--shadow-light);
+        z-index: 100;
+      }
+
+      .selector-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(22px, 3vw, 28px);
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 30px;
+        letter-spacing: 0.05em;
+      }
+
+      .selector-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 576px) {
+        .selector-buttons {
+          flex-direction: row;
+          justify-content: center;
+        }
+      }
+
+      .selector-btn {
+        flex: 1;
+        padding: 20px 32px;
+        background: linear-gradient(135deg, var(--background-cream), var(--background-dark));
+        border: 2px solid var(--brand-primary);
+        border-radius: var(--border-radius);
+        color: var(--brand-primary);
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        min-width: 160px;
+      }
+
+      .selector-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s;
+      }
+
+      .selector-btn:hover::before {
+        left: 100%;
+      }
+
+      .selector-btn.active,
+      .selector-btn:hover {
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+        color: white;
+        box-shadow: 0 8px 24px var(--shadow-medium);
+        transform: translateY(-3px);
+      }
+
+      /* === Store Info Section === */
+      .store-info {
+        display: none;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .store-info.active {
+        display: block;
+      }
+
+      .store-header {
+        background: var(--background-light);
+        border-radius: var(--border-radius);
+        padding: 40px;
+        margin-bottom: 40px;
+        box-shadow: 0 8px 32px var(--shadow-light);
+      }
+
+      .store-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(28px, 4vw, 36px);
+        font-weight: 700;
+        color: var(--brand-primary);
+        margin-bottom: 30px;
+        text-align: center;
+        letter-spacing: 0.05em;
+      }
+
+      .store-overview {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        align-items: center;
+      }
+
+      @media (min-width: 768px) {
+        .store-overview {
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+        }
+      }
+
+      .store-image {
+        order: 2;
+      }
+
+      .store-image img {
+        width: 100%;
+        border-radius: var(--border-radius);
+        box-shadow: 0 8px 24px var(--shadow-light);
+        transition: var(--transition);
+      }
+
+      .store-image img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 32px var(--shadow-medium);
+      }
+
+      .store-details {
+        order: 1;
+      }
+
+      @media (min-width: 768px) {
+        .store-image {
+          order: 1;
+        }
+        .store-details {
+          order: 2;
+        }
+      }
+
+      .detail-item {
+        margin-bottom: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+      }
+
+      .detail-label {
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-right: 8px;
+        min-width: 80px;
+        font-size: 14px;
+      }
+
+      .detail-value {
+        color: var(--text-secondary);
+        font-size: clamp(14px, 2.5vw, 16px);
+        flex: 1;
+      }
+
+      .store-feature {
+        margin-top: 20px;
+        padding: 20px;
+        background: linear-gradient(135deg, var(--background-cream), var(--background-dark));
+        border-radius: var(--border-radius-sm);
+        border-left: 4px solid var(--brand-primary);
+      }
+
+      .feature-title {
+        font-weight: 600;
+        color: var(--brand-primary);
+        margin-bottom: 8px;
+      }
+
+      .feature-description {
+        color: var(--text-secondary);
+        font-size: clamp(14px, 2.5vw, 15px);
+        line-height: 1.6;
+      }
+
+      /* === Map Section === */
+      .map-section {
+        margin-bottom: 40px;
+      }
+
+      .map-container {
+        width: 100%;
+        height: 400px;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 8px 32px var(--shadow-light);
+        position: relative;
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .map-overlay {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 8px 16px;
+        border-radius: var(--border-radius-sm);
+        font-size: 12px;
+        color: var(--text-secondary);
+        pointer-events: none;
+      }
+
+      @media (max-width: 768px) {
+        .map-container {
+          height: 300px;
+        }
+      }
+
+      /* === Access Guide === */
+      .access-guide {
+        margin-bottom: 40px;
+      }
+
+      .guide-section {
+        background: var(--background-light);
+        border-radius: var(--border-radius);
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 6px 24px var(--shadow-light);
+        border-left: 4px solid var(--brand-primary);
+      }
+
+      .guide-title {
+        display: flex;
+        align-items: center;
+        font-size: clamp(18px, 3vw, 22px);
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 20px;
+      }
+
+      .guide-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        color: var(--brand-primary);
+      }
+
+      .guide-steps {
+        list-style: none;
+        padding: 0;
+      }
+
+      .guide-step {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        padding: 16px;
+        background: linear-gradient(135deg, var(--background-cream), var(--background-dark));
+        border-radius: var(--border-radius-sm);
+        transition: var(--transition);
+      }
+
+      .guide-step:hover {
+        transform: translateX(8px);
+        box-shadow: 0 4px 12px var(--shadow-light);
+      }
+
+      .step-number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+        color: white;
+        border-radius: 50%;
+        font-weight: 600;
+        font-size: 14px;
+        margin-right: 16px;
+        flex-shrink: 0;
+      }
+
+      .step-content {
+        flex: 1;
+        color: var(--text-secondary);
+        font-size: clamp(14px, 2.5vw, 15px);
+        line-height: 1.6;
+      }
+
+      .landmark {
+        background: linear-gradient(135deg, var(--brand-secondary), #f0e68c);
+        color: var(--text-primary);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 0.9em;
+      }
+
+      .warning-note {
+        color: var(--warning-color);
+        font-weight: 600;
+      }
+
+      /* === Photo Guide === */
+      .photo-guide {
+        margin-bottom: 40px;
+      }
+
+      .photo-guide-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(20px, 3vw, 24px);
+        font-weight: 600;
+        color: var(--brand-primary);
+        text-align: center;
+        margin-bottom: 30px;
+        letter-spacing: 0.05em;
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      @media (min-width: 576px) {
+        .photo-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 992px) {
+        .photo-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      .photo-item {
+        background: var(--background-light);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 6px 20px var(--shadow-light);
+        transition: var(--transition);
+        cursor: pointer;
+      }
+
+      .photo-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 28px var(--shadow-medium);
+      }
+
+      .photo-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .photo-item:hover .photo-image {
+        transform: scale(1.05);
+      }
+
+      .photo-caption {
+        padding: 16px;
+        text-align: center;
+        font-size: clamp(13px, 2vw, 14px);
+        color: var(--text-secondary);
+        font-weight: 500;
+      }
+
+      /* === Contact Section === */
+      .contact-section {
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+        color: white;
+        border-radius: var(--border-radius);
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 8px 32px var(--shadow-medium);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+        opacity: 0.3;
+      }
+
+      .contact-text {
+        font-size: clamp(16px, 3vw, 18px);
+        line-height: 1.6;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .contact-phone {
+        font-size: clamp(22px, 4vw, 28px);
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        position: relative;
+        z-index: 2;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        padding: 10px 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: var(--border-radius-sm);
+        transition: var(--transition);
+      }
+
+      .contact-phone:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+      }
+
+      /* === Call to Action === */
+      .cta-section {
+        text-align: center;
+        padding: 80px 0;
+        background: linear-gradient(135deg, var(--background-cream), var(--background-dark));
+      }
+
+      .cta-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(28px, 4vw, 36px);
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 16px;
+        letter-spacing: 0.05em;
+      }
+
+      .cta-description {
+        font-size: clamp(16px, 2.5vw, 18px);
+        color: var(--text-secondary);
+        line-height: 1.8;
+        max-width: 600px;
+        margin: 0 auto 40px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+      }
+
+      @media (min-width: 768px) {
+        .cta-buttons {
+          flex-direction: row;
+          justify-content: center;
+          gap: 24px;
+        }
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 32px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+        cursor: pointer;
+        border: none;
+        min-height: 56px;
+        min-width: 200px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+      }
+
+      .btn:hover::before {
+        left: 100%;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+        color: white;
+        box-shadow: 0 6px 20px var(--shadow-medium);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px var(--shadow-heavy);
+      }
+
+      .btn-secondary {
+        background: linear-gradient(135deg, var(--background-light), var(--background-cream));
+        color: var(--brand-primary);
+        border: 2px solid var(--brand-primary);
+        box-shadow: 0 4px 16px var(--shadow-light);
+      }
+
+      .btn-secondary:hover {
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px var(--shadow-medium);
+      }
+
+      /* === Quick Navigation === */
+      .quick-nav {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 100;
+      }
+
+      .quick-nav-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--brand-primary);
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px var(--shadow-medium);
+        transition: var(--transition);
+      }
+
+      .quick-nav-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px var(--shadow-heavy);
+      }
+
+      .quick-nav-btn.to-top {
+        background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      }
+
+      /* === Footer === */
+      .footer {
+        background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+        color: #e0e0e0;
+        padding: 60px 0 30px;
+        text-align: center;
+      }
+
+      .footer-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--brand-secondary);
+        margin-bottom: 20px;
+        letter-spacing: 0.1em;
+      }
+
+      .footer-nav {
+        margin: 40px 0;
+      }
+
+      .footer-nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .footer-nav a {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 14px;
+        transition: var(--transition);
+      }
+
+      .footer-nav a:hover {
+        color: var(--brand-secondary);
+      }
+
+      .footer-content {
+        border-top: 1px solid #444;
+        padding-top: 30px;
+        margin-top: 40px;
+      }
+
+      .copyright {
+        font-size: 14px;
+        color: #aaa;
+      }
+
+      /* === Animations === */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* === Scroll Animations === */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* === Mobile Optimizations === */
+      @media (max-width: 768px) {
+        .section {
+          padding: 60px 0;
+        }
+
+        .store-header {
+          padding: 30px 20px;
+        }
+
+        .guide-section {
+          padding: 20px;
+        }
+
+        .contact-section {
+          padding: 30px 20px;
+        }
+
+        .guide-step {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .step-number {
+          margin-right: 0;
+          margin-bottom: 12px;
+        }
+
+        .photo-image {
+          height: 180px;
+        }
+
+        .store-selector {
+          position: static;
+          margin-bottom: 40px;
+        }
+
+        .quick-nav {
+          bottom: 20px;
+          right: 20px;
+        }
+      }
+
+      /* === Utility Classes === */
+      .text-center {
+        text-align: center;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .visible {
+        display: block;
+      }
+
+      /* === Lazy Loading === */
+      img[loading='lazy'] {
+        background: linear-gradient(135deg, var(--background-cream), var(--background-dark));
+      }
+
+      /* === Focus States === */
+      :focus-visible {
+        outline: 2px solid var(--brand-primary);
+        outline-offset: 2px;
+      }
+
+      /* === Skip to Content === */
+      .skip-to-content {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);
+        background: var(--brand-primary);
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
+        transition: transform 0.3s;
+      }
+
+      .skip-to-content:focus {
+        transform: translateX(-50%) translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+      <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-to-content">メインコンテンツへスキップ</a>
+
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-content">
+        <div class="site-logo">
+          <a href="index.html">和招縁</a>
+        </div>
+        <button
+          class="hamburger-button"
+          aria-label="メニューを開閉"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <nav class="main-nav" id="main-nav">
+          <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="beginners.html">初めての方へ</a></li>
+            <li><a href="menu.html">お品書き</a></li>
+            <li><a href="guide.html" class="active">当店への道案内</a></li>
+            <li><a href="about.html">店舗概要</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">当店への道案内</h1>
+        <p class="page-subtitle">お間違えのないよう、ご来店前に必ずご確認ください</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+      <!-- Warning Section -->
+      <section class="section">
+        <div class="container">
+          <div class="warning-alert fade-in">
+            <h2 class="warning-title">
+              <svg
+                class="warning-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 8V12M12 16H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              ご来店前に必ずご確認ください
+            </h2>
+            <p class="warning-text">
+              和招縁では、
+              <span class="warning-highlight">塩町店</span>
+              と
+              <span class="warning-highlight">福中店</span>
+              の2店舗を運営しております。それぞれ特徴の異なる店舗ですので、ご予約・ご来店の際はお間違えのないようご注意ください。
+            </p>
+            <p class="warning-text">
+              以前、店舗をお間違えになったお客様が多くいらっしゃいました。店舗ごとに
+              <span class="warning-highlight">場所・メニュー・雰囲気</span>
+              が異なりますので、ご予約やご来店の際は店舗名を必ずご確認ください。
+            </p>
+          </div>
+
+          <!-- Store Comparison -->
+          <div class="comparison-section fade-in">
+            <h2 class="comparison-title">店舗情報の比較</h2>
+            <div class="comparison-grid">
+              <div class="comparison-card" onclick="selectStore('shiomachi')">
+                <h3 class="comparison-card-title">塩町店</h3>
+                <div class="comparison-item">
+                  <div class="comparison-label">特徴</div>
+                  <div class="comparison-value">
+                    赤い暖簾が目印の本店。伝統的な和の空間でゆったりとお食事をお楽しみいただけます。
+                  </div>
+                </div>
+                <div class="comparison-item">
+                  <div class="comparison-label">場所</div>
+                  <div class="comparison-value">○○線「塩町駅」東口より徒歩5分</div>
+                </div>
+                <div class="comparison-item">
+                  <div class="comparison-label">電話番号</div>
+                  <div class="comparison-value phone-number">000-111-2222（塩町店直通）</div>
+                </div>
+                <div class="comparison-item">
+                  <div class="comparison-label">定休日</div>
+                  <div class="comparison-value">毎週水曜日</div>
+                </div>
+              </div>
+
+              <div class="comparison-card" onclick="selectStore('fukunaka')">
+                <h3 class="comparison-card-title">福中店</h3>
+                <div class="comparison-item">
+                  <div class="comparison-label">特徴</div>
+                  <div class="comparison-value">
+                    茶色の門構えが特徴的な新店舗。モダンな和空間でカジュアルにお食事をお楽しみいただけます。
+                  </div>
+                </div>
+                <div class="comparison-item">
+                  <div class="comparison-label">場所</div>
+                  <div class="comparison-value">○○線「福中駅」西口より徒歩8分</div>
+                </div>
+                <div class="comparison-item">
+                  <div class="comparison-label">電話番号</div>
+                  <div class="comparison-value phone-number">000-333-4444（福中店直通）</div>
+                </div>
+                <div class="comparison-item">
+                  <div class="comparison-label">定休日</div>
+                  <div class="comparison-value">毎週月曜日</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Store Selector -->
+          <div class="store-selector fade-in">
+            <h2 class="selector-title">ご来店予定の店舗を選択してください</h2>
+            <div class="selector-buttons">
+              <button class="selector-btn active" data-store="shiomachi">塩町店</button>
+              <button class="selector-btn" data-store="fukunaka">福中店</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Store Information Sections -->
+      <!-- 塩町店 -->
+      <section class="section section-alt" id="shiomachi-info" data-store="shiomachi">
+        <div class="container">
+          <div class="store-info active fade-in">
+            <div class="store-header">
+              <h2 class="store-title">和招縁 塩町店</h2>
+              <div class="store-overview">
+                <div class="store-image">
+                  <img src="image/600_400.png" alt="和招縁 塩町店の外観" loading="lazy" />
+                </div>
+                <div class="store-details">
+                  <div class="detail-item">
+                    <span class="detail-label">住所:</span>
+                    <span class="detail-value">〒000-0000 ○○県○○市塩町1-2-3</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">電話番号:</span>
+                    <span class="detail-value phone-number">000-111-2222（塩町店直通）</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">営業時間:</span>
+                    <span class="detail-value">11:30〜14:00、17:30〜22:00（L.O. 21:00）</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">定休日:</span>
+                    <span class="detail-value">毎週水曜日</span>
+                  </div>
+                  <div class="store-feature">
+                    <div class="feature-title">■ 塩町店の特徴</div>
+                    <div class="feature-description">
+                      赤い暖簾が目印の本店。伝統的な和の空間でゆったりとお食事をお楽しみいただけます。
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map -->
+            <div class="map-section">
+              <div class="map-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.9805168697653!2d134.68478797708184!3d34.831582376176556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3554e0138af315ed%3A0x1e77ee41b6aee837!2z5ZKM5oub57iBIOWhqeeUuuW6lw!5e0!3m2!1sja!2sjp!4v1745035902179!5m2!1sja!2sjp"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="和招縁 塩町店の地図"
+                ></iframe>
+                <div class="map-overlay">クリックで操作</div>
+              </div>
+            </div>
+
+            <!-- Access Guide -->
+            <div class="access-guide">
+              <!-- 電車 -->
+              <div class="guide-section">
+                <h3 class="guide-title">
+                  <svg
+                    class="guide-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15 5V19M15 5L9 11M15 5L21 11M9 5V19M9 5L3 11M9 5L15 11"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  電車でお越しの方
+                </h3>
+                <ol class="guide-steps">
+                  <li class="guide-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                      ○○線「塩町駅」
+                      <strong>東口</strong>
+                      を出ます（
+                      <span class="warning-note">※西口ではありません</span>
+                      ）
+                    </div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                      駅前の
+                      <span class="landmark">時計塔</span>
+                      が見える方角に進みます
+                    </div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                      <span class="landmark">○○商店街</span>
+                      を直進し、赤い郵便ポストのある交差点を右折
+                    </div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                      50mほど進むと左手に
+                      <span class="landmark">赤い暖簾</span>
+                      が見えます（徒歩約5分）
+                    </div>
+                  </li>
+                </ol>
+              </div>
+
+              <!-- バス -->
+              <div class="guide-section">
+                <h3 class="guide-title">
+                  <svg
+                    class="guide-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 16V20M20 16V20M4 12H20M4 9H20M6 17H18M7 4H17C18.1046 4 19 4.89543 19 6V17H5V6C5 4.89543 5.89543 4 7 4Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  バスでお越しの方
+                </h3>
+                <ol class="guide-steps">
+                  <li class="guide-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">○○駅より「○○市民会館行き」バスに乗車</div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">「塩町一丁目」バス停で下車（約10分）</div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                      バス停の目の前にある
+                      <span class="landmark">コンビニエンスストア</span>
+                      の方向に進みます
+                    </div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                      <span class="landmark">緑の看板</span>
+                      がある角を左折すると当店が見えます（徒歩約2分）
+                    </div>
+                  </li>
+                </ol>
+              </div>
+
+              <!-- 車 -->
+              <div class="guide-section">
+                <h3 class="guide-title">
+                  <svg
+                    class="guide-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 11L19 11M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  お車でお越しの方
+                </h3>
+                <ol class="guide-steps">
+                  <li class="guide-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">○○高速道路「○○インターチェンジ」を降りて右折</div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                      <span class="landmark">○○病院</span>
+                      のある交差点を左折
+                    </div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                      <span class="landmark">○○小学校</span>
+                      を過ぎて2つ目の信号を右折
+                    </div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                      200mほど進んだ左手に専用駐車場があります（5台・無料）
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Photo Guide -->
+            <div class="photo-guide">
+              <h3 class="photo-guide-title">写真で見る道案内 - 塩町店</h3>
+              <div class="photo-grid">
+                <div class="photo-item">
+                  <img
+                    src="image/400_300.png"
+                    alt="塩町駅東口の様子"
+                    class="photo-image"
+                    loading="lazy"
+                  />
+                  <div class="photo-caption">①塩町駅東口を出たところ</div>
+                </div>
+                <div class="photo-item">
+                  <img
+                    src="image/400_300.png"
+                    alt="商店街入口の様子"
+                    class="photo-image"
+                    loading="lazy"
+                  />
+                  <div class="photo-caption">②目印となる時計塔と商店街入口</div>
+                </div>
+                <div class="photo-item">
+                  <img
+                    src="image/400_300.png"
+                    alt="右折すべき交差点の様子"
+                    class="photo-image"
+                    loading="lazy"
+                  />
+                  <div class="photo-caption">③この赤いポストで右折します</div>
+                </div>
+                <div class="photo-item">
+                  <img
+                    src="image/400_300.png"
+                    alt="和招縁 塩町店の外観"
+                    class="photo-image"
+                    loading="lazy"
+                  />
+                  <div class="photo-caption">④赤い暖簾が目印の当店外観</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="contact-section">
+              <p class="contact-text">
+                ご予約・お問い合わせは
+                <strong>塩町店直通</strong>
+                のお電話またはお問い合わせフォームから
+              </p>
+              <p class="contact-phone" onclick="window.location.href='tel:000-111-2222'">
+                TEL: 000-111-2222（塩町店）
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 福中店 -->
+      <section class="section" id="fukunaka-info" data-store="fukunaka">
+        <div class="container">
+          <div class="store-info fade-in">
+            <div class="store-header">
+              <h2 class="store-title">和招縁 福中店</h2>
+              <div class="store-overview">
+                <div class="store-image">
+                  <img src="image/600_400.png" alt="和招縁 福中店の外観" loading="lazy" />
+                </div>
+                <div class="store-details">
+                  <div class="detail-item">
+                    <span class="detail-label">住所:</span>
+                    <span class="detail-value">〒111-1111 ○○県○○市福中3-4-5</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">電話番号:</span>
+                    <span class="detail-value phone-number">000-333-4444（福中店直通）</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">営業時間:</span>
+                    <span class="detail-value">11:30〜14:30、17:00〜22:30（L.O. 21:30）</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">定休日:</span>
+                    <span class="detail-value">毎週月曜日</span>
+                  </div>
+                  <div class="store-feature">
+                    <div class="feature-title">■ 福中店の特徴</div>
+                    <div class="feature-description">
+                      茶色の門構えが特徴的な新店舗。モダンな和空間でカジュアルにお食事をお楽しみいただけます。
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map -->
+            <div class="map-section">
+              <div class="map-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.9175781667004!2d134.68401937708137!3d34.833164776091515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3554e1717b78f897%3A0xf43add4da66fbd2f!2z5ZKM5oub57iB56aP5Lit5bqX!5e0!3m2!1sja!2sjp!4v1745036035411!5m2!1sja!2sjp"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="和招縁 福中店の地図"
+                ></iframe>
+                <div class="map-overlay">クリックで操作</div>
+              </div>
+            </div>
+
+            <!-- Access Guide -->
+            <div class="access-guide">
+              <!-- 電車 -->
+              <div class="guide-section">
+                <h3 class="guide-title">
+                  <svg
+                    class="guide-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15 5V19M15 5L9 11M15 5L21 11M9 5V19M9 5L3 11M9 5L15 11"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  電車でお越しの方
+                </h3>
+                <ol class="guide-steps">
+                  <li class="guide-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                      ○○線「福中駅」
+                      <strong>西口</strong>
+                      改札を出ます（
+                      <span class="warning-note">※東口ではありません</span>
+                      ）
+                    </div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                      右手のエスカレーターで1階に降り、正面の
+                      <span class="landmark">大きな横断歩道</span>
+                      を渡ります
+                    </div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                      <span class="landmark">○○デパート</span>
+                      の横の道を進み、
+                      <span class="landmark">青い屋根の建物</span>
+                      がある角を左折
+                    </div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                      約150m進み、
+                      <span class="landmark">茶色の門</span>
+                      がある建物が当店です（徒歩約8分）
+                    </div>
+                  </li>
+                </ol>
+              </div>
+
+              <!-- バス -->
+              <div class="guide-section">
+                <h3 class="guide-title">
+                  <svg
+                    class="guide-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 16V20M20 16V20M4 12H20M4 9H20M6 17H18M7 4H17C18.1046 4 19 4.89543 19 6V17H5V6C5 4.89543 5.89543 4 7 4Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  バスでお越しの方
+                </h3>
+                <ol class="guide-steps">
+                  <li class="guide-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">○○駅より「○○総合病院行き」バスに乗車</div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">「福中公園前」バス停で下車（約15分）</div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                      バス停から見える
+                      <span class="landmark">緑色のマンション</span>
+                      方向に進みます
+                    </div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                      <span class="landmark">公園入口</span>
+                      を通り過ぎて2つ目の角を右折すると、当店が見えます（徒歩約3分）
+                    </div>
+                  </li>
+                </ol>
+              </div>
+
+              <!-- 車 -->
+              <div class="guide-section">
+                <h3 class="guide-title">
+                  <svg
+                    class="guide-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 11L19 11M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  お車でお越しの方
+                </h3>
+                <ol class="guide-steps">
+                  <li class="guide-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">○○高速道路「○○インターチェンジ」を降ります</div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                      最初の信号を直進し、
+                      <span class="landmark">大きなガソリンスタンド</span>
+                      のある交差点を右折
+                    </div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                      <span class="landmark">○○スーパー</span>
+                      を過ぎて、
+                      <span class="landmark">高層マンション</span>
+                      がある交差点を左折
+                    </div>
+                  </li>
+                  <li class="guide-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                      300mほど進むと右手に当店専用駐車場（8台・無料）があります
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Photo Guide -->
+            <div class="photo-guide">
+              <h3 class="photo-guide-title">写真で見る道案内 - 福中店</h3>
+              <div class="photo-grid">
+                <div class="photo-item">
+                  <img
+                    src="image/400_300.png"
+                    alt="福中駅西口の様子"
+                    class="photo-image"
+                    loading="lazy"
+                  />
+                  <div class="photo-caption">①福中駅西口を出たところ</div>
+                </div>
+                <div class="photo-item">
+                  <img
+                    src="image/400_300.png"
+                    alt="駅前の大きな交差点"
+                    class="photo-image"
+                    loading="lazy"
+                  />
+                  <div class="photo-caption">②この横断歩道を渡ります</div>
+                </div>
+                <div class="photo-item">
+                  <img
+                    src="image/400_300.png"
+                    alt="青い屋根の建物"
+                    class="photo-image"
+                    loading="lazy"
+                  />
+                  <div class="photo-caption">③青い屋根の建物で左折</div>
+                </div>
+                <div class="photo-item">
+                  <img
+                    src="image/400_300.png"
+                    alt="和招縁 福中店の外観"
+                    class="photo-image"
+                    loading="lazy"
+                  />
+                  <div class="photo-caption">④茶色の門が目印の当店外観</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="contact-section">
+              <p class="contact-text">
+                ご予約・お問い合わせは
+                <strong>福中店直通</strong>
+                のお電話またはお問い合わせフォームから
+              </p>
+              <p class="contact-phone" onclick="window.location.href='tel:000-333-4444'">
+                TEL: 000-333-4444（福中店）
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action Section -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="fade-in">
+            <h2 class="cta-title">お気軽にお問い合わせください</h2>
+            <p class="cta-description">
+              ご不明な点やご質問がございましたら、
+              <br />
+              各店舗まで直接お電話いただくか、お問い合わせフォームをご利用ください。
+            </p>
+            <div class="cta-buttons">
+              <a href="menu.html" class="btn btn-primary">お品書きを見る</a>
+              <a href="beginners.html" class="btn btn-secondary">初めての方へ</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Quick Navigation -->
+    <div class="quick-nav">
+      <button class="quick-nav-btn to-top" onclick="scrollToTop()" aria-label="ページトップへ">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 19V5M12 5L5 12M12 5L19 12"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <h2 class="footer-title">和招縁</h2>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="beginners.html">初めての方へ</a></li>
+            <li><a href="menu.html">お品書き</a></li>
+            <li><a href="guide.html">当店への道案内</a></li>
+            <li><a href="about.html">店舗概要</a></li>
+          </ul>
+        </nav>
+        <div class="footer-content">
+          <p class="copyright">Copyright ©2025 和招縁 All rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Loading Overlay
+      window.addEventListener('load', function () {
+        setTimeout(() => {
+          document.getElementById('loading-overlay').classList.add('loaded')
+        }, 300)
+      })
+
+      // Progress Bar
+      window.addEventListener('scroll', function () {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+        const scrolled = (winScroll / height) * 100
+        document.getElementById('progress-bar').style.width = scrolled + '%'
+      })
+
+      // Scroll to Top
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        })
+      }
+
+      // Quick Navigation Visibility
+      const quickNav = document.querySelector('.quick-nav')
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+          quickNav.style.opacity = '1'
+          quickNav.style.pointerEvents = 'auto'
+        } else {
+          quickNav.style.opacity = '0'
+          quickNav.style.pointerEvents = 'none'
+        }
+      })
+      quickNav.style.opacity = '0'
+      quickNav.style.transition = 'opacity 0.3s'
+
+      document.addEventListener('DOMContentLoaded', function () {
+        // Mobile Navigation
+        const hamburgerButton = document.querySelector('.hamburger-button')
+        const mainNav = document.getElementById('main-nav')
+        const body = document.body
+
+        if (hamburgerButton && mainNav) {
+          hamburgerButton.addEventListener('click', function () {
+            const expanded = this.getAttribute('aria-expanded') === 'true'
+            this.setAttribute('aria-expanded', !expanded)
+            mainNav.classList.toggle('is-active')
+            body.classList.toggle('no-scroll')
+          })
+
+          // Close menu when clicking nav links
+          const navLinks = mainNav.querySelectorAll('a')
+          navLinks.forEach((link) => {
+            link.addEventListener('click', function () {
+              if (mainNav.classList.contains('is-active')) {
+                hamburgerButton.setAttribute('aria-expanded', 'false')
+                mainNav.classList.remove('is-active')
+                body.classList.remove('no-scroll')
+              }
+            })
+          })
+        }
+
+        // Store Selector - 修正版
+        const selectorButtons = document.querySelectorAll('.selector-btn')
+        const storeInfoSections = document.querySelectorAll('section[data-store]') // section要素のみを選択
+
+        // Store selection function
+        function selectStore(storeName) {
+          const targetStore = storeName
+
+          // Remove active class from all buttons
+          selectorButtons.forEach((btn) => btn.classList.remove('active'))
+
+          // Add active class to the selected button
+          selectorButtons.forEach((btn) => {
+            if (btn.getAttribute('data-store') === targetStore) {
+              btn.classList.add('active')
+            }
+          })
+
+          // Hide all store sections
+          storeInfoSections.forEach((section) => {
+            section.style.display = 'none'
+            const storeInfo = section.querySelector('.store-info')
+            if (storeInfo) {
+              storeInfo.classList.remove('active')
+            }
+          })
+
+          // Show target section
+          const targetSection = document.getElementById(targetStore + '-info')
+          if (targetSection) {
+            targetSection.style.display = 'block'
+            const targetStoreInfo = targetSection.querySelector('.store-info')
+            if (targetStoreInfo) {
+              targetStoreInfo.classList.add('active')
+            }
+
+            // Smooth scroll to section
+            setTimeout(() => {
+              targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+              })
+            }, 100)
+          }
+        }
+
+        // Make selectStore globally accessible
+        window.selectStore = selectStore
+
+        selectorButtons.forEach((button) => {
+          button.addEventListener('click', function () {
+            const targetStore = this.getAttribute('data-store')
+            selectStore(targetStore)
+          })
+        })
+
+        // Initialize with first store shown
+        const defaultSection = document.getElementById('shiomachi-info')
+        const defaultStoreInfo = defaultSection.querySelector('.store-info')
+        if (defaultStoreInfo) {
+          defaultStoreInfo.classList.add('active')
+        }
+        // Hide fukuoka section initially
+        const fukuokaSection = document.getElementById('fukunaka-info')
+        if (fukuokaSection) {
+          fukuokaSection.style.display = 'none'
+        }
+
+        // Scroll Animation
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px',
+        }
+
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible')
+            }
+          })
+        }, observerOptions)
+
+        const fadeElements = document.querySelectorAll('.fade-in')
+        fadeElements.forEach((el) => observer.observe(el))
+
+        // Enhanced hover effects for interactive elements
+        const interactiveElements = document.querySelectorAll(
+          '.comparison-card, .photo-item, .guide-step'
+        )
+        interactiveElements.forEach((element) => {
+          element.addEventListener('mouseenter', function () {
+            this.style.transform = this.classList.contains('guide-step')
+              ? 'translateX(8px)'
+              : 'translateY(-5px)'
+          })
+
+          element.addEventListener('mouseleave', function () {
+            this.style.transform = this.classList.contains('guide-step')
+              ? 'translateX(0)'
+              : 'translateY(0)'
+          })
+        })
+
+        // Phone number click to call (mobile)
+        const phoneNumbers = document.querySelectorAll('.phone-number')
+        phoneNumbers.forEach((phone) => {
+          if (!phone.onclick) {
+            // Avoid duplicate event handlers
+            phone.style.cursor = 'pointer'
+            phone.addEventListener('click', function () {
+              const number = this.textContent.match(/[\d-]+/)[0]
+              window.location.href = `tel:${number}`
+            })
+          }
+        })
+
+        // Map interaction enhancement
+        const mapContainers = document.querySelectorAll('.map-container')
+        mapContainers.forEach((container) => {
+          let isInteracting = false
+          const overlay = container.querySelector('.map-overlay')
+
+          container.addEventListener('click', function () {
+            isInteracting = true
+            container.style.pointerEvents = 'auto'
+            if (overlay) overlay.style.display = 'none'
+          })
+
+          container.addEventListener('mouseleave', function () {
+            isInteracting = false
+            container.style.pointerEvents = 'none'
+            if (overlay) overlay.style.display = 'block'
+          })
+
+          // Prevent scroll when not interacting
+          container.addEventListener('wheel', function (e) {
+            if (!isInteracting) {
+              e.preventDefault()
+            }
+          })
+        })
+
+        // Step animation on scroll
+        const steps = document.querySelectorAll('.guide-step')
+        const stepObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry, index) => {
+              if (entry.isIntersecting) {
+                setTimeout(() => {
+                  entry.target.style.opacity = '1'
+                  entry.target.style.transform = 'translateY(0)'
+                }, index * 100)
+              }
+            })
+          },
+          { threshold: 0.3 }
+        )
+
+        steps.forEach((step) => {
+          step.style.opacity = '0'
+          step.style.transform = 'translateY(20px)'
+          step.style.transition = 'opacity 0.5s ease, transform 0.5s ease'
+          stepObserver.observe(step)
+        })
+
+        // Photo lightbox functionality
+        const photoItems = document.querySelectorAll('.photo-item')
+        photoItems.forEach((item) => {
+          item.addEventListener('click', function () {
+            const img = this.querySelector('.photo-image')
+            const lightbox = document.createElement('div')
+            lightbox.style.cssText = `
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0,0,0,0.9);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              z-index: 9999;
+              cursor: pointer;
+            `
+
+            const lightboxImg = document.createElement('img')
+            lightboxImg.src = img.src
+            lightboxImg.style.cssText = `
+              max-width: 90%;
+              max-height: 90%;
+              border-radius: var(--border-radius);
+            `
+
+            lightbox.appendChild(lightboxImg)
+            document.body.appendChild(lightbox)
+            document.body.style.overflow = 'hidden'
+
+            lightbox.addEventListener('click', function () {
+              document.body.removeChild(lightbox)
+              document.body.style.overflow = ''
+            })
+          })
+        })
+      })
+    </script>
+  </body>
+</html>

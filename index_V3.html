@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>和招縁 | 姫路の高級寿司・割烹 - 特別な日の特別なひとときを</title>
+    <meta
+      name="description"
+      content="姫路で特別な日のお食事なら和招縁へ。瀬戸内海の新鮮な魚介と職人の技が織りなす至極の寿司と割烹料理。大切な方との記念日、接待、お祝いの席に。JR姫路駅徒歩10分。"
+    />
+    <meta
+      name="keywords"
+      content="姫路,高級寿司,割烹,和食,接待,記念日,特別な日,瀬戸内海,活魚,個室,姫路駅"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://washouen.jp/" />
+    <meta property="og:title" content="和招縁 | 姫路の高級寿司・割烹" />
+    <meta
+      property="og:description"
+      content="特別な日の特別なひとときを。瀬戸内海の恵みと職人の技が織りなす至極の一皿。"
+    />
+    <meta property="og:image" content="https://washouen.jp/images/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://washouen.jp/" />
+    <meta property="twitter:title" content="和招縁 | 姫路の高級寿司・割烹" />
+    <meta
+      property="twitter:description"
+      content="特別な日の特別なひとときを。瀬戸内海の恵みと職人の技が織りなす至極の一皿。"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "和招縁",
+        "image": "https://washouen.jp/images/restaurant.jpg",
+        "url": "https://washouen.jp",
+        "telephone": "+81-79-XXX-XXXX",
+        "priceRange": "¥¥¥¥",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "塩町/福中",
+          "addressLocality": "姫路市",
+          "addressRegion": "兵庫県",
+          "postalCode": "670-0000",
+          "addressCountry": "JP"
+        },
+        "servesCuisine": ["寿司", "割烹", "和食"],
+        "acceptsReservations": "True",
+        "openingHours": "Mo-Su 17:00-22:00"
+      }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <style>
+      /* === CSS Variables === */
+      :root {
+        --gold-primary: #c9a961;
+        --gold-secondary: #e4c87a;
+        --gold-dark: #a08450;
+        --black-primary: #1a1a1a;
+        --black-secondary: #2d2d2d;
+        --white-primary: #ffffff;
+        --white-cream: #fdfcf8;
+        --gray-light: #f5f5f5;
+        --gray-medium: #888888;
+        --text-primary: #2c2c2c;
+        --text-secondary: #666666;
+        --shadow-light: rgba(0, 0, 0, 0.08);
+        --shadow-medium: rgba(0, 0, 0, 0.12);
+        --shadow-heavy: rgba(0, 0, 0, 0.2);
+        --header-height: 80px;
+        --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* === Global Styles === */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: var(--header-height);
+      }
+
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background-color: var(--white-primary);
+        overflow-x: hidden;
+      }
+
+      /* === Loading Screen === */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--black-primary);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.8s ease-out;
+      }
+
+      .loading-screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .loading-logo {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--gold-primary);
+        letter-spacing: 0.3em;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      /* === Header Styles === */
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--header-height);
+        background: rgba(26, 26, 26, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(201, 169, 97, 0.3);
+        z-index: 1000;
+        transition: var(--transition);
+      }
+
+      .site-header.scrolled {
+        box-shadow: 0 4px 20px var(--shadow-medium);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding: 0 40px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .site-logo a {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--gold-primary);
+        text-decoration: none;
+        letter-spacing: 0.2em;
+        transition: var(--transition);
+      }
+
+      .site-logo a:hover {
+        color: var(--gold-secondary);
+      }
+
+      /* === Navigation === */
+      .main-nav ul {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+      }
+
+      .main-nav a {
+        color: var(--white-primary);
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .main-nav a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--gold-primary);
+        transition: var(--transition);
+      }
+
+      .main-nav a:hover {
+        color: var(--gold-primary);
+      }
+
+      .main-nav a:hover::after {
+        width: 100%;
+      }
+
+      /* === Hero Section === */
+      .hero-section {
+        position: relative;
+        height: 100vh;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      .hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          180deg,
+          rgba(26, 26, 26, 0.4) 0%,
+          rgba(26, 26, 26, 0.6) 50%,
+          rgba(26, 26, 26, 0.8) 100%
+        );
+        z-index: 2;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      .hero-subtitle {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--gold-primary);
+        letter-spacing: 0.3em;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 0.5s forwards;
+      }
+
+      .hero-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(48px, 6vw, 72px);
+        font-weight: 700;
+        color: var(--white-primary);
+        line-height: 1.2;
+        letter-spacing: 0.1em;
+        margin-bottom: 30px;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 0.7s forwards;
+      }
+
+      .hero-description {
+        font-size: 18px;
+        line-height: 2;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 50px;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 0.9s forwards;
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 1.1s forwards;
+      }
+
+      /* === Button Styles === */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 50px;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        border: 2px solid transparent;
+        transition: var(--transition);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary {
+        background: var(--gold-primary);
+        color: var(--white-primary);
+        border-color: var(--gold-primary);
+      }
+
+      .btn-primary:hover {
+        background: var(--gold-dark);
+        border-color: var(--gold-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--white-primary);
+        border-color: var(--white-primary);
+      }
+
+      .btn-outline:hover {
+        background: var(--white-primary);
+        color: var(--black-primary);
+        transform: translateY(-2px);
+      }
+
+      /* === Special Occasions Section === */
+      .special-occasions {
+        padding: 120px 0;
+        background: var(--white-cream);
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 80px;
+      }
+
+      .section-subtitle {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 16px;
+        color: var(--gold-primary);
+        letter-spacing: 0.2em;
+        margin-bottom: 20px;
+      }
+
+      .section-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: clamp(36px, 4vw, 48px);
+        font-weight: 700;
+        color: var(--text-primary);
+        letter-spacing: 0.1em;
+        margin-bottom: 30px;
+      }
+
+      .section-description {
+        font-size: 18px;
+        line-height: 2;
+        color: var(--text-secondary);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .occasions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      .occasion-card {
+        background: var(--white-primary);
+        padding: 50px 40px;
+        text-align: center;
+        box-shadow: 0 10px 40px var(--shadow-light);
+        transition: var(--transition);
+      }
+
+      .occasion-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px var(--shadow-medium);
+      }
+
+      .occasion-icon {
+        font-size: 48px;
+        color: var(--gold-primary);
+        margin-bottom: 30px;
+      }
+
+      .occasion-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 15px;
+        letter-spacing: 0.05em;
+      }
+
+      .occasion-description {
+        font-size: 16px;
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+      /* === Chef Section === */
+      .chef-section {
+        padding: 120px 0;
+        background: var(--black-primary);
+        color: var(--white-primary);
+      }
+
+      .chef-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        align-items: center;
+      }
+
+      .chef-image {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .chef-image img {
+        width: 100%;
+        height: auto;
+        filter: grayscale(100%);
+        transition: var(--transition);
+      }
+
+      .chef-image:hover img {
+        filter: grayscale(0%);
+      }
+
+      .chef-info h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--gold-primary);
+        margin-bottom: 20px;
+        letter-spacing: 0.1em;
+      }
+
+      .chef-title {
+        font-size: 18px;
+        color: var(--gold-secondary);
+        margin-bottom: 30px;
+        letter-spacing: 0.1em;
+      }
+
+      .chef-philosophy {
+        font-size: 16px;
+        line-height: 2;
+        margin-bottom: 30px;
+      }
+
+      .chef-signature {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 24px;
+        color: var(--gold-primary);
+        text-align: right;
+        margin-top: 40px;
+      }
+
+      /* === Premium Menu Section === */
+      .premium-menu {
+        padding: 120px 0;
+        background: var(--white-primary);
+      }
+
+      .menu-showcase {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 60px;
+        max-width: 1200px;
+        margin: 80px auto 0;
+        padding: 0 40px;
+      }
+
+      .menu-item {
+        position: relative;
+        overflow: hidden;
+        background: var(--white-cream);
+        transition: var(--transition);
+      }
+
+      .menu-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px var(--shadow-medium);
+      }
+
+      .menu-image {
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .menu-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .menu-item:hover .menu-image img {
+        transform: scale(1.1);
+      }
+
+      .menu-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--gold-primary);
+        color: var(--white-primary);
+        padding: 8px 20px;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+      }
+
+      .menu-content {
+        padding: 40px;
+      }
+
+      .menu-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 15px;
+        letter-spacing: 0.05em;
+      }
+
+      .menu-description {
+        font-size: 16px;
+        line-height: 1.8;
+        color: var(--text-secondary);
+        margin-bottom: 20px;
+      }
+
+      .menu-price {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 20px;
+        color: var(--gold-primary);
+        letter-spacing: 0.1em;
+      }
+
+      /* === Testimonials === */
+      .testimonials {
+        padding: 120px 0;
+        background: var(--gray-light);
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 80px auto 0;
+        padding: 0 40px;
+      }
+
+      .testimonial-card {
+        background: var(--white-primary);
+        padding: 40px;
+        box-shadow: 0 10px 40px var(--shadow-light);
+        position: relative;
+      }
+
+      .testimonial-content {
+        font-size: 16px;
+        line-height: 2;
+        color: var(--text-secondary);
+        margin-bottom: 30px;
+        font-style: italic;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .author-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--gold-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white-primary);
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .author-info h4 {
+        font-size: 18px;
+        color: var(--text-primary);
+        margin-bottom: 5px;
+      }
+
+      .author-info p {
+        font-size: 14px;
+        color: var(--text-secondary);
+      }
+
+      .quote-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 48px;
+        color: var(--gold-primary);
+        opacity: 0.2;
+      }
+
+      /* === Reservation Section === */
+      .reservation-section {
+        padding: 120px 0;
+        background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)),
+          url('images/interior-bg.jpg') center/cover;
+        color: var(--white-primary);
+        text-align: center;
+      }
+
+      .reservation-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      .reservation-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--gold-primary);
+        margin-bottom: 30px;
+        letter-spacing: 0.1em;
+      }
+
+      .reservation-description {
+        font-size: 18px;
+        line-height: 2;
+        margin-bottom: 50px;
+      }
+
+      .reservation-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        margin-bottom: 50px;
+      }
+
+      .info-item {
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(201, 169, 97, 0.3);
+      }
+
+      .info-label {
+        font-size: 14px;
+        color: var(--gold-primary);
+        letter-spacing: 0.2em;
+        margin-bottom: 10px;
+      }
+
+      .info-value {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .reservation-note {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-top: 50px;
+        line-height: 1.8;
+      }
+
+      /* === Store Comparison === */
+      .store-comparison {
+        padding: 120px 0;
+        background: var(--white-cream);
+      }
+
+      .comparison-table {
+        max-width: 1200px;
+        margin: 80px auto 0;
+        padding: 0 40px;
+      }
+
+      .store-features {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+      }
+
+      .store-column {
+        background: var(--white-primary);
+        padding: 60px 40px;
+        box-shadow: 0 10px 40px var(--shadow-light);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .store-column::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, var(--gold-primary), var(--gold-secondary));
+      }
+
+      .store-name {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .store-concept {
+        font-size: 18px;
+        color: var(--gold-primary);
+        text-align: center;
+        margin-bottom: 40px;
+        letter-spacing: 0.1em;
+      }
+
+      .feature-list {
+        list-style: none;
+      }
+
+      .feature-list li {
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 16px;
+      }
+
+      .feature-list li:last-child {
+        border-bottom: none;
+      }
+
+      .feature-icon {
+        color: var(--gold-primary);
+        font-size: 20px;
+      }
+
+      /* === Footer === */
+      .footer {
+        background: var(--black-primary);
+        padding: 80px 0 40px;
+        color: var(--white-primary);
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px;
+      }
+
+      .footer-section h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 24px;
+        color: var(--gold-primary);
+        margin-bottom: 30px;
+        letter-spacing: 0.1em;
+      }
+
+      .footer-section p,
+      .footer-section li {
+        font-size: 16px;
+        line-height: 2;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .footer-section a:hover {
+        color: var(--gold-primary);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 40px;
+        margin-top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-logo {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--gold-primary);
+        letter-spacing: 0.2em;
+        margin-bottom: 20px;
+      }
+
+      .copyright {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* === Mobile Menu === */
+      .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+      }
+
+      .mobile-menu-toggle span {
+        width: 25px;
+        height: 2px;
+        background: var(--white-primary);
+        transition: var(--transition);
+      }
+
+      /* === Animations === */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* === Responsive === */
+      @media (max-width: 1024px) {
+        .chef-content,
+        .store-features {
+          grid-template-columns: 1fr;
+          gap: 60px;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-toggle {
+          display: flex;
+        }
+
+        .main-nav {
+          display: none;
+          position: fixed;
+          top: var(--header-height);
+          left: 0;
+          width: 100%;
+          height: calc(100vh - var(--header-height));
+          background: var(--black-primary);
+          padding: 40px;
+        }
+
+        .main-nav.active {
+          display: block;
+        }
+
+        .main-nav ul {
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .hero-cta {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .occasions-grid,
+        .menu-showcase,
+        .testimonial-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .reservation-info {
+          grid-template-columns: 1fr;
+        }
+
+        .header-content {
+          padding: 0 20px;
+        }
+
+        .section-header {
+          margin-bottom: 60px;
+        }
+
+        .hero-title {
+          font-size: 36px;
+        }
+
+        .section-title {
+          font-size: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading">
+      <div class="loading-logo">和招縁</div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header" id="header">
+      <div class="header-content">
+        <div class="site-logo">
+          <a href="#home">和招縁</a>
+        </div>
+        <nav class="main-nav" id="mainNav">
+          <ul>
+            <li><a href="#home">ホーム</a></li>
+            <li><a href="#occasions">特別な日に</a></li>
+            <li><a href="#chef">料理人</a></li>
+            <li><a href="#menu">お品書き</a></li>
+            <li><a href="#stores">店舗案内</a></li>
+            <li><a href="#reservation">ご予約</a></li>
+          </ul>
+        </nav>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-background">
+        <video autoplay loop muted playsinline class="hero-video">
+          <source src="image/和招縁TOP_PC.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-subtitle">特別な日の、特別なひとときを</p>
+        <h1 class="hero-title">
+          瀬戸内の恵みと
+          <br />
+          職人の技が織りなす
+          <br />
+          至極の一皿
+        </h1>
+        <p class="hero-description">
+          家島の豊かな海で育まれた新鮮な魚介
+          <br />
+          伝統と革新が融合した、唯一無二の味わい
+          <br />
+          大切な方との忘れられない時間をお約束します
+        </p>
+        <div class="hero-cta">
+          <a href="tel:079-XXX-XXXX" class="btn btn-primary">お電話でのご予約</a>
+          <a href="#reservation" class="btn btn-outline">ご予約について</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Occasions Section -->
+    <section class="special-occasions" id="occasions">
+      <div class="section-header fade-in">
+        <p class="section-subtitle">SPECIAL OCCASIONS</p>
+        <h2 class="section-title">特別な日のために</h2>
+        <p class="section-description">
+          人生の大切な節目、心に残る記念日
+          <br />
+          和招縁は、あなたの特別な日を最高の思い出に変えるお手伝いをいたします
+        </p>
+      </div>
+      <div class="occasions-grid">
+        <div class="occasion-card fade-in">
+          <div class="occasion-icon"><i class="fas fa-heart"></i></div>
+          <h3 class="occasion-title">記念日・誕生日</h3>
+          <p class="occasion-description">
+            お二人の大切な記念日や誕生日を、特別な料理とおもてなしで彩ります。サプライズのご相談も承ります。
+          </p>
+        </div>
+        <div class="occasion-card fade-in">
+          <div class="occasion-icon"><i class="fas fa-briefcase"></i></div>
+          <h3 class="occasion-title">接待・会食</h3>
+          <p class="occasion-description">
+            大切なお客様との商談や接待に。完全個室で、プライバシーを確保した上質な空間をご提供します。
+          </p>
+        </div>
+        <div class="occasion-card fade-in">
+          <div class="occasion-icon"><i class="fas fa-ring"></i></div>
+          <h3 class="occasion-title">結納・顔合わせ</h3>
+          <p class="occasion-description">
+            人生の新たな門出を祝う大切な日。格式ある和の空間で、両家の絆を深めるひとときを。
+          </p>
+        </div>
+        <div class="occasion-card fade-in">
+          <div class="occasion-icon"><i class="fas fa-award"></i></div>
+          <h3 class="occasion-title">お祝い事</h3>
+          <p class="occasion-description">
+            還暦・古希などの長寿のお祝い、昇進・昇格のお祝いなど、人生の節目を華やかに演出します。
+          </p>
+        </div>
+        <div class="occasion-card fade-in">
+          <div class="occasion-icon"><i class="fas fa-users"></i></div>
+          <h3 class="occasion-title">法事・法要</h3>
+          <p class="occasion-description">
+            故人を偲ぶ大切な集まりに。心を込めた料理と、落ち着いた空間でお迎えいたします。
+          </p>
+        </div>
+        <div class="occasion-card fade-in">
+          <div class="occasion-icon"><i class="fas fa-glass-cheers"></i></div>
+          <h3 class="occasion-title">歓送迎会</h3>
+          <p class="occasion-description">
+            新たな門出を祝う歓迎会、感謝を込めた送別会。思い出に残る宴席をご用意いたします。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chef Section -->
+    <section class="chef-section" id="chef">
+      <div class="chef-content">
+        <div class="chef-image fade-in">
+          <img src="images/chef.jpg" alt="料理長" />
+        </div>
+        <div class="chef-info fade-in">
+          <h3>料理長からのご挨拶</h3>
+          <p class="chef-title">瀬戸内の恵みを、心を込めて</p>
+          <p class="chef-philosophy">
+            私は瀬戸内海の離島、家島で生まれ育ちました。
+            <br />
+            <br />
+
+            幼い頃から慣れ親しんだ、荒波にもまれて育った魚介類。
+            <br />
+            その本物の味を、一人でも多くのお客様にお届けしたい。
+            <br />
+            <br />
+
+            素材の持つ力を最大限に引き出し、
+            <br />
+            伝統の技法に新たな感性を加えて、
+            <br />
+            お客様の心に残る一皿を創り上げます。
+            <br />
+            <br />
+
+            特別な日のお食事が、
+            <br />
+            かけがえのない思い出となりますように。
+          </p>
+          <p class="chef-signature">料理長　和田</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Premium Menu Section -->
+    <section class="premium-menu" id="menu">
+      <div class="section-header fade-in">
+        <p class="section-subtitle">PREMIUM MENU</p>
+        <h2 class="section-title">特別な日のお品書き</h2>
+        <p class="section-description">
+          記念日や接待など、大切な場面でお選びいただける特別コースをご用意しております
+        </p>
+      </div>
+      <div class="menu-showcase">
+        <div class="menu-item fade-in">
+          <div class="menu-image">
+            <img src="images/course-kiwami.jpg" alt="極みコース" />
+            <span class="menu-badge">おすすめ</span>
+          </div>
+          <div class="menu-content">
+            <h3 class="menu-title">極みコース</h3>
+            <p class="menu-description">
+              最高級の食材を惜しみなく使用した、当店最高峰のコース。大切な記念日や接待に最適です。
+            </p>
+            <p class="menu-price">¥15,000〜</p>
+          </div>
+        </div>
+        <div class="menu-item fade-in">
+          <div class="menu-image">
+            <img src="images/course-takumi.jpg" alt="匠コース" />
+          </div>
+          <div class="menu-content">
+            <h3 class="menu-title">匠コース</h3>
+            <p class="menu-description">
+              職人の技が光る握りと、旬の食材を使った一品料理のハーモニー。バランスの取れた人気コースです。
+            </p>
+            <p class="menu-price">¥10,000〜</p>
+          </div>
+        </div>
+        <div class="menu-item fade-in">
+          <div class="menu-image">
+            <img src="images/course-kaiseiki.jpg" alt="懐石コース" />
+          </div>
+          <div class="menu-content">
+            <h3 class="menu-title">懐石コース</h3>
+            <p class="menu-description">
+              四季の移ろいを感じる、伝統的な懐石料理。接待や会食など、フォーマルな場面に最適です。
+            </p>
+            <p class="menu-price">¥8,000〜</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="section-header fade-in">
+        <p class="section-subtitle">TESTIMONIALS</p>
+        <h2 class="section-title">お客様の声</h2>
+        <p class="section-description">
+          大切な日に和招縁をお選びいただいたお客様からの温かいお言葉
+        </p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card fade-in">
+          <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+          <p class="testimonial-content">
+            結婚記念日に利用させていただきました。料理の素晴らしさはもちろん、スタッフの方々の心遣いが本当に嬉しかったです。最高の記念日になりました。
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">T</div>
+            <div class="author-info">
+              <h4>T.K様</h4>
+              <p>結婚記念日でのご利用</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+          <p class="testimonial-content">
+            大切な取引先との会食で利用しました。個室は落ち着いた雰囲気で、料理も絶品。おかげさまで商談も成功しました。また利用させていただきます。
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">M</div>
+            <div class="author-info">
+              <h4>M.S様</h4>
+              <p>接待でのご利用</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+          <p class="testimonial-content">
+            父の古希のお祝いで家族で伺いました。新鮮な魚介の美味しさに父も大変喜んでおり、素敵な思い出になりました。ありがとうございました。
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">Y</div>
+            <div class="author-info">
+              <h4>Y.H様</h4>
+              <p>古希のお祝いでのご利用</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Store Comparison Section -->
+    <section class="store-comparison" id="stores">
+      <div class="section-header fade-in">
+        <p class="section-subtitle">TWO CONCEPTS</p>
+        <h2 class="section-title">二つの顔を持つ和招縁</h2>
+        <p class="section-description">
+          それぞれ異なる魅力を持つ二店舗で、お客様のニーズに合わせたおもてなしをご提供します
+        </p>
+      </div>
+      <div class="comparison-table">
+        <div class="store-features">
+          <div class="store-column fade-in">
+            <h3 class="store-name">塩町店</h3>
+            <p class="store-concept">〜 江戸前の技と瀬戸内の恵み 〜</p>
+            <ul class="feature-list">
+              <li>
+                <i class="fas fa-check feature-icon"></i>
+                <span>カウンター10席の親密な空間</span>
+              </li>
+              <li>
+                <i class="fas fa-check feature-icon"></i>
+                <span>職人の技を間近で堪能</span>
+              </li>
+              <li>
+                <i class="fas fa-check feature-icon"></i>
+                <span>厳選された鮨コース</span>
+              </li>
+              <li>
+                <i class="fas fa-check feature-icon"></i>
+                <span>掘りごたつ式のテーブル席完備</span>
+              </li>
+              <li>
+                <i class="fas fa-check feature-icon"></i>
+                <span>記念日・デートに最適</span>
+              </li>
+            </ul>
+          </div>
+          <div class="store-column fade-in">
+            <h3 class="store-name">福中店</h3>
+            <p class="store-concept">〜 活魚と懐石の饗宴 〜</p>
+            <ul class="feature-list">
+              <li>
+                <i class="fas fa-check feature-icon"></i>
+                <span>2階・3階完全個室</span>
+              </li>
+              <li>
+                <i class="fas fa-check feature-icon"></i>
+                <span>活魚水槽から直接調理</span>
+              </li>
+              <li>
+                <i class="fas fa-check feature-icon"></i>
+                <span>多彩な調理法でご提供</span>
+              </li>
+              <li>
+                <i class="fas fa-check feature-icon"></i>
+                <span>最大30名様までの宴会対応</span>
+              </li>
+              <li>
+                <i class="fas fa-check feature-icon"></i>
+                <span>接待・会食に最適</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section class="reservation-section" id="reservation">
+      <div class="reservation-content">
+        <h2 class="reservation-title">ご予約</h2>
+        <p class="reservation-description">
+          大切な日のご予約は、お電話にて承っております。
+          <br />
+          お客様のご要望を詳しくお伺いし、最高のおもてなしをご用意いたします。
+        </p>
+        <div class="reservation-info">
+          <div class="info-item fade-in">
+            <p class="info-label">塩町店</p>
+            <p class="info-value">079-XXX-XXXX</p>
+          </div>
+          <div class="info-item fade-in">
+            <p class="info-label">福中店</p>
+            <p class="info-value">079-XXX-XXXX</p>
+          </div>
+        </div>
+        <a href="tel:079-XXX-XXXX" class="btn btn-primary">お電話でのご予約はこちら</a>
+        <p class="reservation-note">
+          ※ご予約は3日前までにお願いいたします
+          <br />
+          ※アレルギーやお苦手な食材がございましたら、ご予約時にお申し付けください
+          <br />
+          ※キャンセルは前日までにご連絡ください
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>和招縁について</h3>
+          <p>
+            姫路で本物の味をお届けする高級寿司・割烹料理店。
+            <br />
+            瀬戸内海の新鮮な魚介と職人の技で、
+            <br />
+            特別な日を最高の思い出に。
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>店舗情報</h3>
+          <ul>
+            <li><strong>塩町店</strong></li>
+            <li>〒670-0000 兵庫県姫路市塩町XX</li>
+            <li>TEL: 079-XXX-XXXX</li>
+            <li>営業時間: 17:00〜22:00</li>
+            <li>定休日: 日曜日</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>福中店</h3>
+          <ul>
+            <li><strong>福中店</strong></li>
+            <li>〒670-0000 兵庫県姫路市福中町XX</li>
+            <li>TEL: 079-XXX-XXXX</li>
+            <li>営業時間: 17:00〜22:00</li>
+            <li>定休日: 日曜日</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-logo">和招縁</p>
+        <p class="copyright">Copyright ©2025 和招縁 All rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Loading Screen
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          document.getElementById('loading').classList.add('hidden')
+        }, 1500)
+      })
+
+      // Header Scroll Effect
+      window.addEventListener('scroll', () => {
+        const header = document.getElementById('header')
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled')
+        } else {
+          header.classList.remove('scrolled')
+        }
+      })
+
+      // Mobile Menu Toggle
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle')
+      const mainNav = document.getElementById('mainNav')
+
+      mobileMenuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('active')
+      })
+
+      // Smooth Scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault()
+          const target = document.querySelector(this.getAttribute('href'))
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            })
+            // Close mobile menu if open
+            mainNav.classList.remove('active')
+          }
+        })
+      })
+
+      // Scroll Animation
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      }, observerOptions)
+
+      document.querySelectorAll('.fade-in').forEach((el) => {
+        observer.observe(el)
+      })
+    </script>
+  </body>
+</html>
