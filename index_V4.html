@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>和招縁 | 兵庫県姫路市で寿司屋をお探しならJR姫路駅徒歩10分の「和招縁」へ</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+      /* === グローバル調整 === */
+      :root {
+        --brand-color: #c3a26f;
+        --background-light: #ffffff;
+        --background-alt: #f6f5e8;
+        --text-color-base: #333333;
+        --header-height: 70px;
+        --text-color-on-video: #ffffff;
+        --brand-color-on-video: #e0c080;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-padding-top: var(--header-height);
+        scroll-behavior: smooth;
+      }
+
+      body {
+        color: var(--text-color-base);
+        font-family: 'Noto Sans JP', sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      body.no-scroll {
+        overflow: hidden;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* === ヘッダーとナビゲーション === */
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: transparent;
+        height: var(--header-height);
+        transition: all 0.3s ease;
+      }
+
+      .site-header.scrolled {
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-content-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding: 0 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .site-logo a {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text-color-on-video);
+        text-decoration: none;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        transition: color 0.3s ease;
+      }
+
+      .site-header.scrolled .site-logo a {
+        color: var(--text-color-base);
+        text-shadow: none;
+      }
+
+      .hamburger-button {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1010;
+      }
+
+      .hamburger-button__line {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-color-on-video);
+        margin: 5px 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      }
+
+      .site-header.scrolled .hamburger-button__line {
+        background-color: var(--text-color-base);
+        box-shadow: none;
+      }
+
+      .hamburger-button[aria-expanded='true'] .hamburger-button__line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .hamburger-button[aria-expanded='true'] .hamburger-button__line:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger-button[aria-expanded='true'] .hamburger-button__line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      #global-nav {
+        display: block;
+      }
+
+      #global-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 30px;
+      }
+
+      #global-nav ul li a {
+        text-decoration: none;
+        color: var(--text-color-on-video);
+        font-weight: 500;
+        padding: 5px 0;
+        position: relative;
+        transition: color 0.3s ease;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      }
+
+      .site-header.scrolled #global-nav ul li a {
+        color: var(--text-color-base);
+        text-shadow: none;
+      }
+
+      #global-nav ul li a:hover {
+        color: var(--brand-color-on-video);
+      }
+
+      .site-header.scrolled #global-nav ul li a:hover {
+        color: var(--brand-color);
+      }
+
+      #global-nav ul li a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: var(--brand-color-on-video);
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+      }
+
+      .site-header.scrolled #global-nav ul li a::after {
+        background-color: var(--brand-color);
+      }
+
+      #global-nav ul li a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      /* === メインコンテンツ === */
+      .main-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* === ビデオ背景セクション === */
+      .video-background-section {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        min-height: 600px;
+        overflow: hidden;
+      }
+
+      .omoi-background-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        object-fit: cover;
+      }
+
+      .omoi-content-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .video-content-inner {
+        text-align: center;
+        color: var(--text-color-on-video);
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .video-background-section h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-weight: 700;
+        font-size: 42px;
+        letter-spacing: 0.15em;
+        margin-bottom: 40px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        position: relative;
+        padding-bottom: 20px;
+      }
+
+      .video-background-section h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--brand-color-on-video);
+      }
+
+      .video-background-section .txt__block {
+        font-size: 18px;
+        line-height: 2;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      /* === 共通スタイル === */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .txt__block {
+        text-align: left;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+        line-height: 1.9;
+        font-weight: 400;
+      }
+
+      .txt__block.text-center {
+        text-align: center;
+      }
+
+      h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-weight: 700;
+        font-size: 38px;
+        letter-spacing: 0.1em;
+        text-align: center;
+        position: relative;
+        padding-bottom: 0.7em;
+        margin-top: 0;
+        margin-bottom: 1.5em;
+        color: var(--text-color-base);
+      }
+
+      h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: var(--brand-color);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* === セクションスタイル === */
+      .top__block {
+        padding: 80px 0;
+      }
+
+      .top__block01--wrap .back-ground {
+        background-color: var(--background-alt);
+        border-top: 1px solid rgba(195, 162, 111, 0.2);
+        border-bottom: 1px solid rgba(195, 162, 111, 0.2);
+      }
+
+      /* === ボタンスタイル === */
+      .button__block--wrap {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .button__block--inner a {
+        display: inline-block;
+        text-decoration: none;
+        padding: 12px 30px;
+        background-color: var(--brand-color);
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .button__block--inner a:hover {
+        background-color: #b59760;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .button__black .button__block--inner a {
+        background-color: #333;
+      }
+
+      .button__black .button__block--inner a:hover {
+        background-color: #555;
+      }
+
+      /* === コンセプトセクション === */
+      .top__block01--row {
+        margin-bottom: 60px;
+      }
+
+      .col-md-6 {
+        padding: 0 15px;
+        margin-bottom: 40px;
+      }
+
+      .col-md-6 img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      /* === メニューセクション === */
+      .menu-items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .menu-item {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .menu-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .menu-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 15px;
+      }
+
+      .menu-item h3 {
+        font-family: 'Noto Serif JP', serif;
+        font-weight: 600;
+        font-size: 1.5em;
+        margin: 15px 0 10px;
+        color: var(--text-color-base);
+      }
+
+      .menu-item .txt__block {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #555;
+      }
+
+      /* === ギャラリーセクション === */
+      h3.gallery {
+        text-align: center;
+        font-family: 'Noto Serif JP', serif;
+        font-weight: 600;
+        font-size: 1.8em;
+        margin: 40px 0 30px;
+        color: var(--text-color-base);
+      }
+
+      .gallery-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-bottom: 40px;
+      }
+
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      /* === マップセクション === */
+      .map-container {
+        width: 100%;
+        height: 400px;
+        margin: 40px 0;
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* === フッター === */
+      footer {
+        background-color: #2c2c2c;
+        color: #e0e0e0;
+        padding: 50px 0 30px;
+      }
+
+      .footer__title h2 {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 28px;
+        color: #fff;
+        margin-bottom: 30px;
+      }
+
+      .footer__title h2::after {
+        background-color: var(--brand-color);
+        width: 50px;
+        height: 2px;
+      }
+
+      .copyright-box {
+        border-top: 1px solid #444;
+        padding-top: 30px;
+        margin-top: 30px;
+      }
+
+      .copyright {
+        text-align: center;
+        color: #aaa;
+        font-size: 14px;
+        margin: 0;
+      }
+
+      /* === レスポンシブデザイン === */
+      @media (max-width: 768px) {
+        .site-header {
+          padding: 0 15px;
+        }
+
+        .site-logo a {
+          font-size: 24px;
+        }
+
+        .hamburger-button {
+          display: block;
+        }
+
+        #global-nav {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background-color: rgba(255, 255, 255, 0.98);
+          padding-top: var(--header-height);
+          z-index: 1005;
+        }
+
+        #global-nav.is-active {
+          display: block;
+        }
+
+        #global-nav ul {
+          flex-direction: column;
+          align-items: center;
+          padding-top: 40px;
+        }
+
+        #global-nav ul li {
+          margin: 15px 0;
+        }
+
+        #global-nav ul li a {
+          font-size: 1.2em;
+          color: var(--text-color-base);
+          text-shadow: none;
+        }
+
+        .hamburger-button[aria-expanded='true'] .hamburger-button__line {
+          background-color: var(--text-color-base);
+        }
+
+        .video-background-section {
+          height: 70vh;
+          min-height: 500px;
+        }
+
+        .video-background-section h2 {
+          font-size: 32px;
+        }
+
+        .video-background-section .txt__block {
+          font-size: 16px;
+        }
+
+        h2 {
+          font-size: 30px;
+        }
+
+        .top__block {
+          padding: 60px 0;
+        }
+
+        .menu-items {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery-row {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .col-md-6 {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .gallery-row {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* === Bootstrap グリッドシステムの基本実装 === */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+
+      .col-md-6 {
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+
+      @media (min-width: 768px) {
+        .col-md-6 {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+      }
+
+      .img-responsive {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .container-fluid {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header class="site-header">
+      <div class="header-content-wrapper">
+        <div class="site-logo">
+          <a href="index.html">和招縁</a>
+        </div>
+        <button class="hamburger-button" aria-label="メニューを開閉" aria-expanded="false" aria-controls="global-nav">
+          <span class="hamburger-button__line"></span>
+          <span class="hamburger-button__line"></span>
+          <span class="hamburger-button__line"></span>
+        </button>
+        <nav id="global-nav">
+          <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="beginners.html">初めての方へ</a></li>
+            <li><a href="menu.html">お品書き</a></li>
+            <li><a href="guide.html">当店への道案内</a></li>
+            <li><a href="about.html">店舗概要</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+      <main>
+        <!-- ビデオ背景セクション -->
+        <div class="video-background-section">
+          <video autoplay loop muted playsinline class="omoi-background-video">
+            <source src="image/和招縁TOP_PC.mp4" type="video/mp4">
+            お使いのブラウザは動画タグに対応していません。
+          </video>
+          <div class="omoi-content-overlay">
+            <div class="video-content-inner">
+              <h2>和 招 縁 の 思 い</h2>
+              <div class="txt__block">
+                数ある店舗の中から「和招縁」にご関心頂き誠にありがとうございます。<br><br>
+                和招縁は、食生活がおびやかされている現代、<br>
+                安全で身体に良い物を吟味し四季「旬」を大切に、<br>
+                お客様に和みながら美味しく料理を食べて頂きたい。<br><br>
+                和招縁でお会いする方々に素敵なご縁が出来る場所であってほしい。<br><br>
+                そんな思いを込めて和招縁を開業いたしました。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 初めての方へセクション -->
+        <div class="top__block01--wrap">
+          <div class="back-ground">
+            <div class="container">
+              <div class="top__block top__block01">
+                <h2>初めての方へ</h2>
+                <div class="txt__block text-center">
+                  ホームページをご覧頂き有難うございます。<br>
+                  初めての方でも気軽にお立ち寄りいただき「また来たい！」と思える店を目指しスタッフ一同日々精進しております。<br><br>
+                  ぜひ、当店ならではの味わいとおもてなしを心ゆくまでお楽しみください。<br><br>
+                  皆様のご来店を心よりお待ちしております。<br><br>
+                  当店は二店舗ございますので、以下のボタンよりご希望の店舗をご確認下さい。
+                </div>
+                <div class="button__block--wrap">
+                  <div class="button__block--inner">
+                    <a href="beginners.html">▶和招縁のこだわり</a>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 center">
+                    <img class="img-responsive" src="image/yuhi.png" alt="和招縁 吟味された鮮魚">
+                    <h2>塩町店のコンセプト</h2>
+                    <div class="txt__block">
+                      鮨をメインに提供しております。店主は瀬戸内海の離島(家島)で生まれ、島の豊かな海で獲れる新鮮な魚介で育ちました。その自慢の地元の恵みを活かした本物のおいしさと店主のひと手間加えた熟練の技が光る握りを真心こめてご提供いたします。目の前で職人の技が見れるカウンターがおすすめです。掘りごたつのテーブル席も完備しております。
+                    </div>
+                  </div>
+                  <div class="col-md-6 center">
+                    <img class="img-responsive" src="image/katuo.png" alt="和招縁 寿司の基本シャリ">
+                    <h2>福中店のコンセプト</h2>
+                    <div class="txt__block">
+                      活魚・一品料理をメインに提供しております。瀬戸内海の荒波にもまれ育った活魚を水槽から直前に出し調理いたします。お客様のお好みの調理法「生・焼・煮・揚・蒸・にぎり」にて天然魚の本当の旨みを色々な形でご堪能下さい。二階、三階は完全個室です。接待や大切な方とのお食事など幅広いシーンにおすすめです。一階はカウンターも完備しております。
+                    </div>
+                  </div>
+                </div>
+
+                <div class="button__block--wrap">
+                  <div class="button__block--inner">
+                    <a href="beginners.html">初めてのご利用のお客様へ</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- お品書きセクション -->
+        <div class="container">
+          <div class="top__block">
+            <section class="sushi-menu">
+              <h2>お品書き</h2>
+              <div class="menu-items">
+                <div class="menu-item">
+                  <img src="image/katuo.png" alt="大トロ握り">
+                  <h3>大トロ握り</h3>
+                  <p class="txt__block">
+                    最高級の大トロを使用し、とろける食感と深い旨味が特徴。
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <img src="image/sushi.jpg" alt="中トロ握り">
+                  <h3>中トロ握り</h3>
+                  <p class="txt__block">
+                    脂と旨味のバランスが絶妙。上品な味わいをご堪能ください。
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <img src="image/susidukuri.png" alt="鯛の握り">
+                  <h3>鯛の握り</h3>
+                  <p class="txt__block">
+                    新鮮な鯛を厳選し、繊細な味わいを引き出しました。
+                  </p>
+                </div>
+                <div class="menu-item">
+                  <img src="image/kaisen.png" alt="穴子握り">
+                  <h3>穴子握り</h3>
+                  <p class="txt__block">
+                    柔らかい穴子に秘伝のタレを絡めた逸品。
+                  </p>
+                </div>
+              </div>
+            </section>
+            <div class="button__block--wrap button__black">
+              <div class="button__block--inner">
+                <a href="menu.html">お品書きを見る</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ギャラリーセクション -->
+        <div class="back-ground">
+          <div class="container">
+            <div class="top__block">
+              <h2>店舗ギャラリー</h2>
+              <h3 class="gallery">塩町店</h3>
+              <div class="gallery-row">
+                <div class="gallery-item">
+                  <img src="image/shiomachi/1.JPG" alt="塩町店 店内写真1">
+                </div>
+                <div class="gallery-item">
+                  <img src="image/shiomachi/2.jpg" alt="塩町店 店内写真2">
+                </div>
+                <div class="gallery-item">
+                  <img src="image/shiomachi/3.jpg" alt="塩町店 店内写真3">
+                </div>
+                <div class="gallery-item">
+                  <img src="image/shiomachi/4.JPG" alt="塩町店 店内写真4">
+                </div>
+              </div>
+              <h3 class="gallery">福中店</h3>
+              <div class="gallery-row">
+                <div class="gallery-item">
+                  <img src="image/fukunaka/1.JPG" alt="福中店 店内写真1">
+                </div>
+                <div class="gallery-item">
+                  <img src="image/fukunaka/2.JPG" alt="福中店 店内写真2">
+                </div>
+                <div class="gallery-item">
+                  <img src="image/fukunaka/3.JPG" alt="福中店 店内写真3">
+                </div>
+                <div class="gallery-item">
+                  <img src="image/fukunaka/4.JPG" alt="福中店 店内写真4">
+                </div>
+              </div>
+              <div class="button__block--wrap button__black">
+                <div class="button__block--inner">
+                  <a href="guide.html">店舗への道案内</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Google Maps -->
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d818.7443620173344!2d134.68707140419764!3d34.83165953317169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3554e0138af315ed%3A0x1e77ee41b6aee837!2z5ZKM5oub57iBIOWhqeeUuuW6lw!5e0!3m2!1sja!2sjp!4v1738245031317!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- フッター -->
+    <footer>
+      <div class="container">
+        <div class="footer__info">
+          <div class="footer__title">
+            <h2>和招縁</h2>
+          </div>
+        </div>
+        <div class="copyright-box">
+          <p class="copyright">Copyright ©2025 和招縁 All rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerButton = document.querySelector('.hamburger-button');
+        const globalNav = document.getElementById('global-nav');
+        const body = document.body;
+        const siteHeader = document.querySelector('.site-header');
+
+        // ハンバーガーメニューの動作
+        if (hamburgerButton && globalNav) {
+          hamburgerButton.addEventListener('click', function() {
+            const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+            this.setAttribute('aria-expanded', !expanded);
+            globalNav.classList.toggle('is-active');
+            body.classList.toggle('no-scroll');
+          });
+
+          // メニューリンクをクリックしたらメニューを閉じる
+          const navLinks = globalNav.querySelectorAll('a');
+          navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              if (globalNav.classList.contains('is-active')) {
+                hamburgerButton.setAttribute('aria-expanded', 'false');
+                globalNav.classList.remove('is-active');
+                body.classList.remove('no-scroll');
+              }
+            });
+          });
+        }
+
+        // スクロール時のヘッダー背景変更
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          
+          if (scrollTop > 50) {
+            siteHeader.classList.add('scrolled');
+          } else {
+            siteHeader.classList.remove('scrolled');
+          }
+          
+          lastScrollTop = scrollTop;
+        });
+      });
+    </script>
+  </body>
+</html>
